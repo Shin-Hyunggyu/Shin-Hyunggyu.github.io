@@ -1,1 +1,0 @@
-# Shin-Hyunggyu.github.io
