@@ -6,11 +6,12 @@
 
 main,
 footer,
-.nav-container {
+.nav-container,
+.pagination-container {
   display: block;
   margin: 0 auto;
   max-width: 800px;
-  width: 100%;
+  width: 90%;
 }
 
 .nav {
@@ -64,6 +65,15 @@ footer,
     &:focus {
       opacity: 1;
     }
+
+    .count {
+      color: $theme-color;
+    }
+
+    &.active {
+      font-weight: bold;
+      opacity: 1 !important;
+    }
   }
 
   a {
@@ -75,13 +85,12 @@ footer,
   .nav {
     &-container {
       text-align: left;
-      padding: 0 1rem;
     }
 
     ul {
       bottom: 0;
       position: absolute;
-      right: 1rem;
+      right: 0;
     }
   }
 }

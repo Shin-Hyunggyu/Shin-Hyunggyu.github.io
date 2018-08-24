@@ -1,0 +1,16 @@
+<ul>
+  {% if page.title == 'About' %}
+    <li class="active"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+  {% else %}
+    <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+  {% endif %}
+  
+  {% for category in site.categories %}
+    {% assign _category = category | first %}
+    {% if page.category == _category %}
+      <li class="active"><a href="{{ site.baseurl }}/{{ category | first | downcase }}">{{ category | first }}(<span class="count">{{ category | last | size }}</span>)</a></li>
+    {% else %}
+      <li><a href="{{ site.baseurl }}/{{ category | first | downcase }}">{{ category | first }}(<span class="count">{{ category | last | size }}</span>)</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>

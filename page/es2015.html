@@ -1,10 +1,13 @@
 ---
 layout: default
+title: "ES2015"
+category: ES2015
+permalink: /es2015
 ---
 
 <main>
   <div class="catalogue">
-    {% for post in paginator.posts %}
+    {% for post in site.categories[page.category] %}
       <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
         <div>
           <div>

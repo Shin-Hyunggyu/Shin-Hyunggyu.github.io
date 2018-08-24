@@ -1,6 +1,6 @@
 # Dev Store Blog
 
-## 1. install
+## 1. Run Server
 ```yaml
 jekyll serve
 ```
@@ -20,6 +20,7 @@ layout: post
 categories: ES6
 title: "Async Await In ES6"  
 author: "Lofty87" (default site.author.name)
+author-img: /assets/img/<author>.jpg (default site.author.img)
 date: 2018-08-13
 ---
 ```

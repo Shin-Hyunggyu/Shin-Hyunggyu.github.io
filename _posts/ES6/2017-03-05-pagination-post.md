@@ -1,8 +1,9 @@
 ---
 layout: post
-categories: ES6
+category: ES6
 title: "동해물과 백두산이 마르고 닳도록 하느님이"
-# author: "Chester"
+author: "Chester"
+author-img: /assets/img/logo.png
 date: 2018-08-13
 ---
 

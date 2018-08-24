@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
   {% include head.html %}
-
   <body>
     <nav class="nav">
       <div class="nav-container">
@@ -10,15 +8,9 @@
           <img src="/assets/img/logo.png"/>
           <h2 class="nav-title">{{ site.title }}</h2>
         </a>
-        <ul>
-          <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-          <li><a href="{{ site.baseurl }}/">Posts</a></li>
-        </ul>
+        {% include nav.html %}
       </div>
     </nav>
-
-    <main>
-      {{ content }}
-    </main>
+    {{ content }}
   </body>
 </html>
