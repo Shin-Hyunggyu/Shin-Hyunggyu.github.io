@@ -1,0 +1,55 @@
+.catalogue {
+  &-item {
+    border-bottom: 1px solid $grey-2;
+    color: $default-color;
+    display: inline-block;
+    padding: 2rem 1rem;
+
+    .catalogue-line {
+      border-color: $theme-tint;
+    }
+
+    &:hover .catalogue-line,
+    &:focus .catalogue-line {
+      width: 5rem;
+    }
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  &-time {
+    color: $theme-tint;
+    letter-spacing: .5px;
+    font-size: 0.8rem;
+  }
+
+  &-title {
+    color: $default-color;
+    display: block;
+    font-size: 2rem;
+    margin: .4rem 0;
+  }
+
+  &-img {
+    $img-size: 22px;
+    display: inline-block;
+    margin: 0 1px 1px 0px !important;
+    width: $img-size;
+    height: $img-size;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  &-line {
+    @include transition(all .3s ease-out);
+    border-top: .2rem solid $default-shade;
+    display: block;
+    width: 2rem;
+  }
+
+  p {
+    color: $grey-1;
+  }
+}

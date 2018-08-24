@@ -1,0 +1,57 @@
+$green : #A6E22A;
+$blue  : #84D7EC;
+$yellow :#E6DB74;
+$magenta:  #F92672;
+$greylight : #E6E6E6;
+$original : #eee;
+$background: #272822;
+$grey:#595959;
+$violet:#AE81FF;
+
+code {
+  font-family: $font-family !important;
+  font-size: 0.85rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
+.highlight {
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.2em;
+  background-color: $background;
+  color: $original;
+  padding: 10px 15px;
+  border-radius: 0;
+
+  .lineno {
+    margin: 3px;
+    font-size: 16px;
+    color: $greylight;
+  }
+
+  .c, .cm, .cp, .c1, .cs { /* comment */
+    color: $grey;
+  }
+
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .o, .nt{ /* key word*/
+    color: $magenta;
+  }
+
+  .m, .mf, .mh, .mi, .mo{ /*number*/
+    color: $violet;
+  }
+
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss{ /*string*/
+    color: $yellow;
+  }
+  
+  .nf, .na, .nc {
+    color: $green;
+  }
+
+  .css .k, .nb, .kd, .n {
+    font-style: italic;
+    color: $blue;
+  }
+}
