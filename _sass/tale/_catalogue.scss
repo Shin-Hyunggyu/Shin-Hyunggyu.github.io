@@ -4,6 +4,7 @@
     color: $default-color;
     display: inline-block;
     padding: 2rem 0;
+    width: 100%;
 
     .catalogue-line {
       border-color: $theme-tint;
@@ -51,5 +52,95 @@
 
   p {
     color: $grey-1;
+  }
+}
+
+.catalogue.category {
+  padding-bottom: 1.5rem;
+
+  .title {
+    padding: 2rem 0 .05rem 0;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: $default-shade;
+
+    span {
+      font-size: 0.4rem;
+      vertical-align: middle;
+    }
+  }
+
+  .catalogue-item {
+    padding: 0.5rem 0 0.6rem 0;
+  }
+
+  .catalogue-title {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .catalogue-time {
+    font-size: 0.7rem;
+  }
+}
+
+.sub-catalogue {
+  margin-bottom: 3rem;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid $grey-2;
+  font-size: 0.9rem;
+
+  .section, &-item {
+    height: 30px;
+  }
+
+  .section {
+    position: relative;
+    padding-bottom: 0.5rem;
+    border-bottom: 1.5px solid $grey-2;
+    font-weight: bold;
+
+    .info {
+      padding-left: 5px;
+      float: left;
+      color: $default-color;
+    }
+
+    a {
+      margin-right: 5px;
+      float: right;
+      color: $default-color;
+      text-decoration: none;
+    }
+  }
+
+  &-item {
+    position: relative;
+    padding: 0.5rem 0;
+
+    &.underline a h1 {
+      border-bottom: 2px solid $theme-tint;
+    }
+
+    a {
+      float: left;
+
+      h1 {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $default-color;
+        opacity: .8;
+      }
+
+      &:hover {
+        border-bottom: 2px solid $theme-tint;
+      }
+    }
+
+    time {
+      float: right;
+      color: $grey-1;
+    }
   }
 }

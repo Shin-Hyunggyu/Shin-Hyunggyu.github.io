@@ -7,8 +7,19 @@
   font-weight: bold;
 
   span {
-    color: $theme-tint;
+    @include transition(all .3s ease-out);
+    padding: 0 0.4rem;
+    color: $default-tint;
     font-size: 1.1rem;
+    cursor: pointer;
+
+    &.active {
+      color: $theme-tint;
+    }
+
+    &:hover {
+      opacity: .6;
+    }
   }
 
   &-container {
@@ -30,7 +41,13 @@
     @include transition(all .3s ease-out);
     color: $theme-tint;
     position: absolute;
-    line-height: 1.7;
+    line-height: 1.5;
+
+    &.disable {
+      opacity: .6;
+      color: $theme-shadow !important;
+      cursor: not-allowed;
+    }
 
     &:hover,
     &:focus {

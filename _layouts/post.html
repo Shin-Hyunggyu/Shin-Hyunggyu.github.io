@@ -32,14 +32,32 @@ layout: default
   </div>
 </main>
 
-<div class="pagination">
-  <div class="pagination-container">
-    {% if page.next.url %}
-      <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">PREV</a>
-    {% endif %}
-    {% if page.previous.url %}
-      <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">NEXT</a>
-    {% endif %}
-    <a href="#" class="top">Top</a>
+<div class="sub-catalogue">
+  <div class="section">
+    <div class="info">'{{ page.categories }}' 카테고리의 최신글</div>
+    <a href="{{ site.baseurl }}/{{ page.categories | first | downcase }}">더보기</a>
   </div>
+  {% assign count = 0 %}
+  {% for post in site.posts %}
+    {% if post.categories == page.categories %}
+      {% assign count = count | plus: 1 %}
+      {% if count < 6 %}
+        {% if post.id == page.id %}
+          <div class="sub-catalogue-item underline">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+              <h1 class="sub-catalogue-title">{{ post.title | strip_html | truncatewords: 5 }}</h1>
+            </a>
+            <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%Y.%m.%d" }}</time>
+          </div>
+        {% else %}
+          <div class="sub-catalogue-item">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+              <h1 class="sub-catalogue-title">{{ post.title | strip_html | truncatewords: 5 }}</h1>
+            </a>
+            <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%Y.%m.%d" }}</time>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
 </div>
