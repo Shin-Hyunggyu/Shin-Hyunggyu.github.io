@@ -1,10 +1,10 @@
 ---
 layout: post
-categories: Style
-title: "Style Example"
+categories: Etc
+title: "정말 축하축하축하축하"
 # author: "Lofty87" (default site.author.name)
 # author-img: /assets/img/<author>.jpg (default site.author.img)
-date: 2018-08-25
+date: 2015-05-25
 ---
 
 국가안전보장회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국회는 의원의 자격을 심사하며, 의원을 징계할 수 있다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 재판의 심리와 판결은 공개한다. 다만, 심리는 국가의 안전보장 또는 안녕질서를 방해하거나 선량한 풍속을 해할 염려가 있을 때에는 법원의 결정으로 공개하지 아니할 수 있다.

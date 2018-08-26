@@ -1,0 +1,25 @@
+<div class="post-info-wrap">
+  <div class="post-info">
+    <div>
+      <time>Written By</time>
+
+      {% if page.author %}
+          <span> {{ page.author }}</span>
+      {% else %}
+          <span> {{ site.author.name }}</span>
+      {% endif %}
+
+      {% if page.author-img %}
+        <img src="{{ page.author-img }}"/>
+      {% else %}
+        <img src="{{ site.author.img }}"/>
+      {% endif %}
+    </div>
+
+    {% if page.date %}
+      <div>
+        <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      </div>
+    {% endif %}
+  </div>
+</div>

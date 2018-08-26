@@ -4,15 +4,18 @@ layout: default
 
 <main>
   <div class="post">
-    <div class="post-info">
-      <time>Written By</time>
-      <img src="{{ site.author.img }}"/>
-      <b>{{ site.author.name }}</b>
-    </div>
-    <div>
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-line"></div>
-      {{ content }}
+    {% include post-title.html %}
+    {{ content }}
+    {% include post-author.html %}
+
+    <div class="description">
+      <div>
+        <u><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></u>&nbsp;
+      </div>
+      <br>
+      <div>
+        <i>{{ site.description }}</i>
+      </div>
     </div>
   </div>
 </main>

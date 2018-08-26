@@ -5,51 +5,25 @@ comments: true
 
 <main>
   <div class="post">
-    <div class="post-info">
-      <time>Written By</time>
-      
-      {% if page.author-img %}
-        <img src="{{ page.author-img }}"/>
-      {% else %}
-        <img src="{{ site.author.img }}"/>
-      {% endif %}
-
-      {% if page.author %}
-          <b>{{ page.author }}</b>
-      {% else %}
-          <b>{{ site.author.name }}</b>
-      {% endif %}
-
-      {% if page.date %}
-        <br>
-        <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-      {% endif %}
-    </div>
-    <div>
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-line"></div>
-      {{ content }}
-    </div>
+    {% include post-title.html %}
+    {{ content }}
+    {% include post-author.html %}
   </div>
 </main>
 
 <div class="sub-catalogue">
   <div class="section">
-    <div class="info">'{{ page.categories }}' 카테고리의 최신글</div>
+    <div class="info">'{{ page.categories }}' 카테고리 최신글</div>
     <a href="{{ site.baseurl }}/{{ page.categories | first | downcase }}">더보기</a>
   </div>
+
   {% assign count = 0 %}
   {% for post in site.posts %}
     {% if post.categories == page.categories %}
       {% assign count = count | plus: 1 %}
       {% if count < 6 %}
         {% if post.id == page.id %}
-          <div class="sub-catalogue-item underline">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-              <h1 class="sub-catalogue-title">{{ post.title | strip_html | truncatewords: 5 }}</h1>
-            </a>
-            <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%Y.%m.%d" }}</time>
-          </div>
+          {% assign count = count | minus: 1 %}
         {% else %}
           <div class="sub-catalogue-item">
             <a href="{{ post.url | prepend: site.baseurl }}">
@@ -61,6 +35,7 @@ comments: true
       {% endif %}
     {% endif %}
   {% endfor %}
+
 </div>
 
-{% include comments.html %}
+{% include post-comments.html %}

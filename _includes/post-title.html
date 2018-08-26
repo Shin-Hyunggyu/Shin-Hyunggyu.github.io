@@ -1,0 +1,9 @@
+<div class="post-title-wrap">
+  {% if page.title != 'About Dev Store' %}
+    <div class="post-category">{{ page.categories }}</div>
+    <div class="post-comment-count">
+        <a href="{{ site.baseurl }}{{ page.url }}#disqus_thread">Comment Count</a>
+    </div>
+  {% endif %}
+  <h1 class="post-title">{{ page.title }}</h1>
+</div>

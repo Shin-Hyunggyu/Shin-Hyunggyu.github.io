@@ -1,20 +1,23 @@
 .post {
-  padding: 3rem 0 2rem 0;
-
-  .post-line {
-    border-color: $theme-tint;
-  }
+  padding: 2rem 0 2rem 0;
 
   &-info {
+    display: inline-block;
+    padding-bottom: 0.5rem;
     font-size: 1rem;
     color: $theme-tint;
     letter-spacing: 0.5px;
-    text-align: center;
+
+    &-wrap {
+      text-align: right;
+      padding-top: 2rem;
+      line-height: 1.1;
+    }
 
     img {
-      $img-size: 25px;
+      $img-size: 35px;
       display: inline-block;
-      margin: 0 1px 2px 3px !important;
+      margin: 0 0 0.2rem 0 !important;
       width: $img-size;
       height: $img-size;
       border-radius: 50%;
@@ -22,7 +25,9 @@
     }
 
     span {
-      font-style: italic;
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: $theme-tint;
     }
 
     time {
@@ -30,11 +35,35 @@
     }
   }
 
+  &-category {
+    color: $theme-color;
+    font-weight: bold;
+  }
+
+  &-comment-count {
+    font-size: 0.8rem;
+    padding-bottom: 0.5rem;
+    
+    a {
+      color: $default-tint;
+      text-decoration: none !important;
+      cursor: text;
+    }
+  }
+
   &-title {
+    display: inline-block;
+    border-bottom: 4px dashed $theme-tint;
     color: $default-color;
     font-size: 3.1rem;
-    margin: 1rem 0;
-    text-align: center;
+    margin: -0.5rem 0 1.5rem 0;
+    padding-bottom: 0.4rem;
+    line-height: 1.2;
+
+    &-wrap {
+      padding: 1.2rem 0;
+      text-align: center;
+    }
   }
 
   &-line {
@@ -47,6 +76,7 @@
   p {
     margin: 0 0 1rem;
     text-align: justify;
+    line-height: 1.8rem;
   }
 
   a:hover {
@@ -75,5 +105,18 @@
     vertical-align: text-top;
     padding: 0;
     margin: 0;
+  }
+
+  .description {
+    margin-top: -0.5rem;
+    padding-bottom: 2rem;
+    text-align: right;
+    color: $theme-tint;
+    font-size: 1.2rem;
+
+    a {
+      color: $theme-tint;
+      font-size: 0.8rem;
+    }
   }
 }

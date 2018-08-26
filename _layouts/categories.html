@@ -13,6 +13,7 @@ layout: default
       {% endif %}
       <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
         <div>
+          <h1 class="catalogue-title">{{ post.title }}</h1>
           <div>
             <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
               <span class="catalogue-time">Written By</span>
@@ -22,7 +23,6 @@ layout: default
                 <img class="catalogue-img" src="{{ site.author.img }}"/>
               {% endif %}
           </div>
-          <h1 class="catalogue-title">{{ post.title }}</h1>
         </div>
       </a>
     {% endfor %}

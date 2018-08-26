@@ -72,6 +72,10 @@
 
   .catalogue-item {
     padding: 0.5rem 0 0.6rem 0;
+
+    div {
+      line-height: 1.2;
+    }
   }
 
   .catalogue-title {
@@ -85,7 +89,7 @@
 }
 
 .sub-catalogue {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   padding: 0.8rem 1rem;
   border: 1.5px solid $grey-2;
   font-size: 0.9rem;
@@ -117,10 +121,6 @@
   &-item {
     position: relative;
     padding: 0.5rem 0;
-
-    &.underline a h1 {
-      border-bottom: 2px solid $theme-tint;
-    }
 
     a {
       float: left;

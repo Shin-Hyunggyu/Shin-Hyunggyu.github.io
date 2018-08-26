@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: Style
-title: "Style Example"
+categories: Etc
+title: "한국 살기 좋은나라"
 # author: "Lofty87" (default site.author.name)
 # author-img: /assets/img/<author>.jpg (default site.author.img)
 date: 2018-08-25
