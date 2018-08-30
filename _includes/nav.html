@@ -8,9 +8,9 @@
   {% for category in site.categories %}
     {% assign _category = category | first %}
     {% if page.categories == _category %}
-      <li class="active"><a href="{{ site.baseurl }}/{{ category | first | downcase }}">{{ category | first }}(<span class="count">{{ category | last | size }}</span>)</a></li>
+      <li class="active"><a href="{{ site.baseurl }}/{{ category | first | downcase }}">{{ category | first }}</a></li>
     {% else %}
-      <li><a href="{{ site.baseurl }}/{{ category | first | downcase }}">{{ category | first }}(<span class="count">{{ category | last | size }}</span>)</a></li>
+      <li><a href="{{ site.baseurl }}/{{ category | first | downcase }}">{{ category | first }}</a></li>
     {% endif %}
   {% endfor %}
 </ul>

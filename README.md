@@ -32,6 +32,7 @@ bundle update
 ---
 layout: post  
 categories: ES6
+tags: [ typescript, es6, commonjs ]
 title: "Async Await In ES6"  
 author: "Lofty87" (default site.author.name)
 author-img: /assets/img/<author>.jpg (default site.author.img)

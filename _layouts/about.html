@@ -4,18 +4,16 @@ layout: default
 
 <main>
   <div class="post">
-    {% include post-title.html %}
     {{ content }}
+
+    <div class="section">
+      <i>{{ site.description }}</i>
+    </div>
+    
     {% include post-author.html %}
 
     <div class="description">
-      <div>
-        <u><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></u>&nbsp;
-      </div>
-      <br>
-      <div>
-        <i>{{ site.description }}</i>
-      </div>
+      <u><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></u>&nbsp;
     </div>
   </div>
 </main>

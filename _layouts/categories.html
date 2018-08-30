@@ -6,7 +6,7 @@ layout: default
   <div class="catalogue category">
     {% assign date = '' %}
     {% for post in site.categories[page.categories] %}
-      {% assign postdate = post.date | date: "%B, %Y" %}
+      {% assign postdate = post.date | date: "%Y.%m" %}
       {% if date != postdate %}
         <div class="title"><span>●</span> {{ postdate }}</div>
         {% assign date = postdate %}
@@ -15,13 +15,20 @@ layout: default
         <div>
           <h1 class="catalogue-title">{{ post.title }}</h1>
           <div>
-            <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-              <span class="catalogue-time">Written By</span>
+            <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%Y.%m.%d" }}</time>
+            <span class="catalogue-time">
+              Written By
               {% if post.author-img %}
                 <img class="catalogue-img" src="{{ post.author-img }}"/>
               {% else %}
                 <img class="catalogue-img" src="{{ site.author.img }}"/>
               {% endif %}
+            </span>
+            <span class="catalogue-time">
+              {% for tag in post.tags %}
+                <div class="tag">{{ tag }}</div>
+              {% endfor %}
+            </span>
           </div>
         </div>
       </a>
