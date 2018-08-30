@@ -40,12 +40,13 @@ a {
 }
 
 blockquote {
-  border-left: .25rem solid $code-color;
+  border-left: .35rem solid $code-color;
   color: $grey-2;
   margin: .8rem 0;
   padding: .6rem .8rem .7rem .8rem;
   background-color: $blockquote-background;
   font-size: 0.85rem !important;
+  letter-spacing: 0.02rem;
 
   p:last-child {
     margin-bottom: 0;
