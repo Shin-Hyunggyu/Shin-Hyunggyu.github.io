@@ -1,3 +1,9 @@
+$gl-ms         : "screen and (max-width: 23.5em)"; // up to 360px
+$gl-xs         : "screen and (max-width: 35.5em)"; // up to 568px
+$gl-sm         : "screen and (max-width: 48em)";   // max 768px
+$gl-md         : "screen and (max-width: 64em)";   // max 1024px
+$gl-lg         : "screen and (max-width: 80em)";   // max 1280px
+
 * {
   @include box-sizing;
   line-height: 1.5;
@@ -63,6 +69,33 @@ img {
   max-width: 100%;
 }
 
-td {
-  vertical-align: top;
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  border:1px solid #e5e5e5;
+  background:white;
+  overflow:hidden;
+  min-width: 60%;
+  max-width: 100%;
+  margin:0 auto;
+  position:relative;
+  
+  * {
+    position:relative;
+  }
+
+  thead tr {
+    height:40px;
+    background:#d0bfff;
+    font-size:16px;
+  }
+  
+  tbody tr {
+    height:40px;
+    border-bottom:1px solid #e5e5e5;
+    
+    &:last-child {
+      border:0;
+    }
+  }
 }
