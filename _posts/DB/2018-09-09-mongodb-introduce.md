@@ -11,7 +11,8 @@ date: 2018-09-09
 # 1. MongoDB 란
 
 [MongoDB](https://www.mongodb.com/) 는 Key 와 Value 의 **JSON** 으로 이루어진 Document 기반의 **NoSQL**(Not Only SQL) 이다. 기존의 RDS(Relational Database System) 는 무결성을 지키기 위해 여러 테이블로 나누고 서로 관계를 맺는 구조를 가지는데 반에 **NoSQL** 은 Key 와 Value 그리고 집합이라는 매우 심플한 구조를 가진다. RDS 특성상 **Data Sharding** 을 하기 위해서는 큰 부담이 따르고 한계가 있기 때문에 **Scale Out** 보다 **Scale Up** 을 한다. **Scale Up** 은 **Scale Out** 보다 비용과 시간적인 측면에서 매우 부담이 큰 작업이다. 하지만 **NoSQL** 은 이런 단점을 극복할 수 있도록 설계되어 있어 **Scale Out** 에 용이하다. 또 **Schema** 가 고정되어 있는 RDS 와는 달리 Collection(Table) 안에서 서로 다른 **Schema** 형태의 Document(Record/Row) 를 가질 수 있어 매우 유연하다. 이런 특징은 Document 안에 Field(Column) 를 확장하거나 축소할 때 편하고 부담이 없다. **MongoDB** 는 Main Query Language 로 **Javascript** 를 사용하고 있어 Web Developer 에게 친숙하다는 것도 장점이 될 수 있겠다. 하지만 위와 같은 편리함과 유연함은 복잡한 쿼리를 불가능하게 하고 데이터의 무결성을 깰 수 있다는 점에서 단점이 될 수 도 있다.
-<br><br>
+
+<br>
 
 |     RDS    |   MongoDB   |
 |:----------:|:-----------:|
@@ -62,9 +63,11 @@ mkdir -p /data/db
 
 ※ **.cfg** 나 **.conf** 는 확장자 차이 일 뿐 참조해서 MongoDB 를 실행하고 싶을 때는 선호하는 확장자로 만들면 됨
 
-#### 6. Service 재시작 (mongod.cfg 변경사항 적용)
+#### 6. MongoDB 재시작 (mongod.cfg 변경사항 적용)
 
-> services.msc
+```bash
+services.msc
+```
 
 ![install](/assets/img/posts/DB/2018-09-09/service-restart.png)
 
@@ -119,7 +122,7 @@ RUNNING
   * Simple Pricing Policy (All-Inclusive Pricing)
   * SANDBOX : Free / Variable RAM / 0.5 GB Storage / Limited Regions
 
-## 3. MongoDB GUI Client Tool
+## 3. GUI Client Tool
 
 * [MongoDB Compass](https://www.mongodb.com/products/compass)
   * MongoDB 에서 만든 GUI
@@ -136,29 +139,31 @@ RUNNING
 
 <br>
 
-# 3. 실행
+# 3. MongoDB 실행
 
-## 1. MongoDB : 처음 실행하게 되면 DB 초기 파일들이 생성된다.
+처음 실행하게 되면 DB 초기 파일들이 생성된다.
 
-* 기본경로 (**/data/db**)
+* **기본경로 (/data/db)**
 
 ```bash
 mongod
 ```
 
-* 경로지정
+* **경로지정**
 
 ```bash
 mongod --dbpath 경로
 ```
 
-## 2. MongoDB javascript shell
+<br>
+
+# 4. MongoDB javascript shell
 
 ```bash
 mongo
 ```
 
-<br>
+<br><br>
 
 **※ Reference**
   * [NoSQL의 장단점](http://lazybrain.ikspres.com/nosql1/)

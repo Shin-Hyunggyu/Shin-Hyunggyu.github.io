@@ -10,7 +10,9 @@ date: 2018-08-30
 
 ES6 에서 모듈을 불러오고 내보낼 수 있는 **import** 와 **export** 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 **CommonJS** 기반의 NodeJS 에서는 부분적으로 ES6 사용이 가능한 것 같고 완벽한 ES6 또는 NEXT(최신버전) 를 사용하기 위해서는 **Babel** 이나 **Typescript** 의 도움을 받아야만 한다. 이번 포스팅은 **Typescript** 를 통해 **import** 와 **export** 를 사용했을 때 어떻게 transpile 되는지 알아 보려고 한다. 또 **Babel** 과도 어떤 차이가 있는지 비교해 볼 것이다. transpile target 은 가장 안정적으로 돌아가는 ES5 로 하겠다.
 
-# CommonJS 와 ES6 비교
+<br>
+
+# 1. CommonJS 와 ES6 비교
 
 ### 1. default 로 내보내고 불러오기
 
@@ -74,7 +76,7 @@ sum(1, 2);
 
 <br>
 
-# Typescript 에서 import 와 export 의 transpile
+# 2. Typescript 에서 import 와 export 의 transpile
 
 **Typescript** 에서 **CommonJS** 기반의 모듈을 어떻게 **import** 하는지 살펴보기 위해 '**3rd-module.js**' 를 추가했다. 아직까지는 <u>npm 에 올라와 있는 대부분의 모듈들이 <b>CommonJS</b> 기반으로 제공되고 있다는 점을 유의해야 한다.</u>
 
@@ -221,7 +223,7 @@ const thirdModule = require('./3rd-module').default;
 
 <br>
 
-# Babel VS Typescript
+# 3. Babel VS Typescript
 
 **Babel** 에서 **CommonJS** 기반의 모듈을 어떻게 **import** 하는지 살펴보기 위해 '**commonjs-module.js**' 를 추가했다.
 
@@ -360,7 +362,7 @@ import * as alias from module;
 import name from module;  // import * as alias from module; 도 가능
 ```
 
-<br>
+<br><br>
 
 **※ Reference**
   * [타입스크립트 밋업 2018 1분기 첫번째 세션 손찬욱님 (NAVER) - TypeScript로부터 얻은 것과 잃은 것](https://www.youtube.com/watch?v=3M92klkicVc&list=PLV6pYUAZ-ZoG0WgaxL9sk2hDMSmXwC_HG)
