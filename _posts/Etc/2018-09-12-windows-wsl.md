@@ -37,7 +37,10 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ## 3. Linux 설치
 
-**Microsoft Store** 에서 '**linux**' 로 검색하면 '**Windows 에서 Linux 실행하기 앱 다운로드**' 라는 항목이 나온다. 이 항목을 클릭하면 설치할 수 있는 Linux 들을 볼 수 있다.
+**Microsoft Store** 에서 '**linux**' 로 검색하면 설치할 수 있는 Linux 들이 나온다.
+
+* Ubuntu 를 설치하려면 **16.04 LTS** 를 설치하자. 18.04 LTS 는 나온지 얼마 안되서 그런지 문제가 많은듯하다.
+  * MongoDB 를 설치하려고 했는데 결국 성공하지 못함 ([설치매뉴얼](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu))
 
 ![config](/assets/img/posts/Etc/2018-09-12/search.png)
 
