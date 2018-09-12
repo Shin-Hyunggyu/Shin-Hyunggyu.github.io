@@ -8,18 +8,18 @@ title: "MongoDB 계정관리"
 date: 2018-09-10
 ---
 
-**MongoDB** 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 **MongoDB** 를 **<u>Authentication Mode</u>** 로 실행하여 계정들의 접근을 컨트롤 할 수 있어야 한다.
+MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 **Authentication Mode** 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.
 
 * 계정은 각 DB 의 **db.system.users collection** 에 저장된다.
-* 계정은 자신의 정보가 **저장된 DB** 에서 **authenticate** 를 할 수 있다.
-* 계정이 저장된 DB 에서 **authenticate** 를 했을 지라도 **다른 DB 에 대한 접근권한**이 있다면 언제든 그 DB 에 접근이 가능하다. (다른 DB 에 대한 접근권한을 제한하지 않음)
+* 계정은 자신의 정보가 저장된 DB 에서만 authenticate 를 할 수 있다.
+* 계정이 저장된 DB 에서 authenticate 를 했을 지라도 다른 DB 에 대한 접근권한이 있다면 언제든 그 DB 에 접근이 가능하다. (다른 DB 에 대한 접근권한을 제한하지 않음)
 
 <br>
 
 # 1. Administrator 생성
 
-* **admin DB** 에 Administrator 를 생성하지 않아도 **Role** 을 주어 언제든 **다른 DB** 에 Administrator 를 만들 수 있다.
-* **'root'** 는 readWriteAnyDatabase, dbAdminAnyDatabase, userAdminAnyDatabase, clusterAdmin, restore, backup Role 을 포함한다.
+* admin DB 에 Administrator 를 생성하지 않아도 언제든 다른 DB 에 Administrator 를 생성할 수 있다.
+* `root` Role 은 `readWriteAnyDatabase`, `dbAdminAnyDatabase`, `userAdminAnyDatabase`, `clusterAdmin`, `restore`, `backup` Role 을 포함한다.
 
 ```js
 use admin
@@ -45,9 +45,8 @@ mongod --auth
 ```
 
 * **mongod.cfg 로 실행하는 경우**
-
-  1. authorization 값을 추가
-  2. Service 에 등록하여 실행하는 경우 MongoDB 를 재시작
+  1. `security: authorization: enabled` 값을 추가
+  2. Service 에 등록하여 실행하고 있는 경우 MongoDB 를 재시작
 
 > security:
 <br>
@@ -61,7 +60,7 @@ services.msc
 
 # 3. Authenticate
 
-접속할 때 또는 접속한 후 한번 authenticate 하면 된다.
+접속할 때 또는 접속한 후 한번만 authenticate 하면 된다.
 
 * **접속할 때**
 

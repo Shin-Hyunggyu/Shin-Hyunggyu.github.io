@@ -1,35 +1,11 @@
+$ul-ol-padding-top: 0.5rem;
+
 .post {
   padding: 2rem 0 2rem 0;
 
-  ul {
-    padding-left: 2rem;
-
-    ul {
-      padding-left: 1rem;
-    }
-
-    ol {
-      padding-left: 0.75rem;
-    }
-
-    li {
-      padding-bottom: 0.3rem;
-    }
-  }
-
-  ol {
-    padding-left: 1.75rem;
-
-    ul {
-      padding-left: 1rem;
-    }
-
-    ol {
-      padding-left: 0.87rem;
-    }
-
-    li {
-      padding-bottom: 0.3rem;
+  a {
+    &:hover {
+      text-decoration: underline;
     }
   }
 
@@ -119,10 +95,6 @@
     word-break: break-all;
   }
 
-  a:hover {
-    text-decoration: underline;
-  }
-
   img {
     margin: 0 auto 0.5rem;
   }
@@ -164,6 +136,42 @@
     a {
       color: $theme-tint;
       font-size: 0.8rem;
+    }
+  }
+
+  ul {
+    padding-left: 2rem;
+
+    ul {
+      padding-top: $ul-ol-padding-top;
+      padding-left: 1rem;
+    }
+
+    ol {
+      padding-top: $ul-ol-padding-top;
+      padding-left: 0.75rem;
+    }
+
+    li {
+      padding-bottom: 0.3rem;
+    }
+  }
+
+  ol {
+    padding-left: 1.75rem;
+
+    ul {
+      padding-top: $ul-ol-padding-top;
+      padding-left: 1rem;
+    }
+
+    ol {
+      padding-top: $ul-ol-padding-top;
+      padding-left: 0.87rem;
+    }
+
+    li {
+      padding-bottom: 0.3rem;
     }
   }
 }

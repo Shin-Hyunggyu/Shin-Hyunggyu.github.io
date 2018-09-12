@@ -1,10 +1,10 @@
 .catalogue {
   &-item {
-    border-bottom: 1px solid $grey-2;
-    color: $default-color;
     display: inline-block;
     padding: 2rem 0;
     width: 100%;
+    border-bottom: 1px solid $grey-2;
+    color: $default-color;
 
     .catalogue-line {
       border-color: $theme-tint;
