@@ -94,6 +94,11 @@ table {
     height:40px;
     border-bottom:1px solid #e5e5e5;
     
+    td {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     &:last-child {
       border:0;
     }
