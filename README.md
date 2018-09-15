@@ -53,7 +53,7 @@ date: 2018-08-13
 ---
 ```
 
-## 7. 검색등록을 위한 sitemap, feed 추가
+## 7. 검색등록을 위한 sitemap, feed, robots.txt 추가
 
 이미 **sitemap.xml** 이나 **feed.xml** 이 있다면 새로 생성하지 않음
 
@@ -88,4 +88,12 @@ plugins:
 ```txt
 http://domain/sitemap.xml
 http://domain/feed.xml
+```
+
+### 5. robots.txt 추가
+
+```txt
+User-agent: *
+Allow: /
+Sitemap: http://domain/sitemap.xml
 ```
