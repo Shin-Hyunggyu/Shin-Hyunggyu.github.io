@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shin-hyunggyu.github.io/sitemap.xml
