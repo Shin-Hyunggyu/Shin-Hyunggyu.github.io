@@ -5,6 +5,7 @@ tags: [ nodejs, node-gyp, c++, addon ]
 title: "C++ Addon Compile 을 위한 node-gyp"
 # author: "Lofty87" (default site.author.name)
 # author-img: /assets/img/<author>.jpg (default site.author.img)
+description: "'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."
 date: 2018-09-14
 ---
 

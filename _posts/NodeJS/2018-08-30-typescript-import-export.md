@@ -5,6 +5,7 @@ tags: [ es6, typescript, commonjs, babel, import, export ]
 title: "Typescript 에서 import 와 export 를 어떻게 처리할까?"
 # author: "Lofty87" (default site.author.name)
 # author-img: /assets/img/<author>.jpg (default site.author.img)
+description: "ES6 에서 모듈을 불러오고 내보낼 수 있는 'import' 와 'export' 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 CommonJS 기반의 NodeJS 에서는 부분적으로 ES6 사용이 가능한 것 같고 완벽한 ES6 또는 NEXT(최신버전) 를 사용하기 위해서는 Babel 이나 Typescript 의 도움을 받아야만 한다. 이번 포스팅은 Typescript 를 통해 'import' 와 'export' 를 사용했을 때 어떻게 transpile 되는지 알아 보려고 한다. 또 Babel 과도 어떤 차이가 있는지 비교해 볼 것이다. transpile target 은 가장 안정적으로 돌아가는 ES5 로 하겠다."
 date: 2018-08-30
 ---
 

@@ -5,6 +5,7 @@ tags: [ mongodb, mongoose ]
 title: "MongoDB 소개"
 # author: "Lofty87" (default site.author.name)
 # author-img: /assets/img/<author>.jpg (default site.author.img)
+description: "MongoDB 는 JSON 으로 이루어진 Document 기반의 NoSQL(Not Only SQL) 이다. 기존의 RDS(Relational Database System) 는 무결성을 지키기 위해 여러 테이블로 나누고 서로 관계를 맺는 구조를 가지는데 반에 NoSQL 은 Key 와 Value 그리고 Collection 이라는 매우 심플한 구조를 가진다. RDS 특성상 Data Sharding 을 하기 위해서는 큰 부담이 따르고 한계가 있기 때문에 Scale Out 보다 Scale Up 을 한다."
 date: 2018-09-09
 ---
 

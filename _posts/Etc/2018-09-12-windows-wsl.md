@@ -5,6 +5,7 @@ tags: [ windows, wsl, linux, zsh ]
 title: "Windows 에서 Linux 사용하기"
 # author: "Lofty87" (default site.author.name)
 # author-img: /assets/img/<author>.jpg (default site.author.img)
+description: "WSL(Windows Subsystem for Linux) 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 'Ubuntu', 'OpenSUSE', 'SLES', 'Kali Linux', 'Debian GNU/Linux' 가 있다."
 date: 2018-09-12
 ---
 

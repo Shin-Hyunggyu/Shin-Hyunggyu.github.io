@@ -5,6 +5,7 @@ tags: [ react, snippet ]
 title: "React Component Snippet"
 # author: "Lofty87" (default site.author.name)
 # author-img: /assets/img/<author>.jpg (default site.author.img)
+description: "React Component Snippet in Visual Studio Code"
 date: 2018-09-14
 ---
 
