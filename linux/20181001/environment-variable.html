@@ -9,18 +9,18 @@
 
 <base href="http://localhost:4000">
 <link rel="canonical" href="http://localhost:4000"/>
-<title>Home | Dev Store</title>
-<meta name="by" content="lofty87"><meta name="description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- BEGIN OPENGRAPH -->
+<title>환경변수 등록 | Dev Store</title>
+<meta name="by" content="lofty87"><meta name="description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다."><!-- BEGIN OPENGRAPH -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Dev Store">
-<meta property="og:title" content="Home | Dev Store">
-<meta property="og:url" content="http://localhost:4000/index.html"><meta property="og:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><meta property="og:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta property="og:title" content="환경변수 등록 | Dev Store">
+<meta property="og:url" content="http://localhost:4000/linux/20181001/environment-variable"><meta property="og:description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다."><meta property="og:image" content="http://localhost:4000/assets/favicon-32x32.png">
 <!-- END OPENGRAPH -->
 
 <!-- BEGIN TWITTERCARD -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Dev Store">
-<meta name="twitter:title" content="Home | Dev Store"><meta name="twitter:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><meta name="twitter:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta name="twitter:title" content="환경변수 등록 | Dev Store"><meta name="twitter:description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다."><meta name="twitter:image" content="http://localhost:4000/assets/favicon-32x32.png">
 <!-- END TWITTERCARD -->
 
 <!-- BEGIN Structured Data -->
@@ -28,13 +28,13 @@
   {
     "@context":"http://schema.org",
     "@type":"BlogPosting",
-    "headline":"Home | Dev Store",
-    "name":"Home | Dev Store",
-    "url":"http://localhost:4000/index.html","description":"프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.","author":{
+    "headline":"환경변수 등록 | Dev Store",
+    "name":"환경변수 등록 | Dev Store",
+    "url":"http://localhost:4000/linux/20181001/environment-variable","description":"환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.","author":{
       "@type":"Person","name":"lofty87","img":"http://localhost:4000/assets/img/author.jpg"}
-    "dateCreated":"",
-    "datePublished":"",
-    "keywords":[""],
+    "dateCreated":"2018-10-01",
+    "datePublished":"2018-10-01",
+    "keywords":["linux", "bash", "profile"],
     "creator":"lofty87"
   }
 </script>
@@ -114,240 +114,154 @@
     </header>
     <main>
       <section class="container">
-        <div class="list">
+        <div class="post">
+  <div class="post-title-wrap">
   
-    <a href="/etc/windows/20181001/windows-update-defender-onedrive" class="item">
-      <h1 class="item-title">Windows Update, Defender 중지, OneDrive 삭제</h1>
-      <div class="item-line"></div>
-      <p>1. Windows Update 중지
-
-1. services.msc
-
-
-
-
-
-
-
-
-2. gpedit.msc
-
-
-
-
-
-
-
-
-
-2. Windows Defender 중지
-
-
-
-
-
-
-
-
-
-3. OneDrive 삭제
-
-
-
-
-
-
-
-  
-    
-      OneDrive 삭제
+    <div class="post-category">Linux</div>
+    <div class="post-tags">
       
-    
-  
-
-
-
-</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">windows</div>
-          
-            <div class="tag">update</div>
-          
-            <div class="tag">defender</div>
-          
-            <div class="tag">onedrive</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/linux/20181001/environment-variable" class="item">
-      <h1 class="item-title">환경변수 등록</h1>
-      <div class="item-line"></div>
-      <p>환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login...</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">linux</div>
-          
-            <div class="tag">bash</div>
-          
-            <div class="tag">profile</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/etc/20181001/windows-update-defender-onedrive" class="item">
-      <h1 class="item-title">Windows Update, Defender 중지, OneDrive 삭제</h1>
-      <div class="item-line"></div>
-      <p>1. Windows Update 중지
-
-1. services.msc
-
-
-
-
-
-
-
-
-2. gpedit.msc
-
-
-
-
-
-
-
-
-
-2. Windows Defender 중지
-
-
-
-
-
-
-
-
-
-3. OneDrive 삭제
-
-
-
-
-
-
-
-  
-    
-      OneDrive 삭제
+        <div class="tag">linux</div>
       
+        <div class="tag">bash</div>
+      
+        <div class="tag">profile</div>
+      
+    </div>
+  
+  <h1 class="post-title">환경변수 등록</h1>
+</div>
+  <p>환경변수 등록은 <strong>login shell</strong> 과 <strong>none login shell</strong> 로 구분되고 <strong>전역(global)</strong> 등록과 <strong>지역(user)</strong> 등록으로 나누어 진다. <strong>login shell</strong> 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. <strong>none login shell</strong> 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. <strong>전역(global)</strong> 등록은 모든 유저에게 공통으로 적용되는 등록이고 <strong>지역(user)</strong> 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</p>
+
+<p><br /></p>
+
+<h3 id="1-login-shell">1. login shell</h3>
+
+<p>login shell 이 실행될 때 함께 로드되는 파일은 ‘<strong>/etc/profile</strong>’, ‘<strong>~/.profile</strong>’, ‘<strong>~/.bash_profile</strong>’ 등이 있다. ‘<strong>/etc/profile</strong>’, ‘<strong>~/.profile</strong>’ 은 모든 shell 이 대상이고 ‘<strong>~/.bash_profile</strong>’ 은 bash shell 이 대상이다. 또 다른 차이는 ‘<strong>/etc/profile</strong>’ 은 전역(global) 등록이고 ‘<strong>~/.profile</strong>’, ‘<strong>~/.bash_profile</strong>’ 은 지역(user) 등록이다. 전역(global) 등록 파일은 <code class="highlighter-rouge">/etc</code> 디렉토리에 있고 지역(user) 파일은 유저의 <code class="highlighter-rouge">home(~)</code> 디렉토리에 있다.</p>
+
+<blockquote>
+  <p>유저가 ssh 접속 후 bash shell 을 실행할 때 ‘/etc/profile’, ‘~/.profile’, ‘~/.bash_profile’ 순서로 로드될 것이다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="2-none-login-shell">2. none login shell</h3>
+
+<p>none login shell (bash shell) 이 실행될 때 로드되는 파일은 ‘<strong>/etc/bashrc</strong>’, ‘<strong>~/.bashrc</strong>’ 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. ‘<strong>/etc/bashrc</strong>’ 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 ‘<strong>~/.bashrc</strong>’ 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.</p>
+
+<p><br /></p>
+
+<h3 id="3-결론">3. 결론</h3>
+
+<p>따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 ‘<strong>/etc/profile</strong>’, ‘<strong>~/.profile</strong>’, ‘<strong>~/.bash_profile</strong>’ 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">name</span><span class="o">=</span>value
+</code></pre></div></div>
+
+<p>value 에 띄어쓰기가 있을 경우 반드시 <strong>“(쌍따옴표)</strong>로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span>또는 <span class="nb">env</span>
+</code></pre></div></div>
+
+  <div class="post-info-wrap">
+  <div class="post-info">
+    <div>
+      <time>Written By</time>
+
+      
+          <span> lofty87</span>
+      
+
+      
+        <img src="/assets/img/author.jpg"/>
+      
+    </div>
+
     
-  
-
-
-
-</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">windows</div>
-          
-            <div class="tag">update</div>
-          
-            <div class="tag">defender</div>
-          
-            <div class="tag">onedrive</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/linux/20181001/environment-variable" class="item">
-      <h1 class="item-title">환경변수 등록</h1>
-      <div class="item-line"></div>
-      <p>환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login...</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">linux</div>
-          
-            <div class="tag">bash</div>
-          
-            <div class="tag">profile</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/nodejs/20180914/react-component-snippet" class="item">
-      <h1 class="item-title">React Component Snippet</h1>
-      <div class="item-line"></div>
-      <p>1. User Snippets
-
-
-
-
-
-2. React Component Snippet (‘rc’)
-
-"react component set": {
-  "prefix": "rc",
-  "body": [
-    "import React, { Component } from 'react';",
-    "import PropTypes from 'prop-types';",
-   ...</p>
-      <caption>
-        <time datetime="2018-09-14" class="item-time">2018-09-14</time>
-        <span class="item-time">
-          
-            <div class="tag">react</div>
-          
-            <div class="tag">snippet</div>
-          
-        </span>
-      </caption>
-    </a>
-  
+      <div>
+        <time datetime="2018-10-01 00:00:00 +0900">2018.10.01</time>
+      </div>
+    
+  </div>
+</div>
 </div>
 
-<div class="pagination">
+<div class="sub-catalogue">
+  <div class="section">
+    <div class="info">'Linux' 카테고리 최신글</div>
+    <a href="/linux">더보기</a>
+  </div>
+
+  
   
     
-    
-    
-      <span class="arrow disable">&lt;&lt;</span>
-    
-    
-      
-        <span class="active">1</span>
-      
-    
-      
-        <a href="/2"><span>2</span></a>
-      
-    
-      
-        <a href="/3"><span>3</span></a>
-      
-    
-      
-        <a href="/4"><span>4</span></a>
-      
-    
-    
-      <a href="/2/"><span class="arrow">&gt;&gt;</span></a>
+  
     
   
+    
+      
+      
+        
+          
+        
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
 </div>
+
+<div class="comment">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+  this.page.url = "http://localhost:4000/linux/20181001/environment-variable";
+  this.page.identifier = "/linux/20181001/environment-variable";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://dev-store.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </section>
       <aside>
         <section>

@@ -9,18 +9,18 @@
 
 <base href="http://localhost:4000">
 <link rel="canonical" href="http://localhost:4000"/>
-<title>Home | Dev Store</title>
-<meta name="by" content="lofty87"><meta name="description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- BEGIN OPENGRAPH -->
+<title>MongoDB 계정관리 | Dev Store</title>
+<meta name="by" content="lofty87"><meta name="description" content="MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다."><!-- BEGIN OPENGRAPH -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Dev Store">
-<meta property="og:title" content="Home | Dev Store">
-<meta property="og:url" content="http://localhost:4000/index.html"><meta property="og:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><meta property="og:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta property="og:title" content="MongoDB 계정관리 | Dev Store">
+<meta property="og:url" content="http://localhost:4000/db/mongodb/20180910/mongodb-authentication"><meta property="og:description" content="MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다."><meta property="og:image" content="http://localhost:4000/assets/favicon-32x32.png">
 <!-- END OPENGRAPH -->
 
 <!-- BEGIN TWITTERCARD -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Dev Store">
-<meta name="twitter:title" content="Home | Dev Store"><meta name="twitter:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><meta name="twitter:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta name="twitter:title" content="MongoDB 계정관리 | Dev Store"><meta name="twitter:description" content="MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다."><meta name="twitter:image" content="http://localhost:4000/assets/favicon-32x32.png">
 <!-- END TWITTERCARD -->
 
 <!-- BEGIN Structured Data -->
@@ -28,13 +28,13 @@
   {
     "@context":"http://schema.org",
     "@type":"BlogPosting",
-    "headline":"Home | Dev Store",
-    "name":"Home | Dev Store",
-    "url":"http://localhost:4000/index.html","description":"프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.","author":{
+    "headline":"MongoDB 계정관리 | Dev Store",
+    "name":"MongoDB 계정관리 | Dev Store",
+    "url":"http://localhost:4000/db/mongodb/20180910/mongodb-authentication","description":"MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.","author":{
       "@type":"Person","name":"lofty87","img":"http://localhost:4000/assets/img/author.jpg"}
-    "dateCreated":"",
-    "datePublished":"",
-    "keywords":[""],
+    "dateCreated":"2018-09-10",
+    "datePublished":"2018-09-10",
+    "keywords":["mongodb", "mongoose"],
     "creator":"lofty87"
   }
 </script>
@@ -114,240 +114,310 @@
     </header>
     <main>
       <section class="container">
-        <div class="list">
+        <div class="post">
+  <div class="post-title-wrap">
   
-    <a href="/etc/windows/20181001/windows-update-defender-onedrive" class="item">
-      <h1 class="item-title">Windows Update, Defender 중지, OneDrive 삭제</h1>
-      <div class="item-line"></div>
-      <p>1. Windows Update 중지
-
-1. services.msc
-
-
-
-
-
-
-
-
-2. gpedit.msc
-
-
-
-
-
-
-
-
-
-2. Windows Defender 중지
-
-
-
-
-
-
-
-
-
-3. OneDrive 삭제
-
-
-
-
-
-
-
-  
-    
-      OneDrive 삭제
+    <div class="post-category">DBMongoDB</div>
+    <div class="post-tags">
       
-    
-  
-
-
-
-</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">windows</div>
-          
-            <div class="tag">update</div>
-          
-            <div class="tag">defender</div>
-          
-            <div class="tag">onedrive</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/linux/20181001/environment-variable" class="item">
-      <h1 class="item-title">환경변수 등록</h1>
-      <div class="item-line"></div>
-      <p>환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login...</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">linux</div>
-          
-            <div class="tag">bash</div>
-          
-            <div class="tag">profile</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/etc/20181001/windows-update-defender-onedrive" class="item">
-      <h1 class="item-title">Windows Update, Defender 중지, OneDrive 삭제</h1>
-      <div class="item-line"></div>
-      <p>1. Windows Update 중지
-
-1. services.msc
-
-
-
-
-
-
-
-
-2. gpedit.msc
-
-
-
-
-
-
-
-
-
-2. Windows Defender 중지
-
-
-
-
-
-
-
-
-
-3. OneDrive 삭제
-
-
-
-
-
-
-
-  
-    
-      OneDrive 삭제
+        <div class="tag">mongodb</div>
       
+        <div class="tag">mongoose</div>
+      
+    </div>
+  
+  <h1 class="post-title">MongoDB 계정관리</h1>
+</div>
+  <p>MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 <strong>Authentication Mode</strong> 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.</p>
+
+<ul>
+  <li>계정은 각 DB 의 <strong>db.system.users collection</strong> 에 저장된다.</li>
+  <li>계정은 자신의 정보가 저장된 DB 에서만 authenticate 를 할 수 있다.</li>
+  <li>계정이 저장된 DB 에서 authenticate 를 했을 지라도 다른 DB 에 대한 접근권한이 있다면 언제든 그 DB 에 접근이 가능하다. (다른 DB 에 대한 접근권한을 제한하지 않음)</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="1-administrator-생성">1. Administrator 생성</h1>
+
+<ul>
+  <li>admin DB 에 Administrator 를 생성하지 않아도 언제든 다른 DB 에 Administrator 를 생성할 수 있다.</li>
+  <li><code class="highlighter-rouge">root</code> Role 은 <code class="highlighter-rouge">readWriteAnyDatabase</code>, <code class="highlighter-rouge">dbAdminAnyDatabase</code>, <code class="highlighter-rouge">userAdminAnyDatabase</code>, <code class="highlighter-rouge">clusterAdmin</code>, <code class="highlighter-rouge">restore</code>, <code class="highlighter-rouge">backup</code> Role 을 포함한다.</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">admin</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">createUser</span><span class="p">({</span>
+  <span class="na">user</span><span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
+  <span class="na">pwd</span><span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
+  <span class="na">roles</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="na">role</span><span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
+    <span class="na">db</span><span class="p">:</span> <span class="s1">'admin'</span>
+  <span class="p">}]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="2-authentication-mode">2. Authentication Mode</h1>
+
+<ul>
+  <li><strong>Mongo Shell 로 실행하는 경우</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongod <span class="nt">--auth</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>mongod.cfg 로 실행하는 경우</strong>
+    <ol>
+      <li><code class="highlighter-rouge">security: authorization: enabled</code> 값을 추가</li>
+      <li>Service 에 등록하여 실행하고 있는 경우 MongoDB 를 재시작</li>
+    </ol>
+  </li>
+</ul>
+
+<blockquote>
+  <p>security:
+<br />
+  authorization: enabled</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services.msc
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="3-authenticate">3. Authenticate</h1>
+
+<p>접속할 때 또는 접속한 후 한번만 authenticate 하면 된다.</p>
+
+<ul>
+  <li><strong>접속할 때</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongo <span class="nt">-u</span> root <span class="nt">-p</span> root <span class="nt">--authenticationDatabase</span> admin
+</code></pre></div></div>
+
+<ul>
+  <li><strong>접속한 후</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">admin</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s1">'root'</span><span class="p">,</span> <span class="s1">'root'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="4-user-생성-및-authenticate">4. User 생성 및 Authenticate</h1>
+
+<p>다른 DB Role 을 추가해 본 것 외에는 위에서 본 Administrator 생성과 동일하다.</p>
+
+<ul>
+  <li><strong>User 생성</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">test</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">createUser</span><span class="p">({</span>
+  <span class="na">user</span><span class="p">:</span> <span class="s1">'user'</span><span class="p">,</span>
+  <span class="na">pwd</span><span class="p">:</span> <span class="s1">'user'</span><span class="p">,</span>
+  <span class="na">roles</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'readWrite'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'test'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'read'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'other'</span> <span class="p">}</span> <span class="c1">// 다른 DB Role</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Authenticate (접속할 때, 접속한 후)</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongo <span class="nt">-u</span> user <span class="nt">-p</span> user <span class="nt">--authenticationDatabase</span> <span class="nb">test</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">test</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'user'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="5-user-관련-명령어">5. User 관련 명령어</h1>
+
+<ul>
+  <li><strong>User 리스트 조회</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">show</span> <span class="nx">users</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>User 조회</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="s1">'user'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>User 패스워드 변경</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">changeUserPassword</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'newpassword'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>User 삭제</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">dropUser</span><span class="p">(</span><span class="s1">'user'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>User Role 추가</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">grantRolesToUser</span><span class="p">(</span>
+  <span class="s1">'user'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'readWrite'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'test'</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>User Role 취소</strong></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">revokeRolesFromUser</span><span class="p">(</span>
+  <span class="s1">'user'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'readWrite'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'test'</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<p><strong>※ Reference</strong></p>
+<ul>
+  <li><a href="https://docs.mongodb.com/manual/reference/method">Mongo Shell Methods</a></li>
+  <li><a href="https://docs.mongodb.com/manual/tutorial/enable-authentication">Enable Auth</a></li>
+  <li><a href="https://docs.mongodb.com/manual/core/security-built-in-roles">Built-In Roles</a></li>
+  <li><a href="https://docs.mongodb.com/manual/reference/configuration-options">Configure File Options</a></li>
+</ul>
+
+  <div class="post-info-wrap">
+  <div class="post-info">
+    <div>
+      <time>Written By</time>
+
+      
+          <span> lofty87</span>
+      
+
+      
+        <img src="/assets/img/author.jpg"/>
+      
+    </div>
+
     
-  
-
-
-
-</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">windows</div>
-          
-            <div class="tag">update</div>
-          
-            <div class="tag">defender</div>
-          
-            <div class="tag">onedrive</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/linux/20181001/environment-variable" class="item">
-      <h1 class="item-title">환경변수 등록</h1>
-      <div class="item-line"></div>
-      <p>환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login...</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">linux</div>
-          
-            <div class="tag">bash</div>
-          
-            <div class="tag">profile</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/nodejs/20180914/react-component-snippet" class="item">
-      <h1 class="item-title">React Component Snippet</h1>
-      <div class="item-line"></div>
-      <p>1. User Snippets
-
-
-
-
-
-2. React Component Snippet (‘rc’)
-
-"react component set": {
-  "prefix": "rc",
-  "body": [
-    "import React, { Component } from 'react';",
-    "import PropTypes from 'prop-types';",
-   ...</p>
-      <caption>
-        <time datetime="2018-09-14" class="item-time">2018-09-14</time>
-        <span class="item-time">
-          
-            <div class="tag">react</div>
-          
-            <div class="tag">snippet</div>
-          
-        </span>
-      </caption>
-    </a>
-  
+      <div>
+        <time datetime="2018-09-10 00:00:00 +0900">2018.09.10</time>
+      </div>
+    
+  </div>
+</div>
 </div>
 
-<div class="pagination">
+<div class="sub-catalogue">
+  <div class="section">
+    <div class="info">'DBMongoDB' 카테고리 최신글</div>
+    <a href="/db">더보기</a>
+  </div>
+
+  
   
     
-    
-    
-      <span class="arrow disable">&lt;&lt;</span>
-    
-    
-      
-        <span class="active">1</span>
-      
-    
-      
-        <a href="/2"><span>2</span></a>
-      
-    
-      
-        <a href="/3"><span>3</span></a>
-      
-    
-      
-        <a href="/4"><span>4</span></a>
-      
-    
-    
-      <a href="/2/"><span class="arrow">&gt;&gt;</span></a>
+  
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      
+        
+          
+        
+      
+    
+  
+    
+  
+    
+      
+      
+        
+          <div class="sub-catalogue-item">
+            <a href="/db/mongodb/20180909/mongodb-introduce">
+              <h1 class="sub-catalogue-title">MongoDB 소개</h1>
+            </a>
+            <time datetime="2018-09-09 00:00:00 +0900" class="catalogue-time">2018.09.09</time>
+          </div>
+        
+      
+    
+  
+    
+  
+    
+  
+
 </div>
+
+<div class="comment">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+  this.page.url = "http://localhost:4000/db/mongodb/20180910/mongodb-authentication";
+  this.page.identifier = "/db/mongodb/20180910/mongodb-authentication";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://dev-store.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </section>
       <aside>
         <section>

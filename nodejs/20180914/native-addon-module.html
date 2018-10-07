@@ -9,18 +9,18 @@
 
 <base href="http://localhost:4000">
 <link rel="canonical" href="http://localhost:4000"/>
-<title>Home | Dev Store</title>
-<meta name="by" content="lofty87"><meta name="description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- BEGIN OPENGRAPH -->
+<title>C++ Addon Compile 을 위한 node-gyp | Dev Store</title>
+<meta name="by" content="lofty87"><meta name="description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><!-- BEGIN OPENGRAPH -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Dev Store">
-<meta property="og:title" content="Home | Dev Store">
-<meta property="og:url" content="http://localhost:4000/index.html"><meta property="og:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><meta property="og:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta property="og:title" content="C++ Addon Compile 을 위한 node-gyp | Dev Store">
+<meta property="og:url" content="http://localhost:4000/nodejs/20180914/native-addon-module"><meta property="og:description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><meta property="og:image" content="http://localhost:4000/assets/favicon-32x32.png">
 <!-- END OPENGRAPH -->
 
 <!-- BEGIN TWITTERCARD -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Dev Store">
-<meta name="twitter:title" content="Home | Dev Store"><meta name="twitter:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><meta name="twitter:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta name="twitter:title" content="C++ Addon Compile 을 위한 node-gyp | Dev Store"><meta name="twitter:description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><meta name="twitter:image" content="http://localhost:4000/assets/favicon-32x32.png">
 <!-- END TWITTERCARD -->
 
 <!-- BEGIN Structured Data -->
@@ -28,13 +28,13 @@
   {
     "@context":"http://schema.org",
     "@type":"BlogPosting",
-    "headline":"Home | Dev Store",
-    "name":"Home | Dev Store",
-    "url":"http://localhost:4000/index.html","description":"프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.","author":{
+    "headline":"C++ Addon Compile 을 위한 node-gyp | Dev Store",
+    "name":"C++ Addon Compile 을 위한 node-gyp | Dev Store",
+    "url":"http://localhost:4000/nodejs/20180914/native-addon-module","description":"'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다.","author":{
       "@type":"Person","name":"lofty87","img":"http://localhost:4000/assets/img/author.jpg"}
-    "dateCreated":"",
-    "datePublished":"",
-    "keywords":[""],
+    "dateCreated":"2018-09-14",
+    "datePublished":"2018-09-14",
+    "keywords":["nodejs", "node-gyp", "c++", "addon"],
     "creator":"lofty87"
   }
 </script>
@@ -114,240 +114,158 @@
     </header>
     <main>
       <section class="container">
-        <div class="list">
+        <div class="post">
+  <div class="post-title-wrap">
   
-    <a href="/etc/windows/20181001/windows-update-defender-onedrive" class="item">
-      <h1 class="item-title">Windows Update, Defender 중지, OneDrive 삭제</h1>
-      <div class="item-line"></div>
-      <p>1. Windows Update 중지
-
-1. services.msc
-
-
-
-
-
-
-
-
-2. gpedit.msc
-
-
-
-
-
-
-
-
-
-2. Windows Defender 중지
-
-
-
-
-
-
-
-
-
-3. OneDrive 삭제
-
-
-
-
-
-
-
-  
-    
-      OneDrive 삭제
+    <div class="post-category">NodeJS</div>
+    <div class="post-tags">
       
-    
-  
-
-
-
-</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">windows</div>
-          
-            <div class="tag">update</div>
-          
-            <div class="tag">defender</div>
-          
-            <div class="tag">onedrive</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/linux/20181001/environment-variable" class="item">
-      <h1 class="item-title">환경변수 등록</h1>
-      <div class="item-line"></div>
-      <p>환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login...</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">linux</div>
-          
-            <div class="tag">bash</div>
-          
-            <div class="tag">profile</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/etc/20181001/windows-update-defender-onedrive" class="item">
-      <h1 class="item-title">Windows Update, Defender 중지, OneDrive 삭제</h1>
-      <div class="item-line"></div>
-      <p>1. Windows Update 중지
-
-1. services.msc
-
-
-
-
-
-
-
-
-2. gpedit.msc
-
-
-
-
-
-
-
-
-
-2. Windows Defender 중지
-
-
-
-
-
-
-
-
-
-3. OneDrive 삭제
-
-
-
-
-
-
-
-  
-    
-      OneDrive 삭제
+        <div class="tag">nodejs</div>
       
+        <div class="tag">node-gyp</div>
+      
+        <div class="tag">c++</div>
+      
+        <div class="tag">addon</div>
+      
+    </div>
+  
+  <h1 class="post-title">C++ Addon Compile 을 위한 node-gyp</h1>
+</div>
+  <p><code class="highlighter-rouge">npm</code> 을 통해 모듈을 설치하다 보면 <a href="https://github.com/nodejs/node-gyp">node-gyp</a> 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 <code class="highlighter-rouge">require</code> 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘<a href="https://nodejs.org/api/addons.html#addons_c_addons">C++ Addon</a>’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 <code class="highlighter-rouge">require</code> 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.</p>
+
+<h1 id="node-gyp-설치">node-gyp 설치</h1>
+
+<p>node-gyp 을 설치하고 사용하려면 Python v2.7 과 C++ 언어를 Compile 할 수 있는 환경이 구축되있어야 한다. Python 버전은 반드시 2.7 이어야 함을 명심하자. Mac OS 라면 Python 이 기본적으로 설치되어 있을 것이고 Xcode 를 통해 나머지 환경만 조성하면 되겠다. 하지만 Windows 는 직접 둘을 설치하고 설정해야만 하는 번거로움이 있는데 정상적으로 설치했다고 해도 node-gyp 이 설치되지 않는 짜증나는 경우가 있다. 이를 해결해 줄 모듈이 바로 <a href="https://www.npmjs.com/package/windows-build-tools">windows-build-tools</a> 이다. <code class="highlighter-rouge">npm</code> 을 통해 이 모듈을 설치해주면 자동으로 실행되어 Visual C++ Build Tools (Free Charge) 와 Python 2.7 을 설치해준다. 또 C++ Addon 을 Compile 할 수 있도록 적당한 설정까지 완료해준다. 이미 어떤 환경이 조성되있더라도 충돌하지 않도록 잘 구분해서 설치해주기 때문에 충돌도 걱정할 필요가 없다.</p>
+
+<ul>
+  <li><strong>1. windows-build-tools</strong>
+    <ul>
+      <li>Python 2.7, Visual C++ Build Tools 를 설치해주고 PATH 를 등록해 줌</li>
+      <li>Windows 7 또는 Windows Vista 일 경우 .NET Framework 4.5.1 을 미리 설치해야 함</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 관리자 권한으로 실행
+npm <span class="nb">install</span> <span class="nt">-g</span> <span class="nt">--production</span> windows-build-tools
+</code></pre></div></div>
+
+<ul>
+  <li><strong>2. node-gyp</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> node-gyp
+</code></pre></div></div>
+
+<p><br /><br /></p>
+
+<p><strong>※ Reference</strong></p>
+<ul>
+  <li><a href="https://blog.naver.com/ojwojwoj/221266536930">Node.js C++ 모듈 제작 하기</a></li>
+  <li><a href="http://z-wony.tistory.com/12">Node.js 용 c++ Addon을 gcc로 컴파일하기 (node-gyp 없이)</a></li>
+</ul>
+
+  <div class="post-info-wrap">
+  <div class="post-info">
+    <div>
+      <time>Written By</time>
+
+      
+          <span> lofty87</span>
+      
+
+      
+        <img src="/assets/img/author.jpg"/>
+      
+    </div>
+
     
-  
-
-
-
-</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">windows</div>
-          
-            <div class="tag">update</div>
-          
-            <div class="tag">defender</div>
-          
-            <div class="tag">onedrive</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/linux/20181001/environment-variable" class="item">
-      <h1 class="item-title">환경변수 등록</h1>
-      <div class="item-line"></div>
-      <p>환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login...</p>
-      <caption>
-        <time datetime="2018-10-01" class="item-time">2018-10-01</time>
-        <span class="item-time">
-          
-            <div class="tag">linux</div>
-          
-            <div class="tag">bash</div>
-          
-            <div class="tag">profile</div>
-          
-        </span>
-      </caption>
-    </a>
-  
-    <a href="/deploy/nodejs/20180914/react-component-snippet" class="item">
-      <h1 class="item-title">React Component Snippet</h1>
-      <div class="item-line"></div>
-      <p>1. User Snippets
-
-
-
-
-
-2. React Component Snippet (‘rc’)
-
-"react component set": {
-  "prefix": "rc",
-  "body": [
-    "import React, { Component } from 'react';",
-    "import PropTypes from 'prop-types';",
-   ...</p>
-      <caption>
-        <time datetime="2018-09-14" class="item-time">2018-09-14</time>
-        <span class="item-time">
-          
-            <div class="tag">react</div>
-          
-            <div class="tag">snippet</div>
-          
-        </span>
-      </caption>
-    </a>
-  
+      <div>
+        <time datetime="2018-09-14 00:00:00 +0900">2018.09.14</time>
+      </div>
+    
+  </div>
+</div>
 </div>
 
-<div class="pagination">
+<div class="sub-catalogue">
+  <div class="section">
+    <div class="info">'NodeJS' 카테고리 최신글</div>
+    <a href="/nodejs">더보기</a>
+  </div>
+
+  
   
     
-    
-    
-      <span class="arrow disable">&lt;&lt;</span>
-    
-    
-      
-        <span class="active">1</span>
-      
-    
-      
-        <a href="/2"><span>2</span></a>
-      
-    
-      
-        <a href="/3"><span>3</span></a>
-      
-    
-      
-        <a href="/4"><span>4</span></a>
-      
-    
-    
-      <a href="/2/"><span class="arrow">&gt;&gt;</span></a>
+  
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      
+        
+          
+        
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
 </div>
+
+<div class="comment">
+  <div id="disqus_thread"></div>
+</div>
+
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+  this.page.url = "http://localhost:4000/nodejs/20180914/native-addon-module";
+  this.page.identifier = "/nodejs/20180914/native-addon-module";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://dev-store.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </section>
       <aside>
         <section>
