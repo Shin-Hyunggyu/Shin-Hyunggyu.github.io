@@ -7,20 +7,20 @@
 <meta name="google-site-verification" content="hyjADXBfPWioezEyxWb91yhZYGC08ikSp1aF6Bz1b_w"/>
 <meta name="naver-site-verification" content="16bc7701ad208ef6b2ff1ba2aa5f1021561c8071"/>
 
-<base href="http://localhost:4000">
-<link rel="canonical" href="http://localhost:4000"/>
+<base href="https://Shin-Hyunggyu.github.io">
+<link rel="canonical" href="https://Shin-Hyunggyu.github.io"/>
 <title>C++ Addon Compile 을 위한 node-gyp | Dev Store</title>
 <meta name="by" content="lofty87"><meta name="description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><!-- BEGIN OPENGRAPH -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Dev Store">
 <meta property="og:title" content="C++ Addon Compile 을 위한 node-gyp | Dev Store">
-<meta property="og:url" content="http://localhost:4000/nodejs/20180914/native-addon-module"><meta property="og:description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><meta property="og:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta property="og:url" content="https://Shin-Hyunggyu.github.io/nodejs/20180914/native-addon-module"><meta property="og:description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><meta property="og:image" content="https://Shin-Hyunggyu.github.io/assets/favicon-32x32.png">
 <!-- END OPENGRAPH -->
 
 <!-- BEGIN TWITTERCARD -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="Dev Store">
-<meta name="twitter:title" content="C++ Addon Compile 을 위한 node-gyp | Dev Store"><meta name="twitter:description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><meta name="twitter:image" content="http://localhost:4000/assets/favicon-32x32.png">
+<meta name="twitter:title" content="C++ Addon Compile 을 위한 node-gyp | Dev Store"><meta name="twitter:description" content="'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다."><meta name="twitter:image" content="https://Shin-Hyunggyu.github.io/assets/favicon-32x32.png">
 <!-- END TWITTERCARD -->
 
 <!-- BEGIN Structured Data -->
@@ -30,8 +30,8 @@
     "@type":"BlogPosting",
     "headline":"C++ Addon Compile 을 위한 node-gyp | Dev Store",
     "name":"C++ Addon Compile 을 위한 node-gyp | Dev Store",
-    "url":"http://localhost:4000/nodejs/20180914/native-addon-module","description":"'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다.","author":{
-      "@type":"Person","name":"lofty87","img":"http://localhost:4000/assets/img/author.jpg"}
+    "url":"https://Shin-Hyunggyu.github.io/nodejs/20180914/native-addon-module","description":"'npm' 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 'require' 할 수 있다.","author":{
+      "@type":"Person","name":"lofty87","img":"https://Shin-Hyunggyu.github.io/assets/img/author.jpg"}
     "dateCreated":"2018-09-14",
     "datePublished":"2018-09-14",
     "keywords":["nodejs", "node-gyp", "c++", "addon"],
@@ -48,13 +48,13 @@
 <!-- END Structured Data -->
 
 <!-- CSS -->
-<link rel="stylesheet" href="http://localhost:4000/assets/main.css">
+<link rel="stylesheet" href="https://Shin-Hyunggyu.github.io/assets/main.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4000/assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4000/assets/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:4000/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Shin-Hyunggyu.github.io/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Shin-Hyunggyu.github.io/assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://Shin-Hyunggyu.github.io/assets/apple-touch-icon.png">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121646883-2"></script>
@@ -204,30 +204,12 @@ npm <span class="nb">install</span> <span class="nt">-g</span> <span class="nt">
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       
       
         
           
         
       
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -273,26 +255,6 @@ s.setAttribute('data-timestamp', +new Date());
   <ul>
     
       <li class="article">
-        <a href="/deploy/linux/20181001/environment-variable" alt="환경변수 등록">
-          <article>
-            <div class="category">deploy <span>></span>Linux </div>
-            <div class="title">환경변수 등록</div>
-            <time>2018-10-01</time>
-          </article>
-        </a>
-      </li>
-    
-      <li class="article">
-        <a href="/deploy/etc/20181001/windows-update-defender-onedrive" alt="Windows Update, Defender 중지, OneDrive 삭제">
-          <article>
-            <div class="category">deploy <span>></span>Etc </div>
-            <div class="title">Windows Update, Defender ...</div>
-            <time>2018-10-01</time>
-          </article>
-        </a>
-      </li>
-    
-      <li class="article">
         <a href="/linux/20181001/environment-variable" alt="환경변수 등록">
           <article>
             <div class="category">Linux </div>
@@ -313,10 +275,30 @@ s.setAttribute('data-timestamp', +new Date());
       </li>
     
       <li class="article">
-        <a href="/deploy/nodejs/20180914/react-component-snippet" alt="React Component Snippet">
+        <a href="/nodejs/react/20180914/react-component-snippet" alt="React Component Snippet">
           <article>
-            <div class="category">deploy <span>></span>NodeJS </div>
+            <div class="category">NodeJS <span>></span>React </div>
             <div class="title">React Component Snippet</div>
+            <time>2018-09-14</time>
+          </article>
+        </a>
+      </li>
+    
+      <li class="article">
+        <a href="/nodejs/20180914/native-addon-module" alt="C++ Addon Compile 을 위한 node-gyp">
+          <article>
+            <div class="category">NodeJS </div>
+            <div class="title">C++ Addon Compile 을 위한 no...</div>
+            <time>2018-09-14</time>
+          </article>
+        </a>
+      </li>
+    
+      <li class="article">
+        <a href="/etc/ide/20180914/settings" alt="기본폰트와 기본세팅 정리">
+          <article>
+            <div class="category">Etc <span>></span>IDE </div>
+            <div class="title">기본폰트와 기본세팅 정리</div>
             <time>2018-09-14</time>
           </article>
         </a>
@@ -329,7 +311,7 @@ s.setAttribute('data-timestamp', +new Date());
   <h3>Category</h3>
   <ul>
     <li class="depth depth-1">
-      <a href="/">전체보기<span class="count">(18)</span></a>
+      <a href="/">전체보기<span class="count">(9)</span></a>
     </li>
 
     
@@ -730,132 +712,12 @@ s.setAttribute('data-timestamp', +new Date());
       <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
       
 
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
         
         
 
         
           <li class="depth depth-1">
-            <a href="/categories/db">DB<span class="count">(4)</span></a>
+            <a href="/categories/db">DB<span class="count">(2)</span></a>
           </li>
         
 
@@ -901,22 +763,10 @@ s.setAttribute('data-timestamp', +new Date());
 
         
           <li class="depth depth-1">
-            <a href="/categories/etc">Etc<span class="count">(6)</span></a>
+            <a href="/categories/etc">Etc<span class="count">(3)</span></a>
           </li>
         
 
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
       
 
     
@@ -982,22 +832,10 @@ s.setAttribute('data-timestamp', +new Date());
 
         
           <li class="depth depth-1">
-            <a href="/categories/linux">Linux<span class="count">(2)</span></a>
+            <a href="/categories/linux">Linux<span class="count">(1)</span></a>
           </li>
         
 
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
       
 
     
@@ -1017,7 +855,7 @@ s.setAttribute('data-timestamp', +new Date());
 
         
           <li class="depth depth-1">
-            <a href="/categories/nodejs">NodeJS<span class="count">(6)</span></a>
+            <a href="/categories/nodejs">NodeJS<span class="count">(3)</span></a>
           </li>
         
 
