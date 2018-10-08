@@ -1,5 +1,7 @@
 # Github Page
 
+>**배포 시 `base_url` 환경변수 수정**
+
 ## 1. Jekyll Install
 
 [Jekyll Document Installation](https://jekyllrb.com/docs/installation)
@@ -27,7 +29,7 @@ jekyll serve
 
 * Category 는 2 Depth 만 사용한다.
   * Post 에서 `categories` 변수는 실제로 <u>multiple</u> 한 Category 설정이지만 index 가 있어 Depth 로 활용
-  * Post 에서 `categories` 변수만을 추가하는 것으로 `site` 변수에 Category 를 추가할 수 있다.
+  * Post 에서 `categories` 변수만을 추가하는 것으로 `site` 변수에 **Category** 를 추가할 수 있다.
 * Category Post 들을 보여 줄 수 있는 Category Page 를 생성해야 한다.
   1. Category Page 는 `/page/categories` 에 저장하며 `permalink` 변수 즉, **url** 과 동일하도록 구조가 되있다.
   2. `category.md` 를 추가한다. (기존 파일을 복사해 수정하는 것이 편함)
@@ -37,36 +39,47 @@ jekyll serve
   * **category** : aside 에서 Category 리스트를 뿌릴 때 사용
   * **link** : list 의 Pagination 처리를 위해 사용
   * **permalink** : url 사용자 정의 (폴더구조와 동일)
-  * **pagination** : 해당 `category` Post 들만 Pagination 처리
+  * **pagination** : `category` 변수의 Post 들만 Pagination 처리
 
-## 5. Post 작성
+## 5. Tag 추가
 
-* 포스트 작성시 '**_post**' 폴더 안에 카테고리에 맞게 발행  
-* 파일명은 반드시 '**YYYY-MM-DD-TITLE**' 형태로 저장해야 하며 전부 unique 하게 하는게 좋음  
-('**post id**' 값이 같은 값으로 나오는 버그가 있어 정신건강에 해로움)
-* 한글이 포함된 '**TITLE**' 은 파일명은 반드시 영어로 하고 Post 변수값은 한글로 작성  
-(파일명의 **TITLE** 은 url 값으로 사용되서 문제가 생길 수 있음) 
-* site 보다 page 변수값이 우선순위 높음  
-(특히 '**author**', '**author-img**' 값을 추가하여 Post 작성자를 변경할 수 있음)
+* Post 에서 `tags` 변수만을 추가하는 것으로 `site` 변수에 **Tag** 를 추가할 수 있다.
+* Category 와는 다르게 1 Depth 만 존재한다.
+* Tag Post 들을 보여 줄 수 있는 Tag Page 를 생성해야 한다.
+  1. Tag Page 는 `/page/tags` 에 저장하며 `permalink` 변수 즉, **url** 과 동일하도록 구조가 되있다.
+  2. `tag.md` 를 추가한다. (기존 파일을 복사해 수정하는 것이 편함)
+* Tag Page 에 정의한 변수들은 중복이 있더라도 다 사용되기 때문에 절대 빼먹지 말자!
+  * **title** : title 태그 (Pagination 처리된 page 는 suffix 로 'page - N' 이 붙도록 설정했음 [이유있음])
+  * **link** : list 의 Pagination 처리를 위해 사용
+  * **permalink** : url 사용자 정의 (폴더구조와 동일)
+  * **pagination** : `tag` 변수의 Post 들만 Pagination 처리
 
-## 6. Front Matter
+## 6. Post 작성
+
+* `_post` 폴더는 **Category** 기준으로 구조가 되있다.
+* 파일명은 반드시 `YYYY-MM-DD-TITLE` 형태로 저장해야 하며 전부 **unique** 하게 하는 것이 좋다.
+  * `id` 값이 같은 값으로 나오는 버그가 있어 정신건강에 해로움
+* 파일명은 반드시 영어로 하고 `title` 변수값은 한글로 작성한다.
+  * 파일명이 url 값으로 사용되서 문제가 생길 수 있음 (`permalink` 변수를 사용하지 않았을 때)
+* `site` 변수보다 `page` 변수가 우선순위가 높다.
+* 기존 파일을 복사해 **Front Matter** 만 수정해서 작성하면 된다.
+
+## 7. Front Matter
 
 ```txt
 ---
-layout: post  
-categories: ES6
-tags: [ typescript, es6, commonjs ]
-title: "Async Await In ES6"  
-author: "Lofty87" (default site.author.name)
-author-img: /assets/img/<author>.jpg (default site.author.img)
-description: "you can write post description in this line" 
-date: 2018-08-13
+layout: post
+categories: [ 1 Depth, 2 Depth ]
+tags: [ es6, typescript, commonjs, babel, import, export ]
+title: "Typescript 에서 import 와 export 를 어떻게 처리할까?"
+description: "you can write description in this line"
+date: 2018-08-30
 ---
 ```
 
-## 7. 검색등록을 위한 sitemap, feed, robots.txt 추가
+## 8. SEO 를 위한 sitemap.xml, feed.xml, robots.txt 추가
 
-이미 **sitemap.xml** 이나 **feed.xml** 이 있다면 새로 생성하지 않음
+이미 자동으로 **sitemap.xml** 이나 **feed.xml** 을 만들어 주고 있을 수 있음
 
 ### 1. install
 
@@ -94,7 +107,7 @@ plugins:
 ...
 ```
 
-### 4. 정상적으로 추가되었는지 확인
+### 4. 정상적으로 추가됬는지 확인
 
 ```txt
 http://domain/sitemap.xml

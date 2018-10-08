@@ -1,40 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-07T15:06:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">Windows Update, Defender 중지, OneDrive 삭제</title><link href="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive" rel="alternate" type="text/html" title="Windows Update, Defender 중지, OneDrive 삭제" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive</id><content type="html" xml:base="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive">&lt;h1 id=&quot;1-windows-update-중지&quot;&gt;1. Windows Update 중지&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-08T17:56:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">Windows Update, Defender 중지, OneDrive 삭제</title><link href="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive" rel="alternate" type="text/html" title="Windows Update, Defender 중지, OneDrive 삭제" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive</id><content type="html" xml:base="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive">&lt;h1 id=&quot;1-windows-update-중지&quot;&gt;1. Windows Update 중지&lt;/h1&gt;
 
 &lt;h2 id=&quot;1-servicesmsc&quot;&gt;1. services.msc&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/1.png&quot; alt=&quot;1&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/2.png&quot; alt=&quot;2&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/3.png&quot; alt=&quot;3&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/1.png&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/2.png&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/3.png&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-gpeditmsc&quot;&gt;2. gpedit.msc&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/4.png&quot; alt=&quot;4&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/5.png&quot; alt=&quot;5&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/6.png&quot; alt=&quot;6&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/4.png&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/5.png&quot; alt=&quot;5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/6.png&quot; alt=&quot;6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;2-windows-defender-중지&quot;&gt;2. Windows Defender 중지&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/7.png&quot; alt=&quot;7&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/8.png&quot; alt=&quot;8&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/9.png&quot; alt=&quot;9&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/7.png&quot; alt=&quot;7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/8.png&quot; alt=&quot;8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/9.png&quot; alt=&quot;9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;3-onedrive-삭제&quot;&gt;3. OneDrive 삭제&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/10.jpg&quot; alt=&quot;10&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/11.jpg&quot; alt=&quot;11&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/10.jpg&quot; alt=&quot;10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/11.jpg&quot; alt=&quot;11&quot; /&gt;&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -43,9 +41,7 @@
       &lt;td&gt;&lt;a href=&quot;https://drive.google.com/file/d/1CLKKl_I-gZ8HKo9lUupBOqLdnMb1d75V/view?usp=sharing&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="update" /><category term="defender" /><category term="onedrive" /><summary type="html">1. Windows Update 중지</summary></entry><entry><title type="html">환경변수 등록</title><link href="http://localhost:4000/linux/20181001/environment-variable" rel="alternate" type="text/html" title="환경변수 등록" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/linux/20181001/environment-variable</id><content type="html" xml:base="http://localhost:4000/linux/20181001/environment-variable">&lt;p&gt;환경변수 등록은 &lt;strong&gt;login shell&lt;/strong&gt; 과 &lt;strong&gt;none login shell&lt;/strong&gt; 로 구분되고 &lt;strong&gt;전역(global)&lt;/strong&gt; 등록과 &lt;strong&gt;지역(user)&lt;/strong&gt; 등록으로 나누어 진다. &lt;strong&gt;login shell&lt;/strong&gt; 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. &lt;strong&gt;none login shell&lt;/strong&gt; 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. &lt;strong&gt;전역(global)&lt;/strong&gt; 등록은 모든 유저에게 공통으로 적용되는 등록이고 &lt;strong&gt;지역(user)&lt;/strong&gt; 등록은 접속한 유저(본인)에게만 적용되는 등록이다.&lt;/p&gt;
+&lt;/table&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="update" /><category term="defender" /><category term="onedrive" /><summary type="html">1. Windows Update 중지</summary></entry><entry><title type="html">환경변수 등록</title><link href="http://localhost:4000/linux/20181001/environment-variable" rel="alternate" type="text/html" title="환경변수 등록" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/linux/20181001/environment-variable</id><content type="html" xml:base="http://localhost:4000/linux/20181001/environment-variable">&lt;p&gt;환경변수 등록은 &lt;strong&gt;login shell&lt;/strong&gt; 과 &lt;strong&gt;none login shell&lt;/strong&gt; 로 구분되고 &lt;strong&gt;전역(global)&lt;/strong&gt; 등록과 &lt;strong&gt;지역(user)&lt;/strong&gt; 등록으로 나누어 진다. &lt;strong&gt;login shell&lt;/strong&gt; 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. &lt;strong&gt;none login shell&lt;/strong&gt; 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. &lt;strong&gt;전역(global)&lt;/strong&gt; 등록은 모든 유저에게 공통으로 적용되는 등록이고 &lt;strong&gt;지역(user)&lt;/strong&gt; 등록은 접속한 유저(본인)에게만 적용되는 등록이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -112,6 +108,8 @@
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="snippet" /><summary type="html">1. User Snippets</summary></entry><entry><title type="html">C++ Addon Compile 을 위한 node-gyp</title><link href="http://localhost:4000/nodejs/20180914/native-addon-module" rel="alternate" type="text/html" title="C++ Addon Compile 을 위한 node-gyp" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/20180914/native-addon-module</id><content type="html" xml:base="http://localhost:4000/nodejs/20180914/native-addon-module">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 모듈을 설치하다 보면 &lt;a href=&quot;https://github.com/nodejs/node-gyp&quot;&gt;node-gyp&lt;/a&gt; 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘&lt;a href=&quot;https://nodejs.org/api/addons.html#addons_c_addons&quot;&gt;C++ Addon&lt;/a&gt;’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h1 id=&quot;node-gyp-설치&quot;&gt;node-gyp 설치&lt;/h1&gt;
 
 &lt;p&gt;node-gyp 을 설치하고 사용하려면 Python v2.7 과 C++ 언어를 Compile 할 수 있는 환경이 구축되있어야 한다. Python 버전은 반드시 2.7 이어야 함을 명심하자. Mac OS 라면 Python 이 기본적으로 설치되어 있을 것이고 Xcode 를 통해 나머지 환경만 조성하면 되겠다. 하지만 Windows 는 직접 둘을 설치하고 설정해야만 하는 번거로움이 있는데 정상적으로 설치했다고 해도 node-gyp 이 설치되지 않는 짜증나는 경우가 있다. 이를 해결해 줄 모듈이 바로 &lt;a href=&quot;https://www.npmjs.com/package/windows-build-tools&quot;&gt;windows-build-tools&lt;/a&gt; 이다. &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 이 모듈을 설치해주면 자동으로 실행되어 Visual C++ Build Tools (Free Charge) 와 Python 2.7 을 설치해준다. 또 C++ Addon 을 Compile 할 수 있도록 적당한 설정까지 완료해준다. 이미 어떤 환경이 조성되있더라도 충돌하지 않도록 잘 구분해서 설치해주기 때문에 충돌도 걱정할 필요가 없다.&lt;/p&gt;
@@ -136,7 +134,7 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; node-gyp
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -161,7 +159,7 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-visual-studio-code&quot;&gt;2. Visual Studio Code&lt;/h2&gt;
 
@@ -173,8 +171,6 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-14/VisualStudioCodePlugin.png&quot; alt=&quot;Visual Studio Code Plugin&quot; /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="ide" /><category term="font" /><category term="setting" /><summary type="html">1. 자주 사용하는 폰트</summary></entry><entry><title type="html">Windows 에서 Linux 사용하기</title><link href="http://localhost:4000/etc/windows/20180912/windows-wsl" rel="alternate" type="text/html" title="Windows 에서 Linux 사용하기" /><published>2018-09-12T00:00:00+09:00</published><updated>2018-09-12T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20180912/windows-wsl</id><content type="html" xml:base="http://localhost:4000/etc/windows/20180912/windows-wsl">&lt;p&gt;&lt;strong&gt;WSL(Windows Subsystem for Linux)&lt;/strong&gt; 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 ‘Ubuntu’, ‘OpenSUSE’, ‘SLES’, ‘Kali Linux’, ‘Debian GNU/Linux’ 가 있다.&lt;/p&gt;
 
@@ -337,7 +333,7 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-12/font-config.png&quot; alt=&quot;font-config&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -514,7 +510,7 @@ vim ~/.zshrc
 &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -525,8 +521,6 @@ vim ~/.zshrc
 &lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="mongodb" /><category term="mongoose" /><summary type="html">MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.</summary></entry><entry><title type="html">MongoDB 소개</title><link href="http://localhost:4000/db/mongodb/20180909/mongodb-introduce" rel="alternate" type="text/html" title="MongoDB 소개" /><published>2018-09-09T00:00:00+09:00</published><updated>2018-09-09T00:00:00+09:00</updated><id>http://localhost:4000/db/mongodb/20180909/mongodb-introduce</id><content type="html" xml:base="http://localhost:4000/db/mongodb/20180909/mongodb-introduce">&lt;h1 id=&quot;1-mongodb-란&quot;&gt;1. MongoDB 란&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; 는 &lt;strong&gt;JSON&lt;/strong&gt; 으로 이루어진 Document 기반의 NoSQL(Not Only SQL) 이다. 기존의 RDS(Relational Database System) 는 무결성을 지키기 위해 여러 테이블로 나누고 서로 관계를 맺는 구조를 가지는데 반에 NoSQL 은 Key 와 Value 그리고 Collection 이라는 매우 심플한 구조를 가진다. RDS 특성상 Data Sharding 을 하기 위해서는 큰 부담이 따르고 한계가 있기 때문에 Scale Out 보다 Scale Up 을 한다. Scale Up 은 Scale Out 보다 비용과 시간적인 측면에서 매우 부담이 큰 작업이다. 하지만 NoSQL 은 이런 단점을 극복할 수 있도록 설계되어 있어 Scale Out 에 용이하다. 또 Schema 가 고정되어 있는 RDS 와는 달리 Collection(Table) 안에서 서로 다른 Schema 형태의 Document(Record/Row) 를 가질 수 있어 매우 유연하다. 이런 특징은 Document 안에 Field(Column) 를 확장하거나 축소할 때 편하고 부담이 없다. MongoDB 는 Main Query Language 로 &lt;strong&gt;Javascript&lt;/strong&gt; 를 사용하고 있어 Web Developer 에게 친숙하다는 것도 장점이 될 수 있겠다. 하지만 위와 같은 편리함과 유연함은 복잡한 쿼리를 불가능하게 하고 데이터의 무결성을 깰 수 있다는 점에서 단점이 될 수 도 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -555,7 +549,7 @@ vim ~/.zshrc
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;2-설치하기&quot;&gt;2. 설치하기&lt;/h1&gt;
 
@@ -725,7 +719,7 @@ RUNNING
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1100,7 +1094,7 @@ commonjsModuleProperty
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// import * as alias from module; 도 가능&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;

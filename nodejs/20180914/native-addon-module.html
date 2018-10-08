@@ -78,17 +78,20 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+      <h1 class="logo">
   <a href="/">
-    <h2>
-      <img src="/assets/img/logo.png"/>
-      Dev Store
-    </h2>
+    <img src="/assets/img/logo.png"/>
+    Dev Store
   </a>
-</div>
+</h1>
 
 <nav>
   <ul>
+    <li>
+      <a href="/about">
+        <img src="/assets/img/question-mark.png" alt="about">
+      </a>
+    </li>
     <li>
       <a href="https://github.com/Shin-Hyunggyu" target="_blank">
         <img src="/assets/img/github.png" alt="github">
@@ -114,11 +117,12 @@
     </header>
     <main>
       <section class="container">
-        <div class="post">
-  <div class="post-title-wrap">
-  
-    <div class="post-category">NodeJS</div>
-    <div class="post-tags">
+        
+
+<article class="post">
+  <section class="post-header">
+    <div class="category">NodeJS</div>
+    <div class="tags">
       
         <div class="tag">nodejs</div>
       
@@ -129,10 +133,12 @@
         <div class="tag">addon</div>
       
     </div>
-  
-  <h1 class="post-title">C++ Addon Compile 을 위한 node-gyp</h1>
-</div>
-  <p><code class="highlighter-rouge">npm</code> 을 통해 모듈을 설치하다 보면 <a href="https://github.com/nodejs/node-gyp">node-gyp</a> 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 <code class="highlighter-rouge">require</code> 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘<a href="https://nodejs.org/api/addons.html#addons_c_addons">C++ Addon</a>’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 <code class="highlighter-rouge">require</code> 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.</p>
+    <h1 class="title">C++ Addon Compile 을 위한 node-gyp</h1>
+  </section>
+  <section class="post-content">
+    <p><code class="highlighter-rouge">npm</code> 을 통해 모듈을 설치하다 보면 <a href="https://github.com/nodejs/node-gyp">node-gyp</a> 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 <code class="highlighter-rouge">require</code> 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘<a href="https://nodejs.org/api/addons.html#addons_c_addons">C++ Addon</a>’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 <code class="highlighter-rouge">require</code> 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.</p>
+
+<p><br /></p>
 
 <h1 id="node-gyp-설치">node-gyp 설치</h1>
 
@@ -158,7 +164,7 @@ npm <span class="nb">install</span> <span class="nt">-g</span> <span class="nt">
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> node-gyp
 </code></pre></div></div>
 
-<p><br /><br /></p>
+<p><br /></p>
 
 <p><strong>※ Reference</strong></p>
 <ul>
@@ -166,43 +172,32 @@ npm <span class="nb">install</span> <span class="nt">-g</span> <span class="nt">
   <li><a href="http://z-wony.tistory.com/12">Node.js 용 c++ Addon을 gcc로 컴파일하기 (node-gyp 없이)</a></li>
 </ul>
 
-  <div class="post-info-wrap">
-  <div class="post-info">
-    <div>
-      <time>Written By</time>
+  </section>
+</article>
 
+<section class="post-category-list">
+  <section class="title">
+    <h4><span>'NodeJS'</span> 카테고리의 최신글</h4>
+
+    
+      <a href="/categories/nodejs">더보기</a>
+    
+  </section>
+  
+  <ul>
+    
+    
       
-          <span> lofty87</span>
       
-
+        
+          <li>
+            <a href="/nodejs/react/20180914/react-component-snippet">
+              <h2>React Component Snippet</h2>
+            </a>
+            <time datetime="2018-09-14">2018-09-14</time>
+          </li>
+        
       
-        <img src="/assets/img/author.jpg"/>
-      
-    </div>
-
-    
-      <div>
-        <time datetime="2018-09-14 00:00:00 +0900">2018.09.14</time>
-      </div>
-    
-  </div>
-</div>
-</div>
-
-<div class="sub-catalogue">
-  <div class="section">
-    <div class="info">'NodeJS' 카테고리 최신글</div>
-    <a href="/nodejs">더보기</a>
-  </div>
-
-  
-  
-    
-  
-    
-  
-    
-  
     
       
       
@@ -211,19 +206,20 @@ npm <span class="nb">install</span> <span class="nt">-g</span> <span class="nt">
         
       
     
-  
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20180830/typescript-import-export">
+              <h2>Typescript 에서 import 와 export 를 어떻게 처...</h2>
+            </a>
+            <time datetime="2018-08-30">2018-08-30</time>
+          </li>
+        
+      
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-</div>
+  </ul>
+</section>
 
 <div class="comment">
   <div id="disqus_thread"></div>
@@ -315,318 +311,6 @@ s.setAttribute('data-timestamp', +new Date());
     </li>
 
     
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-    
-      <!-- category page 를 찾고 depth 를 구분 -->
-      
-      
-
-      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
-      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
-      
-      
-      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
 
     
       <!-- category page 를 찾고 depth 를 구분 -->
@@ -905,6 +589,318 @@ s.setAttribute('data-timestamp', +new Date());
           </li>
         
 
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
       
 
     
