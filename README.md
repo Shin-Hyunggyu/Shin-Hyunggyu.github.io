@@ -36,7 +36,7 @@ jekyll serve
   3. 1 Depth Category 는 최상위 경로에 두지만 2 Depth Category 는 해당 1 Depth Category 의 폴더 안에 둔다.
 * Category Page 에 정의한 변수들은 중복이 있더라도 다 사용되기 때문에 절대 빼먹지 말자!
   * **title** : title 태그 (Pagination 처리된 page 는 suffix 로 'page - N' 이 붙도록 설정했음 [이유있음])
-  * **category** : aside 에서 Category 리스트를 뿌릴 때 사용
+  * **category** : aside 에서 Category 리스트를 뿌릴 때, list 에서 Category 뿌릴 때 사용
   * **link** : list 의 Pagination 처리를 위해 사용
   * **permalink** : url 사용자 정의 (폴더구조와 동일)
   * **pagination** : `category` 변수의 Post 들만 Pagination 처리
@@ -50,6 +50,7 @@ jekyll serve
   2. `tag.md` 를 추가한다. (기존 파일을 복사해 수정하는 것이 편함)
 * Tag Page 에 정의한 변수들은 중복이 있더라도 다 사용되기 때문에 절대 빼먹지 말자!
   * **title** : title 태그 (Pagination 처리된 page 는 suffix 로 'page - N' 이 붙도록 설정했음 [이유있음])
+  * **tag** : list 에서 Tag 뿌릴 때 사용
   * **link** : list 의 Pagination 처리를 위해 사용
   * **permalink** : url 사용자 정의 (폴더구조와 동일)
   * **pagination** : `tag` 변수의 Post 들만 Pagination 처리
