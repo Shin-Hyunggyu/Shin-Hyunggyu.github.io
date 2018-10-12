@@ -1,6 +1,6 @@
 # Github Page
 
->**배포 시 `base_url` 환경변수 수정**
+>**배포 시 `env`, `base_url` 환경변수 수정**
 
 ## 1. Jekyll Install
 
