@@ -96,7 +96,6 @@
     <header>
       <h1 class="logo">
   <a href="/">
-    <img src="/assets/img/logo.png"/>
     Dev Store
   </a>
 </h1>
@@ -170,11 +169,11 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">admin</span>
 
 <span class="nx">db</span><span class="p">.</span><span class="nx">createUser</span><span class="p">({</span>
-  <span class="na">user</span><span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
-  <span class="na">pwd</span><span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
+  <span class="na">user</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">pwd</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">roles</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="na">role</span><span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
-    <span class="na">db</span><span class="p">:</span> <span class="s1">'admin'</span>
+    <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">db</span><span class="p">:</span> <span class="dl">'</span><span class="s1">admin</span><span class="dl">'</span>
   <span class="p">}]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -227,7 +226,7 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">admin</span>
 
-<span class="nx">db</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s1">'root'</span><span class="p">,</span> <span class="s1">'root'</span><span class="p">)</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -243,11 +242,11 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">test</span>
 
 <span class="nx">db</span><span class="p">.</span><span class="nx">createUser</span><span class="p">({</span>
-  <span class="na">user</span><span class="p">:</span> <span class="s1">'user'</span><span class="p">,</span>
-  <span class="na">pwd</span><span class="p">:</span> <span class="s1">'user'</span><span class="p">,</span>
+  <span class="na">user</span><span class="p">:</span> <span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">pwd</span><span class="p">:</span> <span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">roles</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'readWrite'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'test'</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'read'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'other'</span> <span class="p">}</span> <span class="c1">// 다른 DB Role</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">readWrite</span><span class="dl">'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">read</span><span class="dl">'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="dl">'</span><span class="s1">other</span><span class="dl">'</span> <span class="p">}</span> <span class="c1">// 다른 DB Role</span>
   <span class="p">]</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -261,7 +260,7 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">test</span>
 
-<span class="nx">db</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'user'</span><span class="p">)</span>
+<span class="nx">db</span><span class="p">.</span><span class="nx">auth</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -279,21 +278,21 @@
   <li><strong>User 조회</strong></li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="s1">'user'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
   <li><strong>User 패스워드 변경</strong></li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">changeUserPassword</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'newpassword'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">changeUserPassword</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">newpassword</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
   <li><strong>User 삭제</strong></li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">dropUser</span><span class="p">(</span><span class="s1">'user'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">dropUser</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
@@ -301,8 +300,8 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">grantRolesToUser</span><span class="p">(</span>
-  <span class="s1">'user'</span><span class="p">,</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'readWrite'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'test'</span> <span class="p">}</span>
+  <span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">readWrite</span><span class="dl">'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span> <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">)</span>
 </code></pre></div></div>
@@ -312,8 +311,8 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">revokeRolesFromUser</span><span class="p">(</span>
-  <span class="s1">'user'</span><span class="p">,</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="s1">'readWrite'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="s1">'test'</span> <span class="p">}</span>
+  <span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">role</span><span class="p">:</span> <span class="dl">'</span><span class="s1">readWrite</span><span class="dl">'</span><span class="p">,</span> <span class="na">db</span><span class="p">:</span> <span class="dl">'</span><span class="s1">test</span><span class="dl">'</span> <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">)</span>
 </code></pre></div></div>
@@ -391,7 +390,7 @@ s.setAttribute('data-timestamp', +new Date());
       </section>
       <aside>
         <section> 
-  <h3>Recent</h3>
+  <h3>Recently</h3>
   <ul>
     
       <li class="article">
@@ -435,10 +434,10 @@ s.setAttribute('data-timestamp', +new Date());
       </li>
     
       <li class="article">
-        <a href="/etc/ide/20180914/ide-settings" alt="IDE 기본폰트와 기본세팅 정리">
+        <a href="/etc/ide/20180914/ide-settings" alt="폰트와 기본세팅 정리">
           <article>
             <div class="category">Etc <span>></span>IDE </div>
-            <div class="title">IDE 기본폰트와 기본세팅 정리</div>
+            <div class="title">폰트와 기본세팅 정리</div>
             <time>2018-09-14</time>
           </article>
         </a>
@@ -1321,7 +1320,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/setting" style="font-size: 9pt; color: #777;">setting</a>
+        <a href="/tags/settings" style="font-size: 9pt; color: #777;">settings</a>
       </li>
     
       

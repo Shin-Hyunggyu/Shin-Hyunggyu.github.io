@@ -96,7 +96,6 @@
     <header>
       <h1 class="logo">
   <a href="/">
-    <img src="/assets/img/logo.png"/>
     Dev Store
   </a>
 </h1>
@@ -184,11 +183,11 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CommonJS</span>
-<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./sum'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./sum</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 
 <span class="c1">// ES6</span>
-<span class="k">import</span> <span class="nx">sum</span> <span class="k">from</span> <span class="s1">'./sum'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">sum</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./sum</span><span class="dl">'</span><span class="p">;</span>
 <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -214,15 +213,15 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CommonJS</span>
-<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./sum'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./sum</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">m</span><span class="p">.</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 
 <span class="c1">// ES6</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">m</span> <span class="k">from</span> <span class="s1">'./sum'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">m</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./sum</span><span class="dl">'</span><span class="p">;</span>
 <span class="nx">m</span><span class="p">.</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 
 <span class="c1">// ES6</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">sum</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./sum'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">sum</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./sum</span><span class="dl">'</span><span class="p">;</span>
 <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 </code></pre></div></div>
 
@@ -238,8 +237,8 @@
   <li>ts-module.ts</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">tsModule</span> <span class="o">=</span> <span class="s1">'tsModule'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">tsModuleProperty</span> <span class="o">=</span> <span class="s1">'tsModuleProperty'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">tsModule</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">tsModule</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">tsModuleProperty</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">tsModuleProperty</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="p">{</span> <span class="nx">tsModuleProperty</span> <span class="p">};</span>
 <span class="k">export</span> <span class="k">default</span> <span class="nx">tsModule</span><span class="p">;</span>
@@ -250,7 +249,7 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">thirdModule</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">thirdModuleProperty</span><span class="p">:</span> <span class="s1">'thirdModuleProperty'</span>
+  <span class="na">thirdModuleProperty</span><span class="p">:</span> <span class="dl">'</span><span class="s1">thirdModuleProperty</span><span class="dl">'</span>
 <span class="p">};</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">thirdModule</span><span class="p">;</span>
@@ -260,8 +259,8 @@
   <li>index.ts</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">tsModule</span><span class="p">,</span> <span class="p">{</span> <span class="nx">tsModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./ts-module'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">thirdModule</span><span class="p">,</span> <span class="p">{</span> <span class="nx">thirdModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./3rd-module'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">tsModule</span><span class="p">,</span> <span class="p">{</span> <span class="nx">tsModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./ts-module</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">thirdModule</span><span class="p">,</span> <span class="p">{</span> <span class="nx">thirdModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./3rd-module</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// ts-module.ts</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tsModule</span><span class="p">);</span>
@@ -278,12 +277,12 @@
   <li>ts-module.js</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"use strict"</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="s2">"__esModule"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="dl">"</span><span class="s2">__esModule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">tsModule</span> <span class="o">=</span> <span class="s1">'tsModule'</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">tsModuleProperty</span> <span class="o">=</span> <span class="s1">'tsModuleProperty'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">tsModule</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">tsModule</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">tsModuleProperty</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">tsModuleProperty</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="nx">exports</span><span class="p">.</span><span class="nx">tsModuleProperty</span> <span class="o">=</span> <span class="nx">tsModuleProperty</span><span class="p">;</span>
 <span class="nx">exports</span><span class="p">.</span><span class="k">default</span> <span class="o">=</span> <span class="nx">tsModule</span><span class="p">;</span>
@@ -293,12 +292,12 @@
   <li>index.js</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"use strict"</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="s2">"__esModule"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="dl">"</span><span class="s2">__esModule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">ts_module_1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"./ts-module"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">_3rd_module_1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"./3rd-module"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ts_module_1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./ts-module</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">_3rd_module_1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./3rd-module</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// ts-module.ts</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ts_module_1</span><span class="p">.</span><span class="k">default</span><span class="p">);</span>
@@ -356,11 +355,11 @@ thirdModuleProperty
 <h2 id="3-commonjs-기반의-모듈을-import-할-때에는-어떻게-해야-될까">3. CommonJS 기반의 모듈을 import 할 때에는 어떻게 해야 될까?</h2>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// before transpile</span>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">thirdModule</span> <span class="k">from</span> <span class="s1">'./3rd-module'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">thirdModule</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./3rd-module</span><span class="dl">'</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">thirdModule</span><span class="p">);</span>
 
 <span class="c1">// transpile</span>
-<span class="kd">var</span> <span class="nx">thirdModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"./3rd-module"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">thirdModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./3rd-module</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">thirdModule</span><span class="p">);</span>
 
 <span class="c1">// console : { thirdModuleProperty: 'thirdModuleProperty' }</span>
@@ -370,7 +369,7 @@ thirdModuleProperty
 
 <h2 id="4-export-default-된-모듈을-require-할-때에는-어떻게-해야-될까">4. export default 된 모듈을 require 할 때에는 어떻게 해야 될까?</h2>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">thirdModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./3rd-module'</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">thirdModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./3rd-module</span><span class="dl">'</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p><code class="highlighter-rouge">export default</code> 는 <code class="highlighter-rouge">exports.default</code> 로 transpile 될 것이다. <code class="highlighter-rouge">import</code> 를 사용해 모듈을 불러 온다면 transpile 되면서 <strong>default 프로퍼티</strong>를 자동으로 추가해 주겠지만 <code class="highlighter-rouge">require</code> 를 사용할 경우 개발자가 직접 <strong>default 프로퍼티</strong>를 추가해 코딩해 주면 된다.</p>
@@ -387,8 +386,8 @@ thirdModuleProperty
   <li>es6-module.js</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">es6Module</span> <span class="o">=</span> <span class="s1">'es6Module'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">es6ModuleProperty</span> <span class="o">=</span> <span class="s1">'es6ModuleProperty'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">es6Module</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">es6Module</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">es6ModuleProperty</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">es6ModuleProperty</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="p">{</span> <span class="nx">es6ModuleProperty</span> <span class="p">};</span>
 <span class="k">export</span> <span class="k">default</span> <span class="nx">es6Module</span><span class="p">;</span>
@@ -399,7 +398,7 @@ thirdModuleProperty
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">commonjsModule</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">commonjsModuleProperty</span><span class="p">:</span> <span class="s1">'commonjsModuleProperty'</span>
+  <span class="na">commonjsModuleProperty</span><span class="p">:</span> <span class="dl">'</span><span class="s1">commonjsModuleProperty</span><span class="dl">'</span>
 <span class="p">};</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">commonjsModule</span><span class="p">;</span>
@@ -409,8 +408,8 @@ thirdModuleProperty
   <li>index.js</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">es6Module</span><span class="p">,</span> <span class="p">{</span> <span class="nx">es6ModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./es6-module'</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">commonjsModule</span><span class="p">,</span> <span class="p">{</span> <span class="nx">commonjsModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./commonjs-module'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">es6Module</span><span class="p">,</span> <span class="p">{</span> <span class="nx">es6ModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./es6-module</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">commonjsModule</span><span class="p">,</span> <span class="p">{</span> <span class="nx">commonjsModuleProperty</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./commonjs-module</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// es6-module.js</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">es6Module</span><span class="p">);</span>
@@ -427,12 +426,12 @@ thirdModuleProperty
   <li>es6-module.js</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="s2">"__esModule"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="dl">"</span><span class="s2">__esModule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">es6Module</span> <span class="o">=</span> <span class="s1">'es6Module'</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">es6ModuleProperty</span> <span class="o">=</span> <span class="s1">'es6ModuleProperty'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">es6Module</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">es6Module</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">es6ModuleProperty</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">es6ModuleProperty</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="nx">exports</span><span class="p">.</span><span class="nx">es6ModuleProperty</span> <span class="o">=</span> <span class="nx">es6ModuleProperty</span><span class="p">;</span>
 <span class="nx">exports</span><span class="p">.</span><span class="k">default</span> <span class="o">=</span> <span class="nx">es6Module</span><span class="p">;</span>
@@ -442,10 +441,10 @@ thirdModuleProperty
   <li>commonjs-module.js</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">commonjsModule</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">commonjsModuleProperty</span><span class="p">:</span> <span class="s1">'commonjsModuleProperty'</span>
+  <span class="na">commonjsModuleProperty</span><span class="p">:</span> <span class="dl">'</span><span class="s1">commonjsModuleProperty</span><span class="dl">'</span>
 <span class="p">};</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">commonjsModule</span><span class="p">;</span>
@@ -455,10 +454,10 @@ thirdModuleProperty
   <li>index.js</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="kd">var</span> <span class="nx">_es6Module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./es6-module'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">_commonjsModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./commonjs-module'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">_es6Module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./es6-module</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">_commonjsModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./commonjs-module</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">_es6Module2</span> <span class="o">=</span> <span class="nx">_interopRequireDefault</span><span class="p">(</span><span class="nx">_es6Module</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">_commonjsModule2</span> <span class="o">=</span> <span class="nx">_interopRequireDefault</span><span class="p">(</span><span class="nx">_commonjsModule</span><span class="p">);</span>
@@ -491,7 +490,7 @@ commonjsModuleProperty
 <p>위에 있는 Babel 예제는 파일명과 변수명만 바뀌었을 뿐 Typescript 예제와 동일하다. 하지만 신기하게도 Babel 의 transpile 은 세번째 값이 재대로 출력되었다. Typescript 에서 <strong>default 프로퍼티</strong>를 처리하는 방식과 Babel 에서 <strong>default 프로퍼티</strong>를 처리하는 방식이 특별히 다르지 않은 것 같은데 어떤 이유로 이런 결과가 나올까?</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// es6-module.js</span>
-<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="s2">"__esModule"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="dl">"</span><span class="s2">__esModule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
 
 <span class="c1">// commonjs-module.js</span>
 <span class="c1">// 'use strict' 가 추가되었을 뿐 특별한 traslate 가 없다.</span>
@@ -582,7 +581,7 @@ s.setAttribute('data-timestamp', +new Date());
       </section>
       <aside>
         <section> 
-  <h3>Recent</h3>
+  <h3>Recently</h3>
   <ul>
     
       <li class="article">
@@ -626,10 +625,10 @@ s.setAttribute('data-timestamp', +new Date());
       </li>
     
       <li class="article">
-        <a href="/etc/ide/20180914/ide-settings" alt="IDE 기본폰트와 기본세팅 정리">
+        <a href="/etc/ide/20180914/ide-settings" alt="폰트와 기본세팅 정리">
           <article>
             <div class="category">Etc <span>></span>IDE </div>
-            <div class="title">IDE 기본폰트와 기본세팅 정리</div>
+            <div class="title">폰트와 기본세팅 정리</div>
             <time>2018-09-14</time>
           </article>
         </a>
@@ -1512,7 +1511,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/setting" style="font-size: 9pt; color: #777;">setting</a>
+        <a href="/tags/settings" style="font-size: 9pt; color: #777;">settings</a>
       </li>
     
       
