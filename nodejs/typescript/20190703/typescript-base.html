@@ -5,50 +5,50 @@
 <meta name="referrer" content="always">
 <meta name="author"   content="lofty87">
 
-  <meta name="keywords" content="wsl,Dev Store">
-<meta name="description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- View -->
+  <meta name="keywords" content="typescript 기본 1,Dev Store">
+<meta name="description" content="typescript 의 가장 기본적인 이론을 설명한다."><!-- View -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"              content="width=device-width, initial-scale=1.0">
 
 <!-- Represent -->
 <base                                                         href="https://lofty87.github.io">
-<link rel="canonical"                                         href="https://lofty87.github.io/tags/wsl/index.html"/>
+<link rel="canonical"                                         href="https://lofty87.github.io/nodejs/typescript/20190703/typescript-base"/>
 <link rel="icon"             type="image/png" sizes="32x32"   href="https://lofty87.github.io/assets/favicon-32x32.png">
 <link rel="icon"             type="image/png" sizes="16x16"   href="https://lofty87.github.io/assets/favicon-16x16.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://lofty87.github.io/assets/apple-touch-icon.png">
 
-<title>wsl | Dev Store</title>
+<title>typescript 기본 1 | Dev Store</title>
 
 <!-- Site Verification --><meta name="google-site-verification" content="hyjADXBfPWioezEyxWb91yhZYGC08ikSp1aF6Bz1b_w"/>
   <meta name="naver-site-verification"  content="16bc7701ad208ef6b2ff1ba2aa5f1021561c8071"/><!-- Open Graph -->
 <meta property="og:type"      content="article">
 <meta property="og:site_name" content="Dev Store">
-<meta property="og:url"       content="https://lofty87.github.io/tags/wsl/index.html">
+<meta property="og:url"       content="https://lofty87.github.io/nodejs/typescript/20190703/typescript-base">
 <meta property="og:image"     content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta property="og:title"     content="wsl">
-<meta property="og:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- Twitter Card -->
+  <meta property="og:title"     content="typescript 기본 1">
+<meta property="og:description" content="typescript 의 가장 기본적인 이론을 설명한다."><!-- Twitter Card -->
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:site"  content="Dev Store">
 <meta name="twitter:image" content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta name="twitter:title" content="wsl">
-<meta name="twitter:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- Structured Data -->
+  <meta name="twitter:title" content="typescript 기본 1">
+<meta name="twitter:description" content="typescript 의 가장 기본적인 이론을 설명한다."><!-- Structured Data -->
 <script type="application/ld+json">
   {
     "@context":"http://schema.org",
     "@type":"BlogPosting",
-    "url":"https://lofty87.github.io/tags/wsl/index.html",
+    "url":"https://lofty87.github.io/nodejs/typescript/20190703/typescript-base",
     
-      "headline":"wsl",
+      "headline":"typescript 기본 1",
     
     
-      "description": "프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.",
+      "description": "typescript 의 가장 기본적인 이론을 설명한다.",
     
-    "datePublished":"",
-    "dateModified":"",
+    "datePublished":"2019-07-03 00:00:00 +0900",
+    "dateModified":"2019-07-03 00:00:00 +0900",
     "mainEntityOfPage":{
-      "@id":"https://lofty87.github.io/tags/wsl/index.html"
+      "@id":"https://lofty87.github.io/nodejs/typescript/20190703/typescript-base"
     },
     "author":{
       "@type":"Person",
@@ -132,57 +132,185 @@
     </header>
     <main>
       <section class="container">
-        <div class="list">
-  
+        
 
-  
-    <h2 class="category">
-      <div class="category-tag">wsl</div>
-    </h2>
-  
+<article class="post">
+  <section class="post-header">
+    <div class="category">Typescript</div>
+    <div class="tags">
+      
+        <div class="tag">es6</div>
+      
+        <div class="tag">typescript</div>
+      
+    </div>
+    <h1 class="title">typescript 기본 1</h1>
+  </section>
+  <section class="post-content">
+    <h2 id="1-primitive-type">1. primitive type</h2>
 
+<ul>
+  <li>boolean</li>
+  <li>number</li>
+  <li>string</li>
+  <li>symbol</li>
+  <li>null</li>
+  <li>undefined (가이드라인에 null 보다 undefined 를 사용하라고 권장)</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="2-literal-type">2. literal type</h2>
+
+<p>값 자체가 타입이 된다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MyType</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// value 변수는 'MyType' 값 외에는 대입할 수 없음</span>
+<span class="kd">let</span> <span class="nx">value</span><span class="p">:</span> <span class="nx">MyType</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MyType</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="3-other-type">3. other type</h2>
+
+<ul>
+  <li>object</li>
+  <li>Array&lt;number&gt; === number[]</li>
+  <li>tuple</li>
+  <li>any</li>
+  <li>union</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tuple</span>
+<span class="kd">const</span> <span class="nx">tuple</span><span class="p">:</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">str</span><span class="dl">'</span><span class="p">,</span> <span class="mi">31</span><span class="p">];</span>
+
+<span class="c1">// any - 컴파일 시 타입체크가 이루어지지 않으며 최대한 누수를 막아주자! (any =&gt; type)</span>
+<span class="kd">function</span> <span class="nx">anyFn</span><span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="nx">string</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">str</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">str</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// union</span>
+<span class="kd">const</span> <span class="nx">union1</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="nx">number</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">union2</span><span class="p">:</span> <span class="dl">'</span><span class="s1">left</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">right</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">top</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">bottom</span><span class="dl">'</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="4-assertions">4. assertions</h2>
+
+<h4 id="1-type-assertion-as-또는-">1. type assertion (as 또는 &lt;&gt;)</h4>
+
+<p>강제로 타입을 지정하지만 형변환이라기 보다는 이 타입이라고 우기는 것이다. 예를 들면 아래와 같이 무조건 값이 존재하는 경우.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">dom</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">#id</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLButtonElement</span><span class="p">;</span>
+
+<span class="c1">// type assertion</span>
+<span class="p">(</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="nx">value</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">(</span><span class="nx">value</span> <span class="k">as</span> <span class="nx">string</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="2-non-null-assertions-">2. non-null assertions (!)</h4>
+
+<p>null, undefined 값은 무조건 아니다 라고 우기는 것이다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// parent dom 이 무조건 존재하는 경우</span>
+<span class="nx">children</span><span class="p">.</span><span class="nx">parentElement</span><span class="o">!</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="5-type-alias">5. type alias</h2>
+
+<p>타입에 대한 별칭을 지정하는 것이다. 이미 존재하는 타입의 조합은 type alias 를 추천.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">MyString</span> <span class="o">=</span> <span class="nx">string</span><span class="p">;</span>
+<span class="nx">type</span> <span class="nx">StringOrNumber</span> <span class="o">=</span> <span class="nx">string</span> <span class="o">|</span> <span class="nx">number</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>※ Reference</strong></p>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=DpjuaI-2UC4&amp;list=PLV6pYUAZ-ZoFwOspuVHBvmhQRalqvj7Jf">맠튜브 - TypeScript Basic 타입스크립트 기초 워크숍 201812</a></li>
+</ul>
+
+  </section>
+</article>
+
+<section class="post-category-list">
+  <section class="title">
+    <h4><span>'Typescript'</span> 카테고리의 최신글</h4>
+
+    
+      <a href="/categories/nodejs/typescript">더보기</a>
+    
+  </section>
   
-    <article class="article">
-      <a href="/etc/windows/20180912/windows-wsl">
-        <h1 class="article-title">Windows 에서 Linux 사용하기</h1>
-        <div class="article-line"></div>
-        <summary class="article-content">WSL(Windows Subsystem for Linux) 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 ...</summary>
-        <section>
-          <time datetime="2018-09-12" class="article-time">2018-09-12</time>
-          <span class="article-time">
-            
-              <div class="tag">windows</div>
-            
-              <div class="tag">wsl</div>
-            
-              <div class="tag">linux</div>
-            
-              <div class="tag">zsh</div>
-            
-          </span>
-        </section>
-      </a>
-    </article>
-  
+  <ul>
+    
+    
+      
+      
+        
+          
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20190702/typescript-tsconfig">
+              <h2>tsconfig.js</h2>
+            </a>
+            <time datetime="2019-07-02">2019-07-02</time>
+          </li>
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20180830/typescript-import-export">
+              <h2>Typescript 에서 import 와 export 를 어떻게 처...</h2>
+            </a>
+            <time datetime="2018-08-30">2018-08-30</time>
+          </li>
+        
+      
+    
+  </ul>
+</section>
+
+<div class="comment">
+  <div id="disqus_thread"></div>
 </div>
 
-<nav class="pagination">
-  
-    
-    
-    
-      <span class="arrow disable">&lt;&lt;</span>
-    
-    
-      
-        <span class="active">1</span>
-      
-    
-    
-      <span class="arrow disable">&gt;&gt;</span>
-    
-  
-</nav>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+  this.page.url = "http://localhost:4000/nodejs/typescript/20190703/typescript-base";
+  this.page.identifier = "/nodejs/typescript/20190703/typescript-base";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://dev-store.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </section>
       <aside>
         <section> 
