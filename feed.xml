@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-03T15:15:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">typescript 기본 1</title><link href="http://localhost:4000/nodejs/typescript/20190703/typescript-base" rel="alternate" type="text/html" title="typescript 기본 1" /><published>2019-07-03T00:00:00+09:00</published><updated>2019-07-03T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/typescript/20190703/typescript-base</id><content type="html" xml:base="http://localhost:4000/nodejs/typescript/20190703/typescript-base">&lt;h2 id=&quot;1-primitive-type&quot;&gt;1. primitive type&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-04T11:41:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">typescript 기본 1</title><link href="http://localhost:4000/nodejs/typescript/20190703/typescript-base" rel="alternate" type="text/html" title="typescript 기본 1" /><published>2019-07-03T00:00:00+09:00</published><updated>2019-07-03T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/typescript/20190703/typescript-base</id><content type="html" xml:base="http://localhost:4000/nodejs/typescript/20190703/typescript-base">&lt;h3 id=&quot;1-primitive-type&quot;&gt;1. primitive type&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;boolean&lt;/li&gt;
@@ -6,12 +6,14 @@
   &lt;li&gt;string&lt;/li&gt;
   &lt;li&gt;symbol&lt;/li&gt;
   &lt;li&gt;null&lt;/li&gt;
-  &lt;li&gt;undefined (가이드라인에 null 보다 undefined 를 사용하라고 권장)&lt;/li&gt;
+  &lt;li&gt;undefined&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;가이드 라인에 null 보다 &lt;strong&gt;undefined&lt;/strong&gt; 를 사용하라고 권장&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2-literal-type&quot;&gt;2. literal type&lt;/h2&gt;
+&lt;h3 id=&quot;2-literal-type&quot;&gt;2. literal type&lt;/h3&gt;
 
 &lt;p&gt;값 자체가 타입이 된다.&lt;/p&gt;
 
@@ -23,7 +25,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;3-other-type&quot;&gt;3. other type&lt;/h2&gt;
+&lt;h3 id=&quot;3-other-type&quot;&gt;3. other type&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;object&lt;/li&gt;
@@ -36,7 +38,7 @@
 &lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// tuple&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;31&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// any - 컴파일 시 타입체크가 이루어지지 않으며 최대한 누수를 막아주자! (any =&amp;gt; type)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// any - 컴파일 시 타입체크 안함, 최대한 누수를 막아주자! (any =&amp;gt; type)&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;anyFn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -50,9 +52,9 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;4-assertions&quot;&gt;4. assertions&lt;/h2&gt;
+&lt;h3 id=&quot;4-assertions&quot;&gt;4. assertions&lt;/h3&gt;
 
-&lt;h4 id=&quot;1-type-assertion-as-또는-&quot;&gt;1. type assertion (as 또는 &amp;lt;&amp;gt;)&lt;/h4&gt;
+&lt;h4 id=&quot;--type-assertion-as-또는-&quot;&gt;- type assertion (as 또는 &amp;lt;&amp;gt;)&lt;/h4&gt;
 
 &lt;p&gt;강제로 타입을 지정하지만 형변환이라기 보다는 이 타입이라고 우기는 것이다. 예를 들면 아래와 같이 무조건 값이 존재하는 경우.&lt;/p&gt;
 
@@ -63,9 +65,7 @@
 &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-non-null-assertions-&quot;&gt;2. non-null assertions (!)&lt;/h4&gt;
+&lt;h4 id=&quot;--non-null-assertions-&quot;&gt;- non-null assertions (!)&lt;/h4&gt;
 
 &lt;p&gt;null, undefined 값은 무조건 아니다 라고 우기는 것이다.&lt;/p&gt;
 
@@ -75,7 +75,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;5-type-alias&quot;&gt;5. type alias&lt;/h2&gt;
+&lt;h3 id=&quot;5-type-alias&quot;&gt;5. type alias&lt;/h3&gt;
 
 &lt;p&gt;타입에 대한 별칭을 지정하는 것이다. 이미 존재하는 타입의 조합은 type alias 를 추천.&lt;/p&gt;
 
@@ -85,34 +85,27 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=DpjuaI-2UC4&amp;amp;list=PLV6pYUAZ-ZoFwOspuVHBvmhQRalqvj7Jf&quot;&gt;맠튜브 - TypeScript Basic 타입스크립트 기초 워크숍 201812&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="es6" /><category term="typescript" /><summary type="html">1. primitive type</summary></entry><entry><title type="html">tsconfig.js</title><link href="http://localhost:4000/nodejs/typescript/20190702/typescript-tsconfig" rel="alternate" type="text/html" title="tsconfig.js" /><published>2019-07-02T00:00:00+09:00</published><updated>2019-07-02T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/typescript/20190702/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/nodejs/typescript/20190702/typescript-tsconfig">&lt;p&gt;&lt;strong&gt;- tsconfig.js 생성하기&lt;/strong&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="es6" /><category term="typescript" /><summary type="html">1. primitive type</summary></entry><entry><title type="html">tsconfig.js</title><link href="http://localhost:4000/nodejs/typescript/20190702/typescript-tsconfig" rel="alternate" type="text/html" title="tsconfig.js" /><published>2019-07-02T00:00:00+09:00</published><updated>2019-07-02T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/typescript/20190702/typescript-tsconfig</id><content type="html" xml:base="http://localhost:4000/nodejs/typescript/20190702/typescript-tsconfig">&lt;h4 id=&quot;--tsconfigjs-생성하기&quot;&gt;- tsconfig.js 생성하기&lt;/h4&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tsc &lt;span class=&quot;nt&quot;&gt;--init&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-extends&quot;&gt;1. extends&lt;/h2&gt;
+&lt;h3 id=&quot;1-extends&quot;&gt;1. extends&lt;/h3&gt;
 
 &lt;p&gt;경로를 지정하여 외부 &lt;strong&gt;tsconfig&lt;/strong&gt; 를 참조할 수 있으며 rule 들을 직접 작성하여 오버라이딩이 가능하다.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-include&quot;&gt;2. include&lt;/h2&gt;
+&lt;h3 id=&quot;2-include&quot;&gt;2. include&lt;/h3&gt;
 
 &lt;p&gt;해당 경로의 &lt;code class=&quot;highlighter-rouge&quot;&gt;.ts&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.tsx&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.d.ts&lt;/code&gt; 들을 컴파일하며 &lt;strong&gt;exclude&lt;/strong&gt; 보다 약하다&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-exclude&quot;&gt;3. exclude&lt;/h2&gt;
+&lt;h3 id=&quot;3-exclude&quot;&gt;3. exclude&lt;/h3&gt;
 
 &lt;p&gt;지정하지 않으면 기본적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bower_components&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;jspm_packages&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;outDir&amp;gt;&lt;/code&gt; 폴더를 제외한다. &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;outDir&amp;gt;&lt;/code&gt; 는 경로를 지정해도 무조건 제외된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-compileoptions&quot;&gt;4. compileOptions&lt;/h2&gt;
+&lt;h3 id=&quot;4-compileoptions&quot;&gt;4. compileOptions&lt;/h3&gt;
 
 &lt;h4 id=&quot;--typeroots&quot;&gt;- typeRoots&lt;/h4&gt;
 
@@ -122,8 +115,6 @@
   &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;typeRoots&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node_modules/@types&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@types&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;--target-과-lib&quot;&gt;- target 과 lib&lt;/h4&gt;
 
@@ -135,9 +126,7 @@
 &lt;br /&gt;es6 이면 dom, es6, dom.iterable, scripthost&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;lib location : &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/typescript/lib&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;lib 경로 : node_modules/typescript/lib&lt;/em&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;--module&quot;&gt;- module&lt;/h4&gt;
 
@@ -148,20 +137,16 @@
 &lt;br /&gt;target 이 es6 가 아니면 commonjs&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;h4 id=&quot;--strict&quot;&gt;- strict&lt;/h4&gt;
 
-&lt;p&gt;&lt;em&gt;–noImplicitAny&lt;/em&gt;&lt;/p&gt;
+&lt;h5 id=&quot;--noimplicitany&quot;&gt;&lt;u&gt;--noImplicitAny&lt;/u&gt;&lt;/h5&gt;
 
 &lt;p&gt;타입을 추정할 수 없는 곳에 any 를 지정하라고 알려준다. 하지만 너무 지나칠 경우 예를 들면 객체의 &lt;strong&gt;index signature&lt;/strong&gt; 일 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;suppressImplicitAnyIndexErrors&lt;/code&gt; 옵션을 통해 제외 시킬 수 있다. 원래는 아래와 같이 객체의 타입을 지정해야 한다.&lt;/p&gt;
 
 &lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;–noImplicitThis&lt;/em&gt;&lt;/p&gt;
+&lt;h5 id=&quot;--noimplicitthis&quot;&gt;&lt;u&gt;--noImplicitThis&lt;/u&gt;&lt;/h5&gt;
 
 &lt;p&gt;this 를 사용하는 곳에 this 변수를 선언하라고 알려준다. 타입을 직접 지정하기도 하지만 any 를 사용하는 것도 합리적이다.&lt;/p&gt;
 
@@ -177,15 +162,11 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;–strictNullChecks&lt;/em&gt;&lt;/p&gt;
+&lt;h5 id=&quot;--strictnullchecks&quot;&gt;&lt;u&gt;--strictNullChecks&lt;/u&gt;&lt;/h5&gt;
 
 &lt;p&gt;모든 타입에 대해 null, undefined 값을 대입할 수 없다.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;–strictPropertyInitialization&lt;/em&gt;&lt;/p&gt;
+&lt;h5 id=&quot;--strictpropertyinitialization&quot;&gt;&lt;u&gt;--strictPropertyInitialization&lt;/u&gt;&lt;/h5&gt;
 
 &lt;p&gt;클래스 속성을 초기화해야 한다고 알려준다. 속성에 바로 초기화하거나 contructor 안에서 초기화할 수 있다.&lt;/p&gt;
 
@@ -206,42 +187,13 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=DpjuaI-2UC4&amp;amp;list=PLV6pYUAZ-ZoFwOspuVHBvmhQRalqvj7Jf&quot;&gt;맠튜브 - TypeScript Basic 타입스크립트 기초 워크숍 201812&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="es6" /><category term="typescript" /><summary type="html">- tsconfig.js 생성하기 tsc --init</summary></entry><entry><title type="html">리눅스 환경변수 등록</title><link href="http://localhost:4000/linux/20181001/linux-environment-variable" rel="alternate" type="text/html" title="리눅스 환경변수 등록" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/linux/20181001/linux-environment-variable</id><content type="html" xml:base="http://localhost:4000/linux/20181001/linux-environment-variable">&lt;p&gt;환경변수 등록은 &lt;strong&gt;login shell&lt;/strong&gt; 과 &lt;strong&gt;none login shell&lt;/strong&gt; 로 구분되고 &lt;strong&gt;전역(global)&lt;/strong&gt; 등록과 &lt;strong&gt;지역(user)&lt;/strong&gt; 등록으로 나누어 진다. &lt;strong&gt;login shell&lt;/strong&gt; 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. &lt;strong&gt;none login shell&lt;/strong&gt; 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. &lt;strong&gt;전역(global)&lt;/strong&gt; 등록은 모든 유저에게 공통으로 적용되는 등록이고 &lt;strong&gt;지역(user)&lt;/strong&gt; 등록은 접속한 유저(본인)에게만 적용되는 등록이다.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="es6" /><category term="typescript" /><summary type="html">- tsconfig.js 생성하기 tsc --init</summary></entry><entry><title type="html">Windows Update, Defender 중지, OneDrive 삭제</title><link href="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive" rel="alternate" type="text/html" title="Windows Update, Defender 중지, OneDrive 삭제" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive</id><content type="html" xml:base="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive">&lt;h3 id=&quot;1-windows-update-중지&quot;&gt;1. Windows Update 중지&lt;/h3&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-login-shell&quot;&gt;1. login shell&lt;/h3&gt;
-
-&lt;p&gt;login shell 이 실행될 때 함께 로드되는 파일은 ‘&lt;strong&gt;/etc/profile&lt;/strong&gt;’, ‘&lt;strong&gt;~/.profile&lt;/strong&gt;’, ‘&lt;strong&gt;~/.bash_profile&lt;/strong&gt;’ 등이 있다. ‘&lt;strong&gt;/etc/profile&lt;/strong&gt;’, ‘&lt;strong&gt;~/.profile&lt;/strong&gt;’ 은 모든 shell 이 대상이고 ‘&lt;strong&gt;~/.bash_profile&lt;/strong&gt;’ 은 bash shell 이 대상이다. 또 다른 차이는 ‘&lt;strong&gt;/etc/profile&lt;/strong&gt;’ 은 전역(global) 등록이고 ‘&lt;strong&gt;~/.profile&lt;/strong&gt;’, ‘&lt;strong&gt;~/.bash_profile&lt;/strong&gt;’ 은 지역(user) 등록이다. 전역(global) 등록 파일은 &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc&lt;/code&gt; 디렉토리에 있고 지역(user) 파일은 유저의 &lt;code class=&quot;highlighter-rouge&quot;&gt;home(~)&lt;/code&gt; 디렉토리에 있다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;유저가 ssh 접속 후 bash shell 을 실행할 때 ‘/etc/profile’, ‘~/.profile’, ‘~/.bash_profile’ 순서로 로드될 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-none-login-shell&quot;&gt;2. none login shell&lt;/h3&gt;
-
-&lt;p&gt;none login shell (bash shell) 이 실행될 때 로드되는 파일은 ‘&lt;strong&gt;/etc/bashrc&lt;/strong&gt;’, ‘&lt;strong&gt;~/.bashrc&lt;/strong&gt;’ 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. ‘&lt;strong&gt;/etc/bashrc&lt;/strong&gt;’ 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 ‘&lt;strong&gt;~/.bashrc&lt;/strong&gt;’ 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-결론&quot;&gt;3. 결론&lt;/h3&gt;
-
-&lt;p&gt;따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 ‘&lt;strong&gt;/etc/profile&lt;/strong&gt;’, ‘&lt;strong&gt;~/.profile&lt;/strong&gt;’, ‘&lt;strong&gt;~/.bash_profile&lt;/strong&gt;’ 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;value 에 띄어쓰기가 있을 경우 반드시 &lt;strong&gt;“(쌍따옴표)&lt;/strong&gt;로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;또는 &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="linux" /><category term="bash" /><category term="profile" /><category term="command" /><summary type="html">환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</summary></entry><entry><title type="html">Windows Update, Defender 중지, OneDrive 삭제</title><link href="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive" rel="alternate" type="text/html" title="Windows Update, Defender 중지, OneDrive 삭제" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive</id><content type="html" xml:base="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive">&lt;h1 id=&quot;1-windows-update-중지&quot;&gt;1. Windows Update 중지&lt;/h1&gt;
-
-&lt;h2 id=&quot;1-servicesmsc&quot;&gt;1. services.msc&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;- services.msc&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/1.png&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
 
@@ -249,7 +201,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/3.png&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2-gpeditmsc&quot;&gt;2. gpedit.msc&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;- gpedit.msc&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/4.png&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
 
@@ -259,7 +211,9 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;2-windows-defender-중지&quot;&gt;2. Windows Defender 중지&lt;/h1&gt;
+&lt;h3 id=&quot;2-windows-defender-중지&quot;&gt;2. Windows Defender 중지&lt;/h3&gt;
+
+&lt;p&gt;Windows 버전에 따라 다를 수 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/7.png&quot; alt=&quot;7&quot; /&gt;&lt;/p&gt;
 
@@ -269,7 +223,9 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;3-onedrive-삭제&quot;&gt;3. OneDrive 삭제&lt;/h1&gt;
+&lt;h3 id=&quot;3-onedrive-삭제&quot;&gt;3. OneDrive 삭제&lt;/h3&gt;
+
+&lt;p&gt;OneDrive 는 Microsoft Cloud 저장소입니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Linux/2018-10-01/10.jpg&quot; alt=&quot;10&quot; /&gt;&lt;/p&gt;
 
@@ -278,11 +234,41 @@
 &lt;table&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;OneDrive 삭제&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;uninstall OneDrive&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;&lt;a href=&quot;https://drive.google.com/file/d/1CLKKl_I-gZ8HKo9lUupBOqLdnMb1d75V/view?usp=sharing&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="update" /><category term="defender" /><category term="onedrive" /><summary type="html">1. Windows Update 중지</summary></entry><entry><title type="html">폰트와 기본세팅 정리</title><link href="http://localhost:4000/etc/ide/20180914/ide-settings" rel="alternate" type="text/html" title="폰트와 기본세팅 정리" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/ide/20180914/ide-settings</id><content type="html" xml:base="http://localhost:4000/etc/ide/20180914/ide-settings">&lt;h2 id=&quot;1-폰트&quot;&gt;1. 폰트&lt;/h2&gt;
+&lt;/table&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="update" /><category term="defender" /><category term="onedrive" /><summary type="html">1. Windows Update 중지</summary></entry><entry><title type="html">리눅스 환경변수 등록</title><link href="http://localhost:4000/linux/20181001/linux-environment-variable" rel="alternate" type="text/html" title="리눅스 환경변수 등록" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/linux/20181001/linux-environment-variable</id><content type="html" xml:base="http://localhost:4000/linux/20181001/linux-environment-variable">&lt;p&gt;환경변수 등록은 &lt;strong&gt;login shell&lt;/strong&gt; 과 &lt;strong&gt;none login shell&lt;/strong&gt; 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. &lt;strong&gt;login shell&lt;/strong&gt; 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. &lt;strong&gt;none login shell&lt;/strong&gt; 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-login-shell&quot;&gt;1. login shell&lt;/h3&gt;
+
+&lt;p&gt;login shell 이 실행될 때 함께 로드되는 파일은 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 등이 있다. &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt; 은 모든 shell 이 대상이고 &lt;em&gt;~/.bash_profile&lt;/em&gt; 은 bash shell 이 대상이다. 또 다른 차이는 &lt;em&gt;/etc/profile&lt;/em&gt; 은 전역(global) 등록이고 &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 은 지역(user) 등록이다. 전역(global) 등록 파일은 &lt;em&gt;/etc&lt;/em&gt; 디렉토리에 있고 지역(user) 파일은 유저의 &lt;em&gt;home(~)&lt;/em&gt; 디렉토리에 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;유저가 ssh 접속 후 bash shell 을 실행할 때 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 순서로 로드될 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-none-login-shell&quot;&gt;2. none login shell&lt;/h3&gt;
+
+&lt;p&gt;none login shell (bash shell) 이 실행될 때 로드되는 파일은 &lt;em&gt;/etc/bashrc&lt;/em&gt;, &lt;em&gt;~/.bashrc&lt;/em&gt; 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. &lt;em&gt;/etc/bashrc&lt;/em&gt; 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 &lt;em&gt;~/.bashrc&lt;/em&gt; 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-결론&quot;&gt;3. 결론&lt;/h3&gt;
+
+&lt;p&gt;따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;value 에 띄어쓰기가 있을 경우 반드시 &lt;strong&gt;“(쌍따옴표)&lt;/strong&gt;로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;또는 &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="linux" /><category term="bash" /><category term="profile" /><category term="command" /><summary type="html">환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</summary></entry><entry><title type="html">폰트와 기본세팅 정리</title><link href="http://localhost:4000/etc/ide/20180914/ide-settings" rel="alternate" type="text/html" title="폰트와 기본세팅 정리" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/ide/20180914/ide-settings</id><content type="html" xml:base="http://localhost:4000/etc/ide/20180914/ide-settings">&lt;h3 id=&quot;1-폰트&quot;&gt;1. 폰트&lt;/h3&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -303,7 +289,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2-visual-studio-code&quot;&gt;2. Visual Studio Code&lt;/h2&gt;
+&lt;h3 id=&quot;2-visual-studio-code&quot;&gt;2. Visual Studio Code&lt;/h3&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -318,13 +304,48 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-14/VisualStudioCodePlugin.png&quot; alt=&quot;Visual Studio Code Plugin&quot; /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="ide" /><category term="font" /><category term="settings" /><summary type="html">1. 폰트</summary></entry><entry><title type="html">React Component Snippet</title><link href="http://localhost:4000/nodejs/react/20180914/react-component-snippet" rel="alternate" type="text/html" title="React Component Snippet" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/react/20180914/react-component-snippet</id><content type="html" xml:base="http://localhost:4000/nodejs/react/20180914/react-component-snippet">&lt;h2 id=&quot;1-user-snippets&quot;&gt;1. User Snippets&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-14/VisualStudioCodePlugin.png&quot; alt=&quot;Visual Studio Code Plugin&quot; /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="ide" /><category term="font" /><category term="settings" /><summary type="html">1. 폰트</summary></entry><entry><title type="html">C++ Addon Compile 을 위한 node-gyp</title><link href="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module" rel="alternate" type="text/html" title="C++ Addon Compile 을 위한 node-gyp" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/20180914/nodejs-native-addon-module</id><content type="html" xml:base="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 모듈을 설치하다 보면 &lt;a href=&quot;https://github.com/nodejs/node-gyp&quot;&gt;node-gyp&lt;/a&gt; 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘&lt;a href=&quot;https://nodejs.org/api/addons.html#addons_c_addons&quot;&gt;C++ Addon&lt;/a&gt;’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;node-gyp-설치&quot;&gt;node-gyp 설치&lt;/h2&gt;
+
+&lt;p&gt;node-gyp 을 설치하고 사용하려면 Python v2.7 과 C++ 언어를 Compile 할 수 있는 환경이 구축되있어야 한다. Python 버전은 반드시 2.7 이어야 함을 명심하자. Mac OS 라면 Python 이 기본적으로 설치되어 있을 것이고 Xcode 를 통해 나머지 환경만 조성하면 되겠다. 하지만 Windows 는 직접 둘을 설치하고 설정해야만 하는 번거로움이 있는데 정상적으로 설치했다고 해도 node-gyp 이 설치되지 않는 짜증나는 경우가 있다. 이를 해결해 줄 모듈이 바로 &lt;a href=&quot;https://www.npmjs.com/package/windows-build-tools&quot;&gt;windows-build-tools&lt;/a&gt; 이다. &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 이 모듈을 설치해주면 자동으로 실행되어 Visual C++ Build Tools (Free Charge) 와 Python 2.7 을 설치해준다. 또 C++ Addon 을 Compile 할 수 있도록 적당한 설정까지 완료해준다. 이미 어떤 환경이 조성되있더라도 충돌하지 않도록 잘 구분해서 설치해주기 때문에 충돌도 걱정할 필요가 없다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-windows-build-tools&quot;&gt;1. windows-build-tools&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Python 2.7, Visual C++ Build Tools 를 설치해주고 PATH 를 등록해 줌&lt;/li&gt;
+  &lt;li&gt;Windows 7 또는 Windows Vista 일 경우 .NET Framework 4.5.1 을 미리 설치해야 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 관리자 권한으로 실행
+npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--production&lt;/span&gt; windows-build-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-node-gyp&quot;&gt;2. node-gyp&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; node-gyp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/ojwojwoj/221266536930&quot;&gt;Node.js C++ 모듈 제작 하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://z-wony.tistory.com/12&quot;&gt;Node.js 용 c++ Addon을 gcc로 컴파일하기 (node-gyp 없이)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="nodejs" /><category term="node-gyp" /><category term="c++" /><category term="addon" /><summary type="html">npm 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 require 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘C++ Addon’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 require 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.</summary></entry><entry><title type="html">React Component Snippet</title><link href="http://localhost:4000/nodejs/react/20180914/react-component-snippet" rel="alternate" type="text/html" title="React Component Snippet" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/react/20180914/react-component-snippet</id><content type="html" xml:base="http://localhost:4000/nodejs/react/20180914/react-component-snippet">&lt;h3 id=&quot;1-user-snippets&quot;&gt;1. User Snippets&lt;/h3&gt;
+
+&lt;p&gt;Preferences - User Snippets&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/NodeJS/2018-09-14/react-component-snippet.png&quot; alt=&quot;React Snippet&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2-react-component-snippet-rc&quot;&gt;2. React Component Snippet (‘rc’)&lt;/h2&gt;
+&lt;h2 id=&quot;2-react-component-snippet&quot;&gt;2. React Component Snippet&lt;/h2&gt;
+
+&lt;p&gt;‘rc’ 를 입력하여 Component 골격을 생성한다.&lt;/p&gt;
 
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;react component set&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;prefix&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -353,47 +374,13 @@
     &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;export default $1;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="snippet" /><summary type="html">1. User Snippets</summary></entry><entry><title type="html">C++ Addon Compile 을 위한 node-gyp</title><link href="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module" rel="alternate" type="text/html" title="C++ Addon Compile 을 위한 node-gyp" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/20180914/nodejs-native-addon-module</id><content type="html" xml:base="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 모듈을 설치하다 보면 &lt;a href=&quot;https://github.com/nodejs/node-gyp&quot;&gt;node-gyp&lt;/a&gt; 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘&lt;a href=&quot;https://nodejs.org/api/addons.html#addons_c_addons&quot;&gt;C++ Addon&lt;/a&gt;’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;node-gyp-설치&quot;&gt;node-gyp 설치&lt;/h1&gt;
-
-&lt;p&gt;node-gyp 을 설치하고 사용하려면 Python v2.7 과 C++ 언어를 Compile 할 수 있는 환경이 구축되있어야 한다. Python 버전은 반드시 2.7 이어야 함을 명심하자. Mac OS 라면 Python 이 기본적으로 설치되어 있을 것이고 Xcode 를 통해 나머지 환경만 조성하면 되겠다. 하지만 Windows 는 직접 둘을 설치하고 설정해야만 하는 번거로움이 있는데 정상적으로 설치했다고 해도 node-gyp 이 설치되지 않는 짜증나는 경우가 있다. 이를 해결해 줄 모듈이 바로 &lt;a href=&quot;https://www.npmjs.com/package/windows-build-tools&quot;&gt;windows-build-tools&lt;/a&gt; 이다. &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 이 모듈을 설치해주면 자동으로 실행되어 Visual C++ Build Tools (Free Charge) 와 Python 2.7 을 설치해준다. 또 C++ Addon 을 Compile 할 수 있도록 적당한 설정까지 완료해준다. 이미 어떤 환경이 조성되있더라도 충돌하지 않도록 잘 구분해서 설치해주기 때문에 충돌도 걱정할 필요가 없다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;1. windows-build-tools&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Python 2.7, Visual C++ Build Tools 를 설치해주고 PATH 를 등록해 줌&lt;/li&gt;
-      &lt;li&gt;Windows 7 또는 Windows Vista 일 경우 .NET Framework 4.5.1 을 미리 설치해야 함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 관리자 권한으로 실행
-npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--production&lt;/span&gt; windows-build-tools
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;2. node-gyp&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; node-gyp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/ojwojwoj/221266536930&quot;&gt;Node.js C++ 모듈 제작 하기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://z-wony.tistory.com/12&quot;&gt;Node.js 용 c++ Addon을 gcc로 컴파일하기 (node-gyp 없이)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="nodejs" /><category term="node-gyp" /><category term="c++" /><category term="addon" /><summary type="html">npm 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 require 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘C++ Addon’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 require 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.</summary></entry><entry><title type="html">Windows 에서 Linux 사용하기</title><link href="http://localhost:4000/etc/windows/20180912/windows-wsl" rel="alternate" type="text/html" title="Windows 에서 Linux 사용하기" /><published>2018-09-12T00:00:00+09:00</published><updated>2018-09-12T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20180912/windows-wsl</id><content type="html" xml:base="http://localhost:4000/etc/windows/20180912/windows-wsl">&lt;p&gt;&lt;strong&gt;WSL(Windows Subsystem for Linux)&lt;/strong&gt; 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 ‘Ubuntu’, ‘OpenSUSE’, ‘SLES’, ‘Kali Linux’, ‘Debian GNU/Linux’ 가 있다.&lt;/p&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="snippet" /><summary type="html">1. User Snippets</summary></entry><entry><title type="html">Windows 에서 Linux 사용하기</title><link href="http://localhost:4000/etc/windows/20180912/windows-wsl" rel="alternate" type="text/html" title="Windows 에서 Linux 사용하기" /><published>2018-09-12T00:00:00+09:00</published><updated>2018-09-12T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20180912/windows-wsl</id><content type="html" xml:base="http://localhost:4000/etc/windows/20180912/windows-wsl">&lt;p&gt;&lt;strong&gt;WSL(Windows Subsystem for Linux)&lt;/strong&gt; 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 Ubuntu, OpenSUSE, SLES, Kali Linux, Debian GNU/Linux 가 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;1-설치하기&quot;&gt;1. 설치하기&lt;/h1&gt;
 
-&lt;h2 id=&quot;1-시스템-요구사항&quot;&gt;1. 시스템 요구사항&lt;/h2&gt;
+&lt;h3 id=&quot;1-시스템-요구사항&quot;&gt;1. 시스템 요구사항&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Windows 10 (64비트)&lt;/li&gt;
@@ -402,47 +389,37 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-12/system-info.png&quot; alt=&quot;system-info&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2-windows-subsystem-for-linux-사용-설정&quot;&gt;2. Windows Subsystem for Linux 사용 설정&lt;/h2&gt;
+&lt;h3 id=&quot;2-windows-subsystem-for-linux-사용-설정&quot;&gt;2. Windows Subsystem for Linux 사용 설정&lt;/h3&gt;
 
 &lt;p&gt;아래 두 가지 방법 중 하고 싶은 방법으로 설정하고 재부팅하면 &lt;strong&gt;WSL&lt;/strong&gt; 을 사용할 수 있게 된다.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;PowerShell (관리자 권한으로 실행)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;- PowerShell (관리자 권한으로 실행)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Enable-WindowsOptionalFeature &lt;span class=&quot;nt&quot;&gt;-Online&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-FeatureName&lt;/span&gt; Microsoft-Windows-Subsystem-Linux
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Windows 기능 켜기/끄기&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;- Windows 기능 켜기/끄기&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-12/config.png&quot; alt=&quot;config&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;3-linux-설치&quot;&gt;3. Linux 설치&lt;/h2&gt;
+&lt;h3 id=&quot;3-linux-설치&quot;&gt;3. Linux 설치&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Microsoft Store&lt;/strong&gt; 에서 ‘&lt;strong&gt;linux&lt;/strong&gt;’ 로 검색하면 설치할 수 있는 Linux 들이 나온다.&lt;/p&gt;
+&lt;p&gt;Microsoft Store 에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;linux&lt;/code&gt; 로 검색하면 설치할 수 있는 Linux 들이 나온다. Ubuntu 를 설치하려면 &lt;strong&gt;16.04 LTS&lt;/strong&gt; 를 설치하자. 18.04 LTS 는 나온지 얼마 안되서 그런지 문제가 많은 듯하다.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Ubuntu 를 설치하려면 &lt;strong&gt;16.04 LTS&lt;/strong&gt; 를 설치하자. 18.04 LTS 는 나온지 얼마 안되서 그런지 문제가 많은듯하다.
-    &lt;ul&gt;
-      &lt;li&gt;MongoDB 를 설치하려고 했는데 결국 성공하지 못함 (&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu&quot;&gt;설치매뉴얼&lt;/a&gt;)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;u&gt;MongoDB 를 설치하려고 했는데 결국 성공하지 못함&lt;/u&gt; (&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu&quot;&gt;설치매뉴얼&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-12/search.png&quot; alt=&quot;config&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;4-linux-실행-ubuntu&quot;&gt;4. Linux 실행 (Ubuntu)&lt;/h2&gt;
+&lt;h3 id=&quot;4-linux-실행-ubuntu&quot;&gt;4. Linux 실행 (Ubuntu)&lt;/h3&gt;
 
 &lt;p&gt;처음 실행하게 되면 계정을 생성하는 부분이 나온다. Windows 계정과 같은 Username 을 사용할 필요는 없으며 Username 과 Password 를 차례대로 입력하면 계정이 생성된다. 생성 후 바로 해당 계정으로 CLI 를 사용할 수 있다. Ubuntu 에서 root 권한으로 명령어를 실행하려면 앞에 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt; 를 붙여주면 된다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-12/install.png&quot; alt=&quot;install&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;5-유의사항&quot;&gt;5. 유의사항&lt;/h2&gt;
+&lt;h3 id=&quot;5-유의사항&quot;&gt;5. 유의사항&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Linux 설치는 반드시 &lt;strong&gt;운영체제가 설치된 드라이브&lt;/strong&gt;에 설치해야 한다. 설치장소를 변경하려면 ‘설정 &amp;gt; 시스템 &amp;gt; 저장 공간 &amp;gt; 새 콘텐츠가 저장되는 위치 변경 &amp;gt; 새 앱 저장 위치’ 에서 할 수 있다.&lt;/li&gt;
+  &lt;li&gt;Linux 설치는 반드시 &lt;strong&gt;운영체제가 설치된 드라이브&lt;/strong&gt;에 설치해야 한다. 설치 위치를 변경하려면 &lt;u&gt;설정 &amp;gt; 시스템 &amp;gt; 저장 공간 &amp;gt; 새 콘텐츠가 저장되는 위치 변경 &amp;gt; 새 앱 저장 위치&lt;/u&gt; 에서 할 수 있다.&lt;/li&gt;
   &lt;li&gt;Windows 에서 &lt;strong&gt;Linux 내부 파일&lt;/strong&gt;을 생성하거나 수정하면 데이터가 손상되거나 손실 될 수 있다. 더 심하면 Linux 를 다시 설치해야 될 수 있으므로 조심해야 한다.&lt;/li&gt;
   &lt;li&gt;Linux 에서 Windows 폴더나 파일을 Mount 하면 접근할 수 있다. 따라서 Windows 에서 개발하고 Linux 에서 테스트할 수 있는 환경을 구축할 수 있다.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt; 는 설치할 수 없다.&lt;/li&gt;
@@ -452,15 +429,15 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
 
 &lt;h1 id=&quot;2-사용하기&quot;&gt;2. 사용하기&lt;/h1&gt;
 
-&lt;h2 id=&quot;1-windows-드라이브에-접근하기&quot;&gt;1. Windows 드라이브에 접근하기&lt;/h2&gt;
+&lt;h3 id=&quot;1-windows-드라이브에-접근하기&quot;&gt;1. Windows 드라이브에 접근하기&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Windows 드라이브가 이미 Linux 의 ‘&lt;strong&gt;/mnt&lt;/strong&gt;’ 폴더에 Mount 되어있다.&lt;/li&gt;
+  &lt;li&gt;Windows 드라이브가 이미 Linux 의 &lt;em&gt;/mnt&lt;/em&gt; 폴더에 Mount 되어있다.&lt;/li&gt;
   &lt;li&gt;Windows 에 있는 프로젝트 폴더를 간편하게 접근할 수 있도록 &lt;strong&gt;심볼릭 링크&lt;/strong&gt;를 만든다.
     &lt;ul&gt;
-      &lt;li&gt;Linux 를 실행하면 기본적으로 접속한 계정의 ‘&lt;strong&gt;home&lt;/strong&gt;’ 에서 시작한다.&lt;/li&gt;
+      &lt;li&gt;Linux 를 실행하면 기본적으로 접속한 계정의 &lt;em&gt;/home&lt;/em&gt; 에서 시작한다.&lt;/li&gt;
       &lt;li&gt;&lt;strong&gt;심볼릭 링크&lt;/strong&gt;를 만들면 Linux 안에 프로젝트 폴더가 있는 것처럼 사용할 수 있다.&lt;/li&gt;
-      &lt;li&gt;아래는 계정의 ‘&lt;strong&gt;home&lt;/strong&gt;’ 안에 ‘&lt;strong&gt;dev&lt;/strong&gt;’ 폴더로 Windows ‘&lt;strong&gt;e 드라이브&lt;/strong&gt;’ 에 접근하도록 &lt;strong&gt;심볼릭 링크&lt;/strong&gt;를 만든 것이다.&lt;/li&gt;
+      &lt;li&gt;아래는 계정의 &lt;em&gt;/home&lt;/em&gt; 안에 &lt;em&gt;dev&lt;/em&gt; 폴더로 Windows 의 &lt;strong&gt;e 드라이브&lt;/strong&gt; 에 접근하도록 &lt;strong&gt;심볼릭 링크&lt;/strong&gt;를 만든 것이다.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -469,9 +446,9 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
 &lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; /mnt/e /home/lofty87/dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;2-npm-오류-해결하기&quot;&gt;2. NPM 오류 해결하기&lt;/h2&gt;
+&lt;h3 id=&quot;2-npm-오류-해결하기&quot;&gt;2. NPM 오류 해결하기&lt;/h3&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 명령어를 사용해보니 아래와 같은 에러를 뿜었다. &lt;code class=&quot;highlighter-rouge&quot;&gt;which npm&lt;/code&gt; 을 통해 실행파일의 위치도 확인했다. 구글링으로 Windows 에 설치된 &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 사용해보려고 노력했지만 Windows 와 Linux 둘 다 설치하는 것이 해결책이었다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 명령어를 사용해 보니 아래와 같은 에러를 뿜었다. &lt;code class=&quot;highlighter-rouge&quot;&gt;which npm&lt;/code&gt; 을 통해 실행파일의 위치도 확인했다. 구글링으로 Windows 에 설치된 &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 사용해보려고 노력했지만 Windows 와 Linux 둘 다 설치하는 것이 해결책이었다.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
 
@@ -481,13 +458,11 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h4 id=&quot;--package-manager-를-통해-nodejs-설치&quot;&gt;- Package Manager 를 통해 NodeJS 설치&lt;/h4&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Package Manager 를 통해 NodeJS 설치&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/package-manager&quot;&gt;공식사이트 링크&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; 명령어로 NodeJS 를 다운받고 &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get&lt;/code&gt; 명령어로 설치한다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/download/package-manager&quot;&gt;공식사이트 링크&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; 명령어로 NodeJS 를 다운받고 &lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get&lt;/code&gt; 명령어로 설치한다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-sL&lt;/span&gt; https://deb.nodesource.com/setup_8.x | &lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; bash -
@@ -498,9 +473,9 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
 &lt;span class=&quot;c&quot;&gt;# 'source ~/.profile' 을 실행해 바로 적용을 시도했지만 잘 안됨&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;3-zsh-사용하기&quot;&gt;3. Zsh 사용하기&lt;/h2&gt;
+&lt;h3 id=&quot;3-zsh-사용하기&quot;&gt;3. Zsh 사용하기&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Zsh(Z Shell)&lt;/strong&gt; 을 사용하는 방법은 Bash 와 비슷하다. 하지만 &lt;strong&gt;&lt;a href=&quot;https://ohmyz.sh/&quot;&gt;Oh My Zsh&lt;/a&gt;&lt;/strong&gt; 프레임워크와 결합하면 Bash 보다 더 강력한 기능과 다양한 플러그인을 사용할 수 있다. 특히 탭을 통한 자동완성 기능이 향상됬고 예쁜 &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/wiki/Themes&quot;&gt;테마&lt;/a&gt;들을 터미널에 적용할 수 있어 사용자들에게 인기가 높은 것 같다. 현재 140개가 넘는 테마와 200개가 넘는 플러그인이 있다. &lt;strong&gt;Oh My Zsh&lt;/strong&gt; 을 사용하기 위해서는 &lt;strong&gt;Zsh&lt;/strong&gt; 버전이 &lt;strong&gt;5.1.1&lt;/strong&gt; 이상이어야 하므로 설치하기 전 &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh --version&lt;/code&gt; 을 통해 &lt;strong&gt;Zsh&lt;/strong&gt; 버전을 확인하도록 한다.&lt;/p&gt;
+&lt;p&gt;Zsh(Z Shell) 을 사용하는 방법은 Bash 와 비슷하다. 하지만 &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;Oh My Zsh&lt;/a&gt; 프레임워크와 결합하면 Bash 보다 더 강력한 기능과 다양한 플러그인을 사용할 수 있다. 특히 탭을 통한 자동완성 기능이 향상됬고 예쁜 &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/wiki/Themes&quot;&gt;테마&lt;/a&gt;들을 터미널에 적용할 수 있어 사용자들에게 인기가 높은 것 같다. 현재 140개가 넘는 테마와 200개가 넘는 플러그인이 있다. Oh My Zsh 을 사용하기 위해서는 Zsh 버전이 &lt;strong&gt;5.1.1&lt;/strong&gt; 이상이어야 하므로 설치하기 전 &lt;code class=&quot;highlighter-rouge&quot;&gt;zsh --version&lt;/code&gt; 을 통해 Zsh 버전을 확인하도록 한다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;탭으로 자동완성 기능을 사용하면서 또 탭을 누르게 되면 더 강력한 자동완성 기능을 사용할 수 있다.&lt;/li&gt;
@@ -536,28 +511,25 @@ vim ~/.zshrc
 &lt;span class=&quot;c&quot;&gt;# 터미널 출력이 이상하다면 다른 폰트로 설정해 본다. (아래 이미지 첨부)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Z Shell 설정화면&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--z-shell-설정화면&quot;&gt;- Z Shell 설정화면&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-12/zsh-config.png&quot; alt=&quot;zsh-config&quot; /&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;터미널 폰트 수정하기&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--터미널-폰트-수정하기&quot;&gt;- 터미널 폰트 수정하기&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-12/font-config.png&quot; alt=&quot;font-config&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/ko-kr/windows/wsl/about&quot;&gt;About the Windows Subsystem for Linux&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/ko-kr/windows/wsl/install-win10&quot;&gt;Install the Windows Subsystem for Linux&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/Microsoft/WSL/issues/1512&quot;&gt;Issue running npm command&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://blur.kr/2018/06/19/Resolve-npm-command-issue-on-WSL&quot;&gt;Resolve npm command issue on Windows Subsystem Linux&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://the-illusionist.me/47&quot;&gt;우분투에 ZSH와 OH MY ZSH 설치하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="wsl" /><category term="linux" /><category term="zsh" /><summary type="html">WSL(Windows Subsystem for Linux) 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 ‘Ubuntu’, ‘OpenSUSE’, ‘SLES’, ‘Kali Linux’, ‘Debian GNU/Linux’ 가 있다.</summary></entry><entry><title type="html">MongoDB 계정관리</title><link href="http://localhost:4000/db/mongodb/20180910/mongodb-authentication" rel="alternate" type="text/html" title="MongoDB 계정관리" /><published>2018-09-10T00:00:00+09:00</published><updated>2018-09-10T00:00:00+09:00</updated><id>http://localhost:4000/db/mongodb/20180910/mongodb-authentication</id><content type="html" xml:base="http://localhost:4000/db/mongodb/20180910/mongodb-authentication">&lt;p&gt;MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 &lt;strong&gt;Authentication Mode&lt;/strong&gt; 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="wsl" /><category term="linux" /><category term="zsh" /><summary type="html">WSL(Windows Subsystem for Linux) 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 Ubuntu, OpenSUSE, SLES, Kali Linux, Debian GNU/Linux 가 있다.</summary></entry><entry><title type="html">MongoDB 계정관리</title><link href="http://localhost:4000/db/mongodb/20180910/mongodb-authentication" rel="alternate" type="text/html" title="MongoDB 계정관리" /><published>2018-09-10T00:00:00+09:00</published><updated>2018-09-10T00:00:00+09:00</updated><id>http://localhost:4000/db/mongodb/20180910/mongodb-authentication</id><content type="html" xml:base="http://localhost:4000/db/mongodb/20180910/mongodb-authentication">&lt;p&gt;MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 &lt;strong&gt;Authentication Mode&lt;/strong&gt; 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;계정은 각 DB 의 &lt;strong&gt;db.system.users collection&lt;/strong&gt; 에 저장된다.&lt;/li&gt;
@@ -567,11 +539,11 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;1-administrator-생성&quot;&gt;1. Administrator 생성&lt;/h1&gt;
+&lt;h3 id=&quot;1-administrator-생성&quot;&gt;1. Administrator 생성&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;admin DB 에 Administrator 를 생성하지 않아도 언제든 다른 DB 에 Administrator 를 생성할 수 있다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; Role 은 &lt;code class=&quot;highlighter-rouge&quot;&gt;readWriteAnyDatabase&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;dbAdminAnyDatabase&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;userAdminAnyDatabase&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;clusterAdmin&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;restore&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;backup&lt;/code&gt; Role 을 포함한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt; Role 은 readWriteAnyDatabase, dbAdminAnyDatabase, userAdminAnyDatabase, clusterAdmin, restore, backup Role 을 포함한다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;admin&lt;/span&gt;
@@ -588,23 +560,18 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;2-authentication-mode&quot;&gt;2. Authentication Mode&lt;/h1&gt;
+&lt;h3 id=&quot;2-authentication-mode&quot;&gt;2. Authentication Mode&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Mongo Shell 로 실행하는 경우&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--mongo-shell-로-실행하는-경우&quot;&gt;- Mongo Shell 로 실행하는 경우&lt;/h4&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongod &lt;span class=&quot;nt&quot;&gt;--auth&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;mongod.cfg 로 실행하는 경우&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;security: authorization: enabled&lt;/code&gt; 값을 추가&lt;/li&gt;
-      &lt;li&gt;Service 에 등록하여 실행하고 있는 경우 MongoDB 를 재시작&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--mongodcfg-로-실행하는-경우&quot;&gt;- mongod.cfg 로 실행하는 경우&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;security: authorization: enabled&lt;/code&gt; 값을 추가&lt;/li&gt;
+  &lt;li&gt;Service 에 등록하여 실행하고 있는 경우 MongoDB 를 재시작&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;security:
@@ -617,20 +584,16 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;3-authenticate&quot;&gt;3. Authenticate&lt;/h1&gt;
+&lt;h3 id=&quot;3-authenticate&quot;&gt;3. Authenticate&lt;/h3&gt;
 
 &lt;p&gt;접속할 때 또는 접속한 후 한번만 authenticate 하면 된다.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;접속할 때&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--접속할-때&quot;&gt;- 접속할 때&lt;/h4&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;--authenticationDatabase&lt;/span&gt; admin
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;접속한 후&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--접속한-후&quot;&gt;- 접속한 후&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;admin&lt;/span&gt;
 
@@ -639,13 +602,11 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;4-user-생성-및-authenticate&quot;&gt;4. User 생성 및 Authenticate&lt;/h1&gt;
+&lt;h3 id=&quot;4-user-생성-및-authenticate&quot;&gt;4. User 생성 및 Authenticate&lt;/h3&gt;
 
 &lt;p&gt;다른 DB Role 을 추가해 본 것 외에는 위에서 본 Administrator 생성과 동일하다.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;User 생성&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--user-생성&quot;&gt;- User 생성&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;
 
@@ -659,9 +620,7 @@ vim ~/.zshrc
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Authenticate (접속할 때, 접속한 후)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--authenticate-접속할-때-접속한-후&quot;&gt;- Authenticate (접속할 때, 접속한 후)&lt;/h4&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; user &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; user &lt;span class=&quot;nt&quot;&gt;--authenticationDatabase&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -673,39 +632,29 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;5-user-관련-명령어&quot;&gt;5. User 관련 명령어&lt;/h1&gt;
+&lt;h3 id=&quot;5-user-관련-명령어&quot;&gt;5. User 관련 명령어&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;User 리스트 조회&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--user-리스트-조회&quot;&gt;- User 리스트 조회&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;users&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;User 조회&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--user-조회&quot;&gt;- User 조회&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;User 패스워드 변경&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--user-패스워드-변경&quot;&gt;- User 패스워드 변경&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;changeUserPassword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;newpassword&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;User 삭제&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--user-삭제&quot;&gt;- User 삭제&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dropUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;User Role 추가&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--user-role-추가&quot;&gt;- User Role 추가&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;grantRolesToUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
   &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
@@ -714,9 +663,7 @@ vim ~/.zshrc
 &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;User Role 취소&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--user-role-취소&quot;&gt;- User Role 취소&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;revokeRolesFromUser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
   &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
@@ -727,13 +674,14 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/reference/method&quot;&gt;Mongo Shell Methods&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/enable-authentication&quot;&gt;Enable Auth&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/core/security-built-in-roles&quot;&gt;Built-In Roles&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/reference/configuration-options&quot;&gt;Configure File Options&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="mongodb" /><category term="mongoose" /><category term="command" /><summary type="html">MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.</summary></entry><entry><title type="html">MongoDB 소개</title><link href="http://localhost:4000/db/mongodb/20180909/mongodb-introduce" rel="alternate" type="text/html" title="MongoDB 소개" /><published>2018-09-09T00:00:00+09:00</published><updated>2018-09-09T00:00:00+09:00</updated><id>http://localhost:4000/db/mongodb/20180909/mongodb-introduce</id><content type="html" xml:base="http://localhost:4000/db/mongodb/20180909/mongodb-introduce">&lt;h1 id=&quot;1-mongodb-란&quot;&gt;1. MongoDB 란&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="mongodb" /><category term="mongoose" /><category term="command" /><summary type="html">MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.</summary></entry><entry><title type="html">MongoDB 소개</title><link href="http://localhost:4000/db/mongodb/20180909/mongodb-introduce" rel="alternate" type="text/html" title="MongoDB 소개" /><published>2018-09-09T00:00:00+09:00</published><updated>2018-09-09T00:00:00+09:00</updated><id>http://localhost:4000/db/mongodb/20180909/mongodb-introduce</id><content type="html" xml:base="http://localhost:4000/db/mongodb/20180909/mongodb-introduce">&lt;h2 id=&quot;1-mongodb-란&quot;&gt;1. MongoDB 란&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; 는 &lt;strong&gt;JSON&lt;/strong&gt; 으로 이루어진 Document 기반의 NoSQL(Not Only SQL) 이다. 기존의 RDS(Relational Database System) 는 무결성을 지키기 위해 여러 테이블로 나누고 서로 관계를 맺는 구조를 가지는데 반에 NoSQL 은 Key 와 Value 그리고 Collection 이라는 매우 심플한 구조를 가진다. RDS 특성상 Data Sharding 을 하기 위해서는 큰 부담이 따르고 한계가 있기 때문에 Scale Out 보다 Scale Up 을 한다. Scale Up 은 Scale Out 보다 비용과 시간적인 측면에서 매우 부담이 큰 작업이다. 하지만 NoSQL 은 이런 단점을 극복할 수 있도록 설계되어 있어 Scale Out 에 용이하다. 또 Schema 가 고정되어 있는 RDS 와는 달리 Collection(Table) 안에서 서로 다른 Schema 형태의 Document(Record/Row) 를 가질 수 있어 매우 유연하다. 이런 특징은 Document 안에 Field(Column) 를 확장하거나 축소할 때 편하고 부담이 없다. MongoDB 는 Main Query Language 로 &lt;strong&gt;Javascript&lt;/strong&gt; 를 사용하고 있어 Web Developer 에게 친숙하다는 것도 장점이 될 수 있겠다. 하지만 위와 같은 편리함과 유연함은 복잡한 쿼리를 불가능하게 하고 데이터의 무결성을 깰 수 있다는 점에서 단점이 될 수 도 있다.&lt;/p&gt;
 
@@ -766,9 +714,9 @@ vim ~/.zshrc
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;2-설치하기&quot;&gt;2. 설치하기&lt;/h1&gt;
+&lt;h2 id=&quot;2-설치하기&quot;&gt;2. 설치하기&lt;/h2&gt;
 
-&lt;h2 id=&quot;1-local-windows10&quot;&gt;1. Local (Windows10)&lt;/h2&gt;
+&lt;h3 id=&quot;--local-windows10&quot;&gt;- Local (Windows10)&lt;/h3&gt;
 
 &lt;h4 id=&quot;1-mongodb-download-center-에서-community-server-다운로드&quot;&gt;1. &lt;a href=&quot;https://www.mongodb.com/download-center&quot;&gt;MongoDB Download Center&lt;/a&gt; 에서 Community Server 다운로드&lt;/h4&gt;
 
@@ -805,10 +753,10 @@ vim ~/.zshrc
 &lt;ul&gt;
   &lt;li&gt;MongoDB 설치폴더 안에 bin 폴더에 위치&lt;/li&gt;
   &lt;li&gt;Service 는 이 &lt;strong&gt;mongod.cfg&lt;/strong&gt; 를 참조하여 MongoDB 를 실행 함&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;dbPath 변경&lt;/strong&gt;
+  &lt;li&gt;dbPath 변경
     &lt;ul&gt;
       &lt;li&gt;MongoDB 를 설치할 때 Service 등록에서 변경하면 될 것 같은데 설치가 재대로 안되는 문제가 있었음&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mongod&lt;/code&gt; 명령어를 통해 직접 실행할 때와 &lt;strong&gt;동일한 storage&lt;/strong&gt; 를 사용하기 위해 변경&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mongod&lt;/code&gt; 명령어를 통해 직접 실행할 때와 동일한 storage 를 사용하기 위해 변경&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;storage: dbPath: /data/db&lt;/code&gt; 로 변경&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -863,7 +811,9 @@ RUNNING
     &amp;gt; help
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;2-cloud-service&quot;&gt;2. Cloud Service&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;--cloud-service&quot;&gt;- Cloud Service&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.mongodb.com/cloud/atlas&quot;&gt;Atlas&lt;/a&gt;&lt;/strong&gt; : &lt;strong&gt;&lt;a href=&quot;https://www.mongodb.com/blog/post/comparing-cloud-mongodb-services-mongodb-atlas-vs-mlab&quot;&gt;Atlas vs mLab&lt;/a&gt;&lt;/strong&gt;
@@ -881,7 +831,9 @@ RUNNING
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;3-gui-client-tool&quot;&gt;3. GUI Client Tool&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;--gui-client-tool&quot;&gt;- GUI Client Tool&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.mongodb.com/products/compass&quot;&gt;MongoDB Compass&lt;/a&gt;&lt;/strong&gt;
@@ -909,34 +861,30 @@ RUNNING
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;3-mongodb-실행&quot;&gt;3. MongoDB 실행&lt;/h1&gt;
+&lt;h2 id=&quot;3-mongodb-실행&quot;&gt;3. MongoDB 실행&lt;/h2&gt;
 
 &lt;p&gt;처음 실행하게 되면 DB 초기 파일들이 생성된다.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;기본경로 (/data/db)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--기본경로-datadb&quot;&gt;- 기본경로 (/data/db)&lt;/h4&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongod
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;경로지정&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--경로지정&quot;&gt;- 경로지정&lt;/h4&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongod &lt;span class=&quot;nt&quot;&gt;--dbpath&lt;/span&gt; 경로
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;4-mongodb-javascript-shell&quot;&gt;4. MongoDB javascript shell&lt;/h1&gt;
+&lt;h2 id=&quot;4-mongodb-javascript-shell&quot;&gt;4. MongoDB javascript shell&lt;/h2&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;※ Reference&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://lazybrain.ikspres.com/nosql1/&quot;&gt;NoSQL의 장단점&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.quora.com/What-query-language-does-MongoDB-uses-please&quot;&gt;What query language does MongoDB uses please?&lt;/a&gt;&lt;/li&gt;

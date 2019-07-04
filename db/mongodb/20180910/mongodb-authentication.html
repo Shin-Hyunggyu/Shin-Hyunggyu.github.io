@@ -159,11 +159,11 @@
 
 <p><br /></p>
 
-<h1 id="1-administrator-생성">1. Administrator 생성</h1>
+<h3 id="1-administrator-생성">1. Administrator 생성</h3>
 
 <ul>
   <li>admin DB 에 Administrator 를 생성하지 않아도 언제든 다른 DB 에 Administrator 를 생성할 수 있다.</li>
-  <li><code class="highlighter-rouge">root</code> Role 은 <code class="highlighter-rouge">readWriteAnyDatabase</code>, <code class="highlighter-rouge">dbAdminAnyDatabase</code>, <code class="highlighter-rouge">userAdminAnyDatabase</code>, <code class="highlighter-rouge">clusterAdmin</code>, <code class="highlighter-rouge">restore</code>, <code class="highlighter-rouge">backup</code> Role 을 포함한다.</li>
+  <li><code class="highlighter-rouge">root</code> Role 은 readWriteAnyDatabase, dbAdminAnyDatabase, userAdminAnyDatabase, clusterAdmin, restore, backup Role 을 포함한다.</li>
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">admin</span>
@@ -180,23 +180,18 @@
 
 <p><br /></p>
 
-<h1 id="2-authentication-mode">2. Authentication Mode</h1>
+<h3 id="2-authentication-mode">2. Authentication Mode</h3>
 
-<ul>
-  <li><strong>Mongo Shell 로 실행하는 경우</strong></li>
-</ul>
+<h4 id="--mongo-shell-로-실행하는-경우">- Mongo Shell 로 실행하는 경우</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongod <span class="nt">--auth</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>mongod.cfg 로 실행하는 경우</strong>
-    <ol>
-      <li><code class="highlighter-rouge">security: authorization: enabled</code> 값을 추가</li>
-      <li>Service 에 등록하여 실행하고 있는 경우 MongoDB 를 재시작</li>
-    </ol>
-  </li>
-</ul>
+<h4 id="--mongodcfg-로-실행하는-경우">- mongod.cfg 로 실행하는 경우</h4>
+<ol>
+  <li><code class="highlighter-rouge">security: authorization: enabled</code> 값을 추가</li>
+  <li>Service 에 등록하여 실행하고 있는 경우 MongoDB 를 재시작</li>
+</ol>
 
 <blockquote>
   <p>security:
@@ -209,20 +204,16 @@
 
 <p><br /></p>
 
-<h1 id="3-authenticate">3. Authenticate</h1>
+<h3 id="3-authenticate">3. Authenticate</h3>
 
 <p>접속할 때 또는 접속한 후 한번만 authenticate 하면 된다.</p>
 
-<ul>
-  <li><strong>접속할 때</strong></li>
-</ul>
+<h4 id="--접속할-때">- 접속할 때</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongo <span class="nt">-u</span> root <span class="nt">-p</span> root <span class="nt">--authenticationDatabase</span> admin
 </code></pre></div></div>
 
-<ul>
-  <li><strong>접속한 후</strong></li>
-</ul>
+<h4 id="--접속한-후">- 접속한 후</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">admin</span>
 
@@ -231,13 +222,11 @@
 
 <p><br /></p>
 
-<h1 id="4-user-생성-및-authenticate">4. User 생성 및 Authenticate</h1>
+<h3 id="4-user-생성-및-authenticate">4. User 생성 및 Authenticate</h3>
 
 <p>다른 DB Role 을 추가해 본 것 외에는 위에서 본 Administrator 생성과 동일하다.</p>
 
-<ul>
-  <li><strong>User 생성</strong></li>
-</ul>
+<h4 id="--user-생성">- User 생성</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">use</span> <span class="nx">test</span>
 
@@ -251,9 +240,7 @@
 <span class="p">})</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Authenticate (접속할 때, 접속한 후)</strong></li>
-</ul>
+<h4 id="--authenticate-접속할-때-접속한-후">- Authenticate (접속할 때, 접속한 후)</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongo <span class="nt">-u</span> user <span class="nt">-p</span> user <span class="nt">--authenticationDatabase</span> <span class="nb">test</span>
 </code></pre></div></div>
@@ -265,39 +252,29 @@
 
 <p><br /></p>
 
-<h1 id="5-user-관련-명령어">5. User 관련 명령어</h1>
+<h3 id="5-user-관련-명령어">5. User 관련 명령어</h3>
 
-<ul>
-  <li><strong>User 리스트 조회</strong></li>
-</ul>
+<h4 id="--user-리스트-조회">- User 리스트 조회</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">show</span> <span class="nx">users</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>User 조회</strong></li>
-</ul>
+<h4 id="--user-조회">- User 조회</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>User 패스워드 변경</strong></li>
-</ul>
+<h4 id="--user-패스워드-변경">- User 패스워드 변경</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">changeUserPassword</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">newpassword</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>User 삭제</strong></li>
-</ul>
+<h4 id="--user-삭제">- User 삭제</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">dropUser</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>User Role 추가</strong></li>
-</ul>
+<h4 id="--user-role-추가">- User Role 추가</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">grantRolesToUser</span><span class="p">(</span>
   <span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span>
@@ -306,9 +283,7 @@
 <span class="p">)</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>User Role 취소</strong></li>
-</ul>
+<h4 id="--user-role-취소">- User Role 취소</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">db</span><span class="p">.</span><span class="nx">revokeRolesFromUser</span><span class="p">(</span>
   <span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span>
@@ -319,7 +294,8 @@
 
 <p><br /></p>
 
-<p><strong>※ Reference</strong></p>
+<h4 id="-reference">※ Reference</h4>
+
 <ul>
   <li><a href="https://docs.mongodb.com/manual/reference/method">Mongo Shell Methods</a></li>
   <li><a href="https://docs.mongodb.com/manual/tutorial/enable-authentication">Enable Auth</a></li>

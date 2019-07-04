@@ -151,13 +151,13 @@
     <h1 class="title">Windows 에서 Linux 사용하기</h1>
   </section>
   <section class="post-content">
-    <p><strong>WSL(Windows Subsystem for Linux)</strong> 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 ‘Ubuntu’, ‘OpenSUSE’, ‘SLES’, ‘Kali Linux’, ‘Debian GNU/Linux’ 가 있다.</p>
+    <p><strong>WSL(Windows Subsystem for Linux)</strong> 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 Ubuntu, OpenSUSE, SLES, Kali Linux, Debian GNU/Linux 가 있다.</p>
 
 <p><br /></p>
 
 <h1 id="1-설치하기">1. 설치하기</h1>
 
-<h2 id="1-시스템-요구사항">1. 시스템 요구사항</h2>
+<h3 id="1-시스템-요구사항">1. 시스템 요구사항</h3>
 
 <ul>
   <li>Windows 10 (64비트)</li>
@@ -166,47 +166,37 @@
 
 <p><img src="/assets/img/posts/Etc/2018-09-12/system-info.png" alt="system-info" /></p>
 
-<h2 id="2-windows-subsystem-for-linux-사용-설정">2. Windows Subsystem for Linux 사용 설정</h2>
+<h3 id="2-windows-subsystem-for-linux-사용-설정">2. Windows Subsystem for Linux 사용 설정</h3>
 
 <p>아래 두 가지 방법 중 하고 싶은 방법으로 설정하고 재부팅하면 <strong>WSL</strong> 을 사용할 수 있게 된다.</p>
 
-<ul>
-  <li><strong>PowerShell (관리자 권한으로 실행)</strong></li>
-</ul>
+<p><strong>- PowerShell (관리자 권한으로 실행)</strong></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable-WindowsOptionalFeature <span class="nt">-Online</span> <span class="nt">-FeatureName</span> Microsoft-Windows-Subsystem-Linux
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Windows 기능 켜기/끄기</strong></li>
-</ul>
+<p><strong>- Windows 기능 켜기/끄기</strong></p>
 
 <p><img src="/assets/img/posts/Etc/2018-09-12/config.png" alt="config" /></p>
 
-<h2 id="3-linux-설치">3. Linux 설치</h2>
+<h3 id="3-linux-설치">3. Linux 설치</h3>
 
-<p><strong>Microsoft Store</strong> 에서 ‘<strong>linux</strong>’ 로 검색하면 설치할 수 있는 Linux 들이 나온다.</p>
+<p>Microsoft Store 에서 <code class="highlighter-rouge">linux</code> 로 검색하면 설치할 수 있는 Linux 들이 나온다. Ubuntu 를 설치하려면 <strong>16.04 LTS</strong> 를 설치하자. 18.04 LTS 는 나온지 얼마 안되서 그런지 문제가 많은 듯하다.</p>
 
-<ul>
-  <li>Ubuntu 를 설치하려면 <strong>16.04 LTS</strong> 를 설치하자. 18.04 LTS 는 나온지 얼마 안되서 그런지 문제가 많은듯하다.
-    <ul>
-      <li>MongoDB 를 설치하려고 했는데 결국 성공하지 못함 (<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu">설치매뉴얼</a>)</li>
-    </ul>
-  </li>
-</ul>
+<p><u>MongoDB 를 설치하려고 했는데 결국 성공하지 못함</u> (<a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu">설치매뉴얼</a>)</p>
 
 <p><img src="/assets/img/posts/Etc/2018-09-12/search.png" alt="config" /></p>
 
-<h2 id="4-linux-실행-ubuntu">4. Linux 실행 (Ubuntu)</h2>
+<h3 id="4-linux-실행-ubuntu">4. Linux 실행 (Ubuntu)</h3>
 
 <p>처음 실행하게 되면 계정을 생성하는 부분이 나온다. Windows 계정과 같은 Username 을 사용할 필요는 없으며 Username 과 Password 를 차례대로 입력하면 계정이 생성된다. 생성 후 바로 해당 계정으로 CLI 를 사용할 수 있다. Ubuntu 에서 root 권한으로 명령어를 실행하려면 앞에 <code class="highlighter-rouge">sudo</code> 를 붙여주면 된다.</p>
 
 <p><img src="/assets/img/posts/Etc/2018-09-12/install.png" alt="install" /></p>
 
-<h2 id="5-유의사항">5. 유의사항</h2>
+<h3 id="5-유의사항">5. 유의사항</h3>
 
 <ul>
-  <li>Linux 설치는 반드시 <strong>운영체제가 설치된 드라이브</strong>에 설치해야 한다. 설치장소를 변경하려면 ‘설정 &gt; 시스템 &gt; 저장 공간 &gt; 새 콘텐츠가 저장되는 위치 변경 &gt; 새 앱 저장 위치’ 에서 할 수 있다.</li>
+  <li>Linux 설치는 반드시 <strong>운영체제가 설치된 드라이브</strong>에 설치해야 한다. 설치 위치를 변경하려면 <u>설정 &gt; 시스템 &gt; 저장 공간 &gt; 새 콘텐츠가 저장되는 위치 변경 &gt; 새 앱 저장 위치</u> 에서 할 수 있다.</li>
   <li>Windows 에서 <strong>Linux 내부 파일</strong>을 생성하거나 수정하면 데이터가 손상되거나 손실 될 수 있다. 더 심하면 Linux 를 다시 설치해야 될 수 있으므로 조심해야 한다.</li>
   <li>Linux 에서 Windows 폴더나 파일을 Mount 하면 접근할 수 있다. 따라서 Windows 에서 개발하고 Linux 에서 테스트할 수 있는 환경을 구축할 수 있다.</li>
   <li><strong>Docker</strong> 는 설치할 수 없다.</li>
@@ -216,15 +206,15 @@
 
 <h1 id="2-사용하기">2. 사용하기</h1>
 
-<h2 id="1-windows-드라이브에-접근하기">1. Windows 드라이브에 접근하기</h2>
+<h3 id="1-windows-드라이브에-접근하기">1. Windows 드라이브에 접근하기</h3>
 
 <ul>
-  <li>Windows 드라이브가 이미 Linux 의 ‘<strong>/mnt</strong>’ 폴더에 Mount 되어있다.</li>
+  <li>Windows 드라이브가 이미 Linux 의 <em>/mnt</em> 폴더에 Mount 되어있다.</li>
   <li>Windows 에 있는 프로젝트 폴더를 간편하게 접근할 수 있도록 <strong>심볼릭 링크</strong>를 만든다.
     <ul>
-      <li>Linux 를 실행하면 기본적으로 접속한 계정의 ‘<strong>home</strong>’ 에서 시작한다.</li>
+      <li>Linux 를 실행하면 기본적으로 접속한 계정의 <em>/home</em> 에서 시작한다.</li>
       <li><strong>심볼릭 링크</strong>를 만들면 Linux 안에 프로젝트 폴더가 있는 것처럼 사용할 수 있다.</li>
-      <li>아래는 계정의 ‘<strong>home</strong>’ 안에 ‘<strong>dev</strong>’ 폴더로 Windows ‘<strong>e 드라이브</strong>’ 에 접근하도록 <strong>심볼릭 링크</strong>를 만든 것이다.</li>
+      <li>아래는 계정의 <em>/home</em> 안에 <em>dev</em> 폴더로 Windows 의 <strong>e 드라이브</strong> 에 접근하도록 <strong>심볼릭 링크</strong>를 만든 것이다.</li>
     </ul>
   </li>
 </ul>
@@ -233,9 +223,9 @@
 <span class="nb">ln</span> <span class="nt">-s</span> /mnt/e /home/lofty87/dev
 </code></pre></div></div>
 
-<h2 id="2-npm-오류-해결하기">2. NPM 오류 해결하기</h2>
+<h3 id="2-npm-오류-해결하기">2. NPM 오류 해결하기</h3>
 
-<p><code class="highlighter-rouge">npm</code> 명령어를 사용해보니 아래와 같은 에러를 뿜었다. <code class="highlighter-rouge">which npm</code> 을 통해 실행파일의 위치도 확인했다. 구글링으로 Windows 에 설치된 <code class="highlighter-rouge">npm</code> 을 사용해보려고 노력했지만 Windows 와 Linux 둘 다 설치하는 것이 해결책이었다.</p>
+<p><code class="highlighter-rouge">npm</code> 명령어를 사용해 보니 아래와 같은 에러를 뿜었다. <code class="highlighter-rouge">which npm</code> 을 통해 실행파일의 위치도 확인했다. 구글링으로 Windows 에 설치된 <code class="highlighter-rouge">npm</code> 을 사용해보려고 노력했지만 Windows 와 Linux 둘 다 설치하는 것이 해결책이었다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nt">-v</span>
 
@@ -245,13 +235,11 @@
 ...
 </code></pre></div></div>
 
+<h4 id="--package-manager-를-통해-nodejs-설치">- Package Manager 를 통해 NodeJS 설치</h4>
+
 <ul>
-  <li><strong>Package Manager 를 통해 NodeJS 설치</strong>
-    <ul>
-      <li><a href="https://nodejs.org/en/download/package-manager">공식사이트 링크</a></li>
-      <li><code class="highlighter-rouge">curl</code> 명령어로 NodeJS 를 다운받고 <code class="highlighter-rouge">apt-get</code> 명령어로 설치한다.</li>
-    </ul>
-  </li>
+  <li><a href="https://nodejs.org/en/download/package-manager">공식사이트 링크</a></li>
+  <li><code class="highlighter-rouge">curl</code> 명령어로 NodeJS 를 다운받고 <code class="highlighter-rouge">apt-get</code> 명령어로 설치한다.</li>
 </ul>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_8.x | <span class="nb">sudo</span> <span class="nt">-E</span> bash -
@@ -262,9 +250,9 @@
 <span class="c"># 'source ~/.profile' 을 실행해 바로 적용을 시도했지만 잘 안됨</span>
 </code></pre></div></div>
 
-<h2 id="3-zsh-사용하기">3. Zsh 사용하기</h2>
+<h3 id="3-zsh-사용하기">3. Zsh 사용하기</h3>
 
-<p><strong>Zsh(Z Shell)</strong> 을 사용하는 방법은 Bash 와 비슷하다. 하지만 <strong><a href="https://ohmyz.sh/">Oh My Zsh</a></strong> 프레임워크와 결합하면 Bash 보다 더 강력한 기능과 다양한 플러그인을 사용할 수 있다. 특히 탭을 통한 자동완성 기능이 향상됬고 예쁜 <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes">테마</a>들을 터미널에 적용할 수 있어 사용자들에게 인기가 높은 것 같다. 현재 140개가 넘는 테마와 200개가 넘는 플러그인이 있다. <strong>Oh My Zsh</strong> 을 사용하기 위해서는 <strong>Zsh</strong> 버전이 <strong>5.1.1</strong> 이상이어야 하므로 설치하기 전 <code class="highlighter-rouge">zsh --version</code> 을 통해 <strong>Zsh</strong> 버전을 확인하도록 한다.</p>
+<p>Zsh(Z Shell) 을 사용하는 방법은 Bash 와 비슷하다. 하지만 <a href="https://ohmyz.sh/">Oh My Zsh</a> 프레임워크와 결합하면 Bash 보다 더 강력한 기능과 다양한 플러그인을 사용할 수 있다. 특히 탭을 통한 자동완성 기능이 향상됬고 예쁜 <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes">테마</a>들을 터미널에 적용할 수 있어 사용자들에게 인기가 높은 것 같다. 현재 140개가 넘는 테마와 200개가 넘는 플러그인이 있다. Oh My Zsh 을 사용하기 위해서는 Zsh 버전이 <strong>5.1.1</strong> 이상이어야 하므로 설치하기 전 <code class="highlighter-rouge">zsh --version</code> 을 통해 Zsh 버전을 확인하도록 한다.</p>
 
 <ul>
   <li>탭으로 자동완성 기능을 사용하면서 또 탭을 누르게 되면 더 강력한 자동완성 기능을 사용할 수 있다.</li>
@@ -300,21 +288,18 @@ vim ~/.zshrc
 <span class="c"># 터미널 출력이 이상하다면 다른 폰트로 설정해 본다. (아래 이미지 첨부)</span>
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Z Shell 설정화면</strong></li>
-</ul>
+<h4 id="--z-shell-설정화면">- Z Shell 설정화면</h4>
 
 <p><img src="/assets/img/posts/Etc/2018-09-12/zsh-config.png" alt="zsh-config" /></p>
 
-<ul>
-  <li><strong>터미널 폰트 수정하기</strong></li>
-</ul>
+<h4 id="--터미널-폰트-수정하기">- 터미널 폰트 수정하기</h4>
 
 <p><img src="/assets/img/posts/Etc/2018-09-12/font-config.png" alt="font-config" /></p>
 
 <p><br /></p>
 
-<p><strong>※ Reference</strong></p>
+<h4 id="-reference">※ Reference</h4>
+
 <ul>
   <li><a href="https://docs.microsoft.com/ko-kr/windows/wsl/about">About the Windows Subsystem for Linux</a></li>
   <li><a href="https://docs.microsoft.com/ko-kr/windows/wsl/install-win10">Install the Windows Subsystem for Linux</a></li>

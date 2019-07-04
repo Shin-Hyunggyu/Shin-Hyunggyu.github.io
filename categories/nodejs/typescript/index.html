@@ -152,8 +152,10 @@
   string
   symbol
   null
-  undefined (가이드라인에 null 보다 undefined 를 사용하라고 권장)
+  undefined
 
+
+가이드 라인에 null 보다 undefined 를 사용하라고 권장
 
 
 
@@ -185,23 +187,17 @@ const MyType = 'MyType';
 tsc --init
 
 
-
-
 1. extends
 
 경로를 지정하여 외부 tsconfig 를 참조할 수 있으며 rule 들을 직접 작성하여 오버라이딩이 가능하다.
-
-
 
 2. include
 
 해당 경로의 .ts, .tsx, .d.ts 들을 컴파일하며 exclude 보다 약하다
 
-
-
 3. exclude
 
-지정하지 않으면 기본적으로 node_m...</summary>
+지정하지 않으면 기본적으로 node_modules...</summary>
         <section>
           <time datetime="2019-07-02" class="article-time">2019-07-02</time>
           <span class="article-time">

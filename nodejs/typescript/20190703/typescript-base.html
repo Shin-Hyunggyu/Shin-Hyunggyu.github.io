@@ -147,7 +147,7 @@
     <h1 class="title">typescript 기본 1</h1>
   </section>
   <section class="post-content">
-    <h2 id="1-primitive-type">1. primitive type</h2>
+    <h3 id="1-primitive-type">1. primitive type</h3>
 
 <ul>
   <li>boolean</li>
@@ -155,12 +155,14 @@
   <li>string</li>
   <li>symbol</li>
   <li>null</li>
-  <li>undefined (가이드라인에 null 보다 undefined 를 사용하라고 권장)</li>
+  <li>undefined</li>
 </ul>
+
+<p>가이드 라인에 null 보다 <strong>undefined</strong> 를 사용하라고 권장</p>
 
 <p><br /></p>
 
-<h2 id="2-literal-type">2. literal type</h2>
+<h3 id="2-literal-type">2. literal type</h3>
 
 <p>값 자체가 타입이 된다.</p>
 
@@ -172,7 +174,7 @@
 
 <p><br /></p>
 
-<h2 id="3-other-type">3. other type</h2>
+<h3 id="3-other-type">3. other type</h3>
 
 <ul>
   <li>object</li>
@@ -185,7 +187,7 @@
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// tuple</span>
 <span class="kd">const</span> <span class="nx">tuple</span><span class="p">:</span> <span class="p">[</span><span class="nx">string</span><span class="p">,</span> <span class="nx">number</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">str</span><span class="dl">'</span><span class="p">,</span> <span class="mi">31</span><span class="p">];</span>
 
-<span class="c1">// any - 컴파일 시 타입체크가 이루어지지 않으며 최대한 누수를 막아주자! (any =&gt; type)</span>
+<span class="c1">// any - 컴파일 시 타입체크 안함, 최대한 누수를 막아주자! (any =&gt; type)</span>
 <span class="kd">function</span> <span class="nx">anyFn</span><span class="p">(</span><span class="nx">input</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="nx">string</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">str</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="nx">input</span><span class="p">;</span>
   <span class="k">return</span> <span class="nx">str</span><span class="p">;</span>
@@ -199,9 +201,9 @@
 
 <p><br /></p>
 
-<h2 id="4-assertions">4. assertions</h2>
+<h3 id="4-assertions">4. assertions</h3>
 
-<h4 id="1-type-assertion-as-또는-">1. type assertion (as 또는 &lt;&gt;)</h4>
+<h4 id="--type-assertion-as-또는-">- type assertion (as 또는 &lt;&gt;)</h4>
 
 <p>강제로 타입을 지정하지만 형변환이라기 보다는 이 타입이라고 우기는 것이다. 예를 들면 아래와 같이 무조건 값이 존재하는 경우.</p>
 
@@ -212,9 +214,7 @@
 <span class="p">(</span><span class="nx">value</span> <span class="k">as</span> <span class="nx">string</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p><br /></p>
-
-<h4 id="2-non-null-assertions-">2. non-null assertions (!)</h4>
+<h4 id="--non-null-assertions-">- non-null assertions (!)</h4>
 
 <p>null, undefined 값은 무조건 아니다 라고 우기는 것이다.</p>
 
@@ -224,7 +224,7 @@
 
 <p><br /></p>
 
-<h2 id="5-type-alias">5. type alias</h2>
+<h3 id="5-type-alias">5. type alias</h3>
 
 <p>타입에 대한 별칭을 지정하는 것이다. 이미 존재하는 타입의 조합은 type alias 를 추천.</p>
 
@@ -234,7 +234,8 @@
 
 <p><br /></p>
 
-<p><strong>※ Reference</strong></p>
+<h4 id="-reference">※ Reference</h4>
+
 <ul>
   <li><a href="https://www.youtube.com/watch?v=DpjuaI-2UC4&amp;list=PLV6pYUAZ-ZoFwOspuVHBvmhQRalqvj7Jf">맠튜브 - TypeScript Basic 타입스크립트 기초 워크숍 201812</a></li>
 </ul>

@@ -147,31 +147,23 @@
     <h1 class="title">tsconfig.js</h1>
   </section>
   <section class="post-content">
-    <p><strong>- tsconfig.js 생성하기</strong></p>
+    <h4 id="--tsconfigjs-생성하기">- tsconfig.js 생성하기</h4>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tsc <span class="nt">--init</span>
 </code></pre></div></div>
 
-<p><br /></p>
-
-<h2 id="1-extends">1. extends</h2>
+<h3 id="1-extends">1. extends</h3>
 
 <p>경로를 지정하여 외부 <strong>tsconfig</strong> 를 참조할 수 있으며 rule 들을 직접 작성하여 오버라이딩이 가능하다.</p>
 
-<p><br /></p>
-
-<h2 id="2-include">2. include</h2>
+<h3 id="2-include">2. include</h3>
 
 <p>해당 경로의 <code class="highlighter-rouge">.ts</code>, <code class="highlighter-rouge">.tsx</code>, <code class="highlighter-rouge">.d.ts</code> 들을 컴파일하며 <strong>exclude</strong> 보다 약하다</p>
 
-<p><br /></p>
-
-<h2 id="3-exclude">3. exclude</h2>
+<h3 id="3-exclude">3. exclude</h3>
 
 <p>지정하지 않으면 기본적으로 <code class="highlighter-rouge">node_modules</code>, <code class="highlighter-rouge">bower_components</code>, <code class="highlighter-rouge">jspm_packages</code>, <code class="highlighter-rouge">&lt;outDir&gt;</code> 폴더를 제외한다. <code class="highlighter-rouge">&lt;outDir&gt;</code> 는 경로를 지정해도 무조건 제외된다.</p>
 
-<p><br /></p>
-
-<h2 id="4-compileoptions">4. compileOptions</h2>
+<h3 id="4-compileoptions">4. compileOptions</h3>
 
 <h4 id="--typeroots">- typeRoots</h4>
 
@@ -181,8 +173,6 @@
   </span><span class="s2">"typeRoots"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"node_modules/@types"</span><span class="p">,</span><span class="w"> </span><span class="s2">"@types"</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
-<p><br /></p>
 
 <h4 id="--target-과-lib">- target 과 lib</h4>
 
@@ -194,9 +184,7 @@
 <br />es6 이면 dom, es6, dom.iterable, scripthost</p>
 </blockquote>
 
-<p>lib location : <code class="highlighter-rouge">node_modules/typescript/lib</code></p>
-
-<p><br /></p>
+<p><em>lib 경로 : node_modules/typescript/lib</em></p>
 
 <h4 id="--module">- module</h4>
 
@@ -207,20 +195,16 @@
 <br />target 이 es6 가 아니면 commonjs</p>
 </blockquote>
 
-<p><br /></p>
-
 <h4 id="--strict">- strict</h4>
 
-<p><em>–noImplicitAny</em></p>
+<h5 id="--noimplicitany"><u>--noImplicitAny</u></h5>
 
 <p>타입을 추정할 수 없는 곳에 any 를 지정하라고 알려준다. 하지만 너무 지나칠 경우 예를 들면 객체의 <strong>index signature</strong> 일 경우 <code class="highlighter-rouge">suppressImplicitAnyIndexErrors</code> 옵션을 통해 제외 시킬 수 있다. 원래는 아래와 같이 객체의 타입을 지정해야 한다.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span> <span class="nx">index</span><span class="p">:</span> <span class="nx">string</span> <span class="p">]:</span> <span class="nx">any</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{};</span>
 </code></pre></div></div>
 
-<p><br /></p>
-
-<p><em>–noImplicitThis</em></p>
+<h5 id="--noimplicitthis"><u>--noImplicitThis</u></h5>
 
 <p>this 를 사용하는 곳에 this 변수를 선언하라고 알려준다. 타입을 직접 지정하기도 하지만 any 를 사용하는 것도 합리적이다.</p>
 
@@ -236,15 +220,11 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><br /></p>
-
-<p><em>–strictNullChecks</em></p>
+<h5 id="--strictnullchecks"><u>--strictNullChecks</u></h5>
 
 <p>모든 타입에 대해 null, undefined 값을 대입할 수 없다.</p>
 
-<p><br /></p>
-
-<p><em>–strictPropertyInitialization</em></p>
+<h5 id="--strictpropertyinitialization"><u>--strictPropertyInitialization</u></h5>
 
 <p>클래스 속성을 초기화해야 한다고 알려준다. 속성에 바로 초기화하거나 contructor 안에서 초기화할 수 있다.</p>
 
@@ -265,7 +245,8 @@
 
 <p><br /></p>
 
-<p><strong>※ Reference</strong></p>
+<h4 id="-reference">※ Reference</h4>
+
 <ul>
   <li><a href="https://www.youtube.com/watch?v=DpjuaI-2UC4&amp;list=PLV6pYUAZ-ZoFwOspuVHBvmhQRalqvj7Jf">맠튜브 - TypeScript Basic 타입스크립트 기초 워크숍 201812</a></li>
 </ul>

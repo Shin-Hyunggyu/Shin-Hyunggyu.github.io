@@ -147,7 +147,7 @@
     <h1 class="title">MongoDB 소개</h1>
   </section>
   <section class="post-content">
-    <h1 id="1-mongodb-란">1. MongoDB 란</h1>
+    <h2 id="1-mongodb-란">1. MongoDB 란</h2>
 
 <p><a href="https://www.mongodb.com/">MongoDB</a> 는 <strong>JSON</strong> 으로 이루어진 Document 기반의 NoSQL(Not Only SQL) 이다. 기존의 RDS(Relational Database System) 는 무결성을 지키기 위해 여러 테이블로 나누고 서로 관계를 맺는 구조를 가지는데 반에 NoSQL 은 Key 와 Value 그리고 Collection 이라는 매우 심플한 구조를 가진다. RDS 특성상 Data Sharding 을 하기 위해서는 큰 부담이 따르고 한계가 있기 때문에 Scale Out 보다 Scale Up 을 한다. Scale Up 은 Scale Out 보다 비용과 시간적인 측면에서 매우 부담이 큰 작업이다. 하지만 NoSQL 은 이런 단점을 극복할 수 있도록 설계되어 있어 Scale Out 에 용이하다. 또 Schema 가 고정되어 있는 RDS 와는 달리 Collection(Table) 안에서 서로 다른 Schema 형태의 Document(Record/Row) 를 가질 수 있어 매우 유연하다. 이런 특징은 Document 안에 Field(Column) 를 확장하거나 축소할 때 편하고 부담이 없다. MongoDB 는 Main Query Language 로 <strong>Javascript</strong> 를 사용하고 있어 Web Developer 에게 친숙하다는 것도 장점이 될 수 있겠다. 하지만 위와 같은 편리함과 유연함은 복잡한 쿼리를 불가능하게 하고 데이터의 무결성을 깰 수 있다는 점에서 단점이 될 수 도 있다.</p>
 
@@ -180,9 +180,9 @@
 
 <p><br /></p>
 
-<h1 id="2-설치하기">2. 설치하기</h1>
+<h2 id="2-설치하기">2. 설치하기</h2>
 
-<h2 id="1-local-windows10">1. Local (Windows10)</h2>
+<h3 id="--local-windows10">- Local (Windows10)</h3>
 
 <h4 id="1-mongodb-download-center-에서-community-server-다운로드">1. <a href="https://www.mongodb.com/download-center">MongoDB Download Center</a> 에서 Community Server 다운로드</h4>
 
@@ -219,10 +219,10 @@
 <ul>
   <li>MongoDB 설치폴더 안에 bin 폴더에 위치</li>
   <li>Service 는 이 <strong>mongod.cfg</strong> 를 참조하여 MongoDB 를 실행 함</li>
-  <li><strong>dbPath 변경</strong>
+  <li>dbPath 변경
     <ul>
       <li>MongoDB 를 설치할 때 Service 등록에서 변경하면 될 것 같은데 설치가 재대로 안되는 문제가 있었음</li>
-      <li><code class="highlighter-rouge">mongod</code> 명령어를 통해 직접 실행할 때와 <strong>동일한 storage</strong> 를 사용하기 위해 변경</li>
+      <li><code class="highlighter-rouge">mongod</code> 명령어를 통해 직접 실행할 때와 동일한 storage 를 사용하기 위해 변경</li>
       <li><code class="highlighter-rouge">storage: dbPath: /data/db</code> 로 변경</li>
     </ul>
   </li>
@@ -277,7 +277,9 @@ RUNNING
     &gt; help
 </code></pre></div></div>
 
-<h2 id="2-cloud-service">2. Cloud Service</h2>
+<p><br /></p>
+
+<h3 id="--cloud-service">- Cloud Service</h3>
 
 <ul>
   <li><strong><a href="https://www.mongodb.com/cloud/atlas">Atlas</a></strong> : <strong><a href="https://www.mongodb.com/blog/post/comparing-cloud-mongodb-services-mongodb-atlas-vs-mlab">Atlas vs mLab</a></strong>
@@ -295,7 +297,9 @@ RUNNING
   </li>
 </ul>
 
-<h2 id="3-gui-client-tool">3. GUI Client Tool</h2>
+<p><br /></p>
+
+<h3 id="--gui-client-tool">- GUI Client Tool</h3>
 
 <ul>
   <li><strong><a href="https://www.mongodb.com/products/compass">MongoDB Compass</a></strong>
@@ -323,34 +327,30 @@ RUNNING
 
 <p><br /></p>
 
-<h1 id="3-mongodb-실행">3. MongoDB 실행</h1>
+<h2 id="3-mongodb-실행">3. MongoDB 실행</h2>
 
 <p>처음 실행하게 되면 DB 초기 파일들이 생성된다.</p>
 
-<ul>
-  <li>기본경로 (/data/db)</li>
-</ul>
+<h4 id="--기본경로-datadb">- 기본경로 (/data/db)</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongod
 </code></pre></div></div>
 
-<ul>
-  <li>경로지정</li>
-</ul>
+<h4 id="--경로지정">- 경로지정</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongod <span class="nt">--dbpath</span> 경로
 </code></pre></div></div>
 
 <p><br /></p>
 
-<h1 id="4-mongodb-javascript-shell">4. MongoDB javascript shell</h1>
+<h2 id="4-mongodb-javascript-shell">4. MongoDB javascript shell</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mongo
 </code></pre></div></div>
 
 <p><br /></p>
 
-<p><strong>※ Reference</strong></p>
+<h4 id="-reference">※ Reference</h4>
 <ul>
   <li><a href="http://lazybrain.ikspres.com/nosql1/">NoSQL의 장단점</a></li>
   <li><a href="https://www.quora.com/What-query-language-does-MongoDB-uses-please">What query language does MongoDB uses please?</a></li>

@@ -151,29 +151,29 @@
     <h1 class="title">리눅스 환경변수 등록</h1>
   </section>
   <section class="post-content">
-    <p>환경변수 등록은 <strong>login shell</strong> 과 <strong>none login shell</strong> 로 구분되고 <strong>전역(global)</strong> 등록과 <strong>지역(user)</strong> 등록으로 나누어 진다. <strong>login shell</strong> 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. <strong>none login shell</strong> 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. <strong>전역(global)</strong> 등록은 모든 유저에게 공통으로 적용되는 등록이고 <strong>지역(user)</strong> 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</p>
+    <p>환경변수 등록은 <strong>login shell</strong> 과 <strong>none login shell</strong> 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. <strong>login shell</strong> 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. <strong>none login shell</strong> 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</p>
 
 <p><br /></p>
 
 <h3 id="1-login-shell">1. login shell</h3>
 
-<p>login shell 이 실행될 때 함께 로드되는 파일은 ‘<strong>/etc/profile</strong>’, ‘<strong>~/.profile</strong>’, ‘<strong>~/.bash_profile</strong>’ 등이 있다. ‘<strong>/etc/profile</strong>’, ‘<strong>~/.profile</strong>’ 은 모든 shell 이 대상이고 ‘<strong>~/.bash_profile</strong>’ 은 bash shell 이 대상이다. 또 다른 차이는 ‘<strong>/etc/profile</strong>’ 은 전역(global) 등록이고 ‘<strong>~/.profile</strong>’, ‘<strong>~/.bash_profile</strong>’ 은 지역(user) 등록이다. 전역(global) 등록 파일은 <code class="highlighter-rouge">/etc</code> 디렉토리에 있고 지역(user) 파일은 유저의 <code class="highlighter-rouge">home(~)</code> 디렉토리에 있다.</p>
+<p>login shell 이 실행될 때 함께 로드되는 파일은 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 등이 있다. <em>/etc/profile</em>, <em>~/.profile</em> 은 모든 shell 이 대상이고 <em>~/.bash_profile</em> 은 bash shell 이 대상이다. 또 다른 차이는 <em>/etc/profile</em> 은 전역(global) 등록이고 <em>~/.profile</em>, <em>~/.bash_profile</em> 은 지역(user) 등록이다. 전역(global) 등록 파일은 <em>/etc</em> 디렉토리에 있고 지역(user) 파일은 유저의 <em>home(~)</em> 디렉토리에 있다.</p>
 
 <blockquote>
-  <p>유저가 ssh 접속 후 bash shell 을 실행할 때 ‘/etc/profile’, ‘~/.profile’, ‘~/.bash_profile’ 순서로 로드될 것이다.</p>
+  <p>유저가 ssh 접속 후 bash shell 을 실행할 때 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 순서로 로드될 것이다.</p>
 </blockquote>
 
 <p><br /></p>
 
 <h3 id="2-none-login-shell">2. none login shell</h3>
 
-<p>none login shell (bash shell) 이 실행될 때 로드되는 파일은 ‘<strong>/etc/bashrc</strong>’, ‘<strong>~/.bashrc</strong>’ 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. ‘<strong>/etc/bashrc</strong>’ 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 ‘<strong>~/.bashrc</strong>’ 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.</p>
+<p>none login shell (bash shell) 이 실행될 때 로드되는 파일은 <em>/etc/bashrc</em>, <em>~/.bashrc</em> 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. <em>/etc/bashrc</em> 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 <em>~/.bashrc</em> 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.</p>
 
 <p><br /></p>
 
 <h3 id="3-결론">3. 결론</h3>
 
-<p>따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 ‘<strong>/etc/profile</strong>’, ‘<strong>~/.profile</strong>’, ‘<strong>~/.bash_profile</strong>’ 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.</p>
+<p>따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">name</span><span class="o">=</span>value
 </code></pre></div></div>
