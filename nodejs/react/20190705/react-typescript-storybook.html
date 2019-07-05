@@ -5,50 +5,50 @@
 <meta name="referrer" content="always">
 <meta name="author"   content="lofty87">
 
-  <meta name="keywords" content="linux,Dev Store">
-<meta name="description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- View -->
+  <meta name="keywords" content="React + TypeScript + StoryBook,Dev Store">
+<meta name="description" content="React + TypeScript + StoryBook 으로 프로젝트 구성하기"><!-- View -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"              content="width=device-width, initial-scale=1.0">
 
 <!-- Represent -->
 <base                                                         href="https://lofty87.github.io">
-<link rel="canonical"                                         href="https://lofty87.github.io/tags/linux/index.html"/>
+<link rel="canonical"                                         href="https://lofty87.github.io/nodejs/react/20190705/react-typescript-storybook"/>
 <link rel="icon"             type="image/png" sizes="32x32"   href="https://lofty87.github.io/assets/favicon-32x32.png">
 <link rel="icon"             type="image/png" sizes="16x16"   href="https://lofty87.github.io/assets/favicon-16x16.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://lofty87.github.io/assets/apple-touch-icon.png">
 
-<title>linux | Dev Store</title>
+<title>React + TypeScript + StoryBook | Dev Store</title>
 
 <!-- Site Verification --><meta name="google-site-verification" content="hyjADXBfPWioezEyxWb91yhZYGC08ikSp1aF6Bz1b_w"/>
   <meta name="naver-site-verification"  content="16bc7701ad208ef6b2ff1ba2aa5f1021561c8071"/><!-- Open Graph -->
 <meta property="og:type"      content="article">
 <meta property="og:site_name" content="Dev Store">
-<meta property="og:url"       content="https://lofty87.github.io/tags/linux/index.html">
+<meta property="og:url"       content="https://lofty87.github.io/nodejs/react/20190705/react-typescript-storybook">
 <meta property="og:image"     content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta property="og:title"     content="linux">
-<meta property="og:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- Twitter Card -->
+  <meta property="og:title"     content="React + TypeScript + StoryBook">
+<meta property="og:description" content="React + TypeScript + StoryBook 으로 프로젝트 구성하기"><!-- Twitter Card -->
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:site"  content="Dev Store">
 <meta name="twitter:image" content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta name="twitter:title" content="linux">
-<meta name="twitter:description" content="프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다."><!-- Structured Data -->
+  <meta name="twitter:title" content="React + TypeScript + StoryBook">
+<meta name="twitter:description" content="React + TypeScript + StoryBook 으로 프로젝트 구성하기"><!-- Structured Data -->
 <script type="application/ld+json">
   {
     "@context":"http://schema.org",
     "@type":"BlogPosting",
-    "url":"https://lofty87.github.io/tags/linux/index.html",
+    "url":"https://lofty87.github.io/nodejs/react/20190705/react-typescript-storybook",
     
-      "headline":"linux",
+      "headline":"React + TypeScript + StoryBook",
     
     
-      "description": "프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.",
+      "description": "React + TypeScript + StoryBook 으로 프로젝트 구성하기",
     
-    "datePublished":"",
-    "dateModified":"",
+    "datePublished":"2019-07-05 00:00:00 +0900",
+    "dateModified":"2019-07-05 00:00:00 +0900",
     "mainEntityOfPage":{
-      "@id":"https://lofty87.github.io/tags/linux/index.html"
+      "@id":"https://lofty87.github.io/nodejs/react/20190705/react-typescript-storybook"
     },
     "author":{
       "@type":"Person",
@@ -132,79 +132,198 @@
     </header>
     <main>
       <section class="container">
-        <div class="list">
-  
+        
 
-  
-    <h2 class="category">
-      <div class="category-tag">linux</div>
-    </h2>
-  
+<article class="post">
+  <section class="post-header">
+    <div class="category">React</div>
+    <div class="tags">
+      
+        <div class="tag">react</div>
+      
+        <div class="tag">typescript</div>
+      
+        <div class="tag">storybook</div>
+      
+    </div>
+    <h1 class="title">React + TypeScript + StoryBook</h1>
+  </section>
+  <section class="post-content">
+    <h2 id="1-프로젝트-만들기">1. 프로젝트 만들기</h2>
 
+<p><code class="highlighter-rouge">create-react-app</code> 을 통해 TypeScript 기반 프로젝트 만들기</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx create-react-app my-app <span class="nt">--typescript</span>
+</code></pre></div></div>
+
+<p>※ package.json 에 typescript 가 dependencies 에 추가되어 있어 devDependencies 로 옮기도록 하자.</p>
+
+<p><br /></p>
+
+<h2 id="2-storybook-추가하기">2. StoryBook 추가하기</h2>
+
+<h4 id="1-프로젝트-폴더">1. 프로젝트 폴더</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>my-app
+</code></pre></div></div>
+
+<h4 id="2-설치하기">2. 설치하기</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx <span class="nt">-p</span> @storybook/cli sb init
+</code></pre></div></div>
+
+<h4 id="3-typings">3. typings</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> @types/storybook__react
+</code></pre></div></div>
+
+<h4 id="4-webpack-config-추가">4. Webpack Config 추가</h4>
+
+<p><code class="highlighter-rouge">.storybook</code> 폴더 안에 <strong>webpack.config.js</strong> 를 추가한다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">config</span><span class="p">,</span> <span class="nx">mode</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">config</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">rules</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+    <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">ts|tsx</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span>
+    <span class="na">loader</span><span class="p">:</span> <span class="nx">require</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">babel-loader</span><span class="dl">'</span><span class="p">),</span>
+    <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">presets</span><span class="p">:</span> <span class="p">[[</span><span class="dl">'</span><span class="s1">react-app</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">flow</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">typescript</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}]],</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+  <span class="nx">config</span><span class="p">.</span><span class="nx">resolve</span><span class="p">.</span><span class="nx">extensions</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">.ts</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.tsx</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">config</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="5-확장자-변경">5. 확장자 변경</h4>
+
+<p>StoryBook 을 설치하면서 생성된 파일들을 TypeScript 프로젝트에 맞게 확장자를 변경해 보자. <code class="highlighter-rouge">*.stories.tsx</code> 확장자는 다음에 config.ts 를 수정하면서 StoryBook 에 불러오는 조건으로 매칭시킬 것이다.</p>
+
+<blockquote>
+  <p>// .storybook 폴더
+<br />addons.js &gt; addons.ts
+<br />config.js &gt; config.ts
+<br /><br />// src/stories 폴더
+<br />index.js &gt; index.stories.tsx</p>
+</blockquote>
+
+<h4 id="6-configts-수정">6. config.ts 수정</h4>
+
+<ul>
+  <li>.storybook 폴더에 위치</li>
+  <li>src 폴더를 전체 범위로 할 것</li>
+  <li><code class="highlighter-rouge">*.stories.tsx</code> 확장자를 가진 파일들만 StoryBook 에 불러올 것</li>
+</ul>
+
+<p>StoryBook 에 불러오는 조건을 TypeScript 프로젝트에 맞게 더 advanced 하게 변경한 것이다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">configure</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@storybook/react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// *.stories.tsx 확장자를 가진 파일들만 자동으로 import</span>
+<span class="kd">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">require</span><span class="p">.</span><span class="nx">context</span><span class="p">(</span><span class="dl">'</span><span class="s1">../src</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">stories</span><span class="se">\.</span><span class="sr">tsx$/</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">loadStories</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">req</span><span class="p">.</span><span class="nx">keys</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">configure</span><span class="p">(</span><span class="nx">loadStories</span><span class="p">,</span> <span class="nx">module</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="7-storybook-독립적으로-사용하기-기본설정">7. StoryBook 독립적으로 사용하기 (기본설정)</h4>
+
+<p>기본적으로 stories 폴더는 src 안에 있고 독립적으로 사용하게 config 되어 있다. 혹시나 stories 폴더를 src 외부에 놓고 싶다면 아래와 같이 <code class="highlighter-rouge">tsconfig.json</code> 과 <code class="highlighter-rouge">config.ts</code> 를 수정해 준다.</p>
+
+<h4 id="--tsconfigjson">- tsconfig.json</h4>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"rootDirs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"src"</span><span class="p">,</span><span class="w"> </span><span class="s2">"stories"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h4 id="--configts">- config.ts</h4>
+<p><code class="highlighter-rouge">*.stories.tsx</code> 확장자를 가진 파일들만 StoryBook 에 불러올 것</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">configure</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@storybook/react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// *.stories.tsx 명을 가진 파일들을 자동으로 import</span>
+<span class="kd">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="nx">require</span><span class="p">.</span><span class="nx">context</span><span class="p">(</span><span class="dl">'</span><span class="s1">../stories</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">stories</span><span class="se">\.</span><span class="sr">tsx$/</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">loadStories</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">req</span><span class="p">.</span><span class="nx">keys</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">configure</span><span class="p">(</span><span class="nx">loadStories</span><span class="p">,</span> <span class="nx">module</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="-reference">※ Reference</h4>
+
+<ul>
+  <li><a href="https://reactjs.org/docs/static-type-checking.html#typescript">Static Type Checking - React</a></li>
+  <li><a href="https://storybook.js.org/docs/configurations/typescript-config/#setting-up-typescript-with-babel-loader">TypeScript Config - StoryBook</a></li>
+</ul>
+
+  </section>
+</article>
+
+<section class="post-category-list">
+  <section class="title">
+    <h4><span>'React'</span> 카테고리의 최신글</h4>
+
+    
+      <a href="/categories/nodejs/react">더보기</a>
+    
+  </section>
   
-    <article class="article">
-      <a href="/linux/20181001/linux-environment-variable">
-        <h1 class="article-title">리눅스 환경변수 등록</h1>
-        <div class="article-line"></div>
-        <summary class="article-content">환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login...</summary>
-        <section>
-          <time datetime="2018-10-01" class="article-time">2018-10-01</time>
-          <span class="article-time">
-            
-              <div class="tag">linux</div>
-            
-              <div class="tag">bash</div>
-            
-              <div class="tag">profile</div>
-            
-              <div class="tag">command</div>
-            
-          </span>
-        </section>
-      </a>
-    </article>
-  
-    <article class="article">
-      <a href="/etc/windows/20180912/windows-wsl">
-        <h1 class="article-title">Windows 에서 Linux 사용하기</h1>
-        <div class="article-line"></div>
-        <summary class="article-content">WSL(Windows Subsystem for Linux) 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 ...</summary>
-        <section>
-          <time datetime="2018-09-12" class="article-time">2018-09-12</time>
-          <span class="article-time">
-            
-              <div class="tag">windows</div>
-            
-              <div class="tag">wsl</div>
-            
-              <div class="tag">linux</div>
-            
-              <div class="tag">zsh</div>
-            
-          </span>
-        </section>
-      </a>
-    </article>
-  
+  <ul>
+    
+    
+      
+      
+        
+          
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/react/20180914/react-component-snippet">
+              <h2>React Component Snippet</h2>
+            </a>
+            <time datetime="2018-09-14">2018-09-14</time>
+          </li>
+        
+      
+    
+  </ul>
+</section>
+
+<div class="comment">
+  <div id="disqus_thread"></div>
 </div>
 
-<nav class="pagination">
-  
-    
-    
-    
-      <span class="arrow disable">&lt;&lt;</span>
-    
-    
-      
-        <span class="active">1</span>
-      
-    
-    
-      <span class="arrow disable">&gt;&gt;</span>
-    
-  
-</nav>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+  this.page.url = "http://localhost:4000/nodejs/react/20190705/react-typescript-storybook";
+  this.page.identifier = "/nodejs/react/20190705/react-typescript-storybook";
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://dev-store.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </section>
       <aside>
         <section> 

@@ -45,6 +45,10 @@
 <lastmod>2019-07-03T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/nodejs/react/20190705/react-typescript-storybook</loc>
+<lastmod>2019-07-05T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about</loc>
 </url>
 <url>
@@ -117,6 +121,9 @@
 <loc>http://localhost:4000/categories/nodejs/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/categories/nodejs/2/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/tags/onedrive/</loc>
 </url>
 <url>
@@ -133,6 +140,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags/snippet/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/tags/storybook/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/tags/typescript/</loc>

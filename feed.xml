@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-04T11:41:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">typescript 기본 1</title><link href="http://localhost:4000/nodejs/typescript/20190703/typescript-base" rel="alternate" type="text/html" title="typescript 기본 1" /><published>2019-07-03T00:00:00+09:00</published><updated>2019-07-03T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/typescript/20190703/typescript-base</id><content type="html" xml:base="http://localhost:4000/nodejs/typescript/20190703/typescript-base">&lt;h3 id=&quot;1-primitive-type&quot;&gt;1. primitive type&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-05T11:54:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">React + TypeScript + StoryBook</title><link href="http://localhost:4000/nodejs/react/20190705/react-typescript-storybook" rel="alternate" type="text/html" title="React + TypeScript + StoryBook" /><published>2019-07-05T00:00:00+09:00</published><updated>2019-07-05T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/react/20190705/react-typescript-storybook</id><content type="html" xml:base="http://localhost:4000/nodejs/react/20190705/react-typescript-storybook">&lt;h2 id=&quot;1-프로젝트-만들기&quot;&gt;1. 프로젝트 만들기&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt; 을 통해 TypeScript 기반 프로젝트 만들기&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npx create-react-app my-app &lt;span class=&quot;nt&quot;&gt;--typescript&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;※ package.json 에 typescript 가 dependencies 에 추가되어 있어 devDependencies 로 옮기도록 하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-storybook-추가하기&quot;&gt;2. StoryBook 추가하기&lt;/h2&gt;
+
+&lt;h4 id=&quot;1-프로젝트-폴더&quot;&gt;1. 프로젝트 폴더&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;my-app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;2-설치하기&quot;&gt;2. 설치하기&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npx &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; @storybook/cli sb init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;3-typings&quot;&gt;3. typings&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--save-dev&lt;/span&gt; @types/storybook__react
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;4-webpack-config-추가&quot;&gt;4. Webpack Config 추가&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.storybook&lt;/code&gt; 폴더 안에 &lt;strong&gt;webpack.config.js&lt;/strong&gt; 를 추가한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// webpack.config.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;ts|tsx&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;babel-loader&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;presets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;react-app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;flow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;typescript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}]],&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;extensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.ts&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.tsx&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;5-확장자-변경&quot;&gt;5. 확장자 변경&lt;/h4&gt;
+
+&lt;p&gt;StoryBook 을 설치하면서 생성된 파일들을 TypeScript 프로젝트에 맞게 확장자를 변경해 보자. &lt;code class=&quot;highlighter-rouge&quot;&gt;*.stories.tsx&lt;/code&gt; 확장자는 다음에 config.ts 를 수정하면서 StoryBook 에 불러오는 조건으로 매칭시킬 것이다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;// .storybook 폴더
+&lt;br /&gt;addons.js &amp;gt; addons.ts
+&lt;br /&gt;config.js &amp;gt; config.ts
+&lt;br /&gt;&lt;br /&gt;// src/stories 폴더
+&lt;br /&gt;index.js &amp;gt; index.stories.tsx&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;6-configts-수정&quot;&gt;6. config.ts 수정&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.storybook 폴더에 위치&lt;/li&gt;
+  &lt;li&gt;src 폴더를 전체 범위로 할 것&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*.stories.tsx&lt;/code&gt; 확장자를 가진 파일들만 StoryBook 에 불러올 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;StoryBook 에 불러오는 조건을 TypeScript 프로젝트에 맞게 더 advanced 하게 변경한 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@storybook/react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// *.stories.tsx 확장자를 가진 파일들만 자동으로 import&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;../src&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;stories&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;tsx$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loadStories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadStories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;7-storybook-독립적으로-사용하기-기본설정&quot;&gt;7. StoryBook 독립적으로 사용하기 (기본설정)&lt;/h4&gt;
+
+&lt;p&gt;기본적으로 stories 폴더는 src 안에 있고 독립적으로 사용하게 config 되어 있다. 혹시나 stories 폴더를 src 외부에 놓고 싶다면 아래와 같이 &lt;code class=&quot;highlighter-rouge&quot;&gt;tsconfig.json&lt;/code&gt; 과 &lt;code class=&quot;highlighter-rouge&quot;&gt;config.ts&lt;/code&gt; 를 수정해 준다.&lt;/p&gt;
+
+&lt;h4 id=&quot;--tsconfigjson&quot;&gt;- tsconfig.json&lt;/h4&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rootDirs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stories&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;--configts&quot;&gt;- config.ts&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*.stories.tsx&lt;/code&gt; 확장자를 가진 파일들만 StoryBook 에 불러올 것&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@storybook/react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// *.stories.tsx 명을 가진 파일들을 자동으로 import&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;../stories&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;stories&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;tsx$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loadStories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadStories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://reactjs.org/docs/static-type-checking.html#typescript&quot;&gt;Static Type Checking - React&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://storybook.js.org/docs/configurations/typescript-config/#setting-up-typescript-with-babel-loader&quot;&gt;TypeScript Config - StoryBook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="typescript" /><category term="storybook" /><summary type="html">1. 프로젝트 만들기</summary></entry><entry><title type="html">TypeScript 기본 1</title><link href="http://localhost:4000/nodejs/typescript/20190703/typescript-base" rel="alternate" type="text/html" title="TypeScript 기본 1" /><published>2019-07-03T00:00:00+09:00</published><updated>2019-07-03T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/typescript/20190703/typescript-base</id><content type="html" xml:base="http://localhost:4000/nodejs/typescript/20190703/typescript-base">&lt;h3 id=&quot;1-primitive-type&quot;&gt;1. primitive type&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;boolean&lt;/li&gt;
@@ -268,43 +381,7 @@
 &lt;p&gt;value 에 띄어쓰기가 있을 경우 반드시 &lt;strong&gt;“(쌍따옴표)&lt;/strong&gt;로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;또는 &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="linux" /><category term="bash" /><category term="profile" /><category term="command" /><summary type="html">환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</summary></entry><entry><title type="html">폰트와 기본세팅 정리</title><link href="http://localhost:4000/etc/ide/20180914/ide-settings" rel="alternate" type="text/html" title="폰트와 기본세팅 정리" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/ide/20180914/ide-settings</id><content type="html" xml:base="http://localhost:4000/etc/ide/20180914/ide-settings">&lt;h3 id=&quot;1-폰트&quot;&gt;1. 폰트&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;D2 Coding&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1w68OjeNbabSGnSJyz2l7tq3RkG4ZYvPa&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1p5OQPqZ8dyLuHLJ8B9qFN5BGmb4Sdhmo&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR (경량화 웹 폰트)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17hG2bY-GUFcZhmK1ejagCsIqkmmCyAB6&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-visual-studio-code&quot;&gt;2. Visual Studio Code&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Mac User Settings&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1uT_CS0f5glfZRLbCjbTE39cWI0rDZ9mY&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Windows User Settings&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17atE33DpHqyormhQ8gFAGWO_fsy60i2K&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-14/VisualStudioCodePlugin.png&quot; alt=&quot;Visual Studio Code Plugin&quot; /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="ide" /><category term="font" /><category term="settings" /><summary type="html">1. 폰트</summary></entry><entry><title type="html">C++ Addon Compile 을 위한 node-gyp</title><link href="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module" rel="alternate" type="text/html" title="C++ Addon Compile 을 위한 node-gyp" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/20180914/nodejs-native-addon-module</id><content type="html" xml:base="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 모듈을 설치하다 보면 &lt;a href=&quot;https://github.com/nodejs/node-gyp&quot;&gt;node-gyp&lt;/a&gt; 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘&lt;a href=&quot;https://nodejs.org/api/addons.html#addons_c_addons&quot;&gt;C++ Addon&lt;/a&gt;’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="linux" /><category term="bash" /><category term="profile" /><category term="command" /><summary type="html">환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</summary></entry><entry><title type="html">C++ Addon Compile 을 위한 node-gyp</title><link href="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module" rel="alternate" type="text/html" title="C++ Addon Compile 을 위한 node-gyp" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/20180914/nodejs-native-addon-module</id><content type="html" xml:base="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 모듈을 설치하다 보면 &lt;a href=&quot;https://github.com/nodejs/node-gyp&quot;&gt;node-gyp&lt;/a&gt; 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘&lt;a href=&quot;https://nodejs.org/api/addons.html#addons_c_addons&quot;&gt;C++ Addon&lt;/a&gt;’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -374,7 +451,43 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
     &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;export default $1;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="snippet" /><summary type="html">1. User Snippets</summary></entry><entry><title type="html">Windows 에서 Linux 사용하기</title><link href="http://localhost:4000/etc/windows/20180912/windows-wsl" rel="alternate" type="text/html" title="Windows 에서 Linux 사용하기" /><published>2018-09-12T00:00:00+09:00</published><updated>2018-09-12T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20180912/windows-wsl</id><content type="html" xml:base="http://localhost:4000/etc/windows/20180912/windows-wsl">&lt;p&gt;&lt;strong&gt;WSL(Windows Subsystem for Linux)&lt;/strong&gt; 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 Ubuntu, OpenSUSE, SLES, Kali Linux, Debian GNU/Linux 가 있다.&lt;/p&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="snippet" /><summary type="html">1. User Snippets</summary></entry><entry><title type="html">폰트와 기본세팅 정리</title><link href="http://localhost:4000/etc/ide/20180914/ide-settings" rel="alternate" type="text/html" title="폰트와 기본세팅 정리" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/ide/20180914/ide-settings</id><content type="html" xml:base="http://localhost:4000/etc/ide/20180914/ide-settings">&lt;h3 id=&quot;1-폰트&quot;&gt;1. 폰트&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;D2 Coding&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1w68OjeNbabSGnSJyz2l7tq3RkG4ZYvPa&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1p5OQPqZ8dyLuHLJ8B9qFN5BGmb4Sdhmo&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR (경량화 웹 폰트)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17hG2bY-GUFcZhmK1ejagCsIqkmmCyAB6&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-visual-studio-code&quot;&gt;2. Visual Studio Code&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Mac User Settings&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1uT_CS0f5glfZRLbCjbTE39cWI0rDZ9mY&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Windows User Settings&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17atE33DpHqyormhQ8gFAGWO_fsy60i2K&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-14/VisualStudioCodePlugin.png&quot; alt=&quot;Visual Studio Code Plugin&quot; /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="ide" /><category term="font" /><category term="settings" /><summary type="html">1. 폰트</summary></entry><entry><title type="html">Windows 에서 Linux 사용하기</title><link href="http://localhost:4000/etc/windows/20180912/windows-wsl" rel="alternate" type="text/html" title="Windows 에서 Linux 사용하기" /><published>2018-09-12T00:00:00+09:00</published><updated>2018-09-12T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20180912/windows-wsl</id><content type="html" xml:base="http://localhost:4000/etc/windows/20180912/windows-wsl">&lt;p&gt;&lt;strong&gt;WSL(Windows Subsystem for Linux)&lt;/strong&gt; 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 Ubuntu, OpenSUSE, SLES, Kali Linux, Debian GNU/Linux 가 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -681,212 +794,4 @@ vim ~/.zshrc
   &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/enable-authentication&quot;&gt;Enable Auth&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/core/security-built-in-roles&quot;&gt;Built-In Roles&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/reference/configuration-options&quot;&gt;Configure File Options&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="mongodb" /><category term="mongoose" /><category term="command" /><summary type="html">MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.</summary></entry><entry><title type="html">MongoDB 소개</title><link href="http://localhost:4000/db/mongodb/20180909/mongodb-introduce" rel="alternate" type="text/html" title="MongoDB 소개" /><published>2018-09-09T00:00:00+09:00</published><updated>2018-09-09T00:00:00+09:00</updated><id>http://localhost:4000/db/mongodb/20180909/mongodb-introduce</id><content type="html" xml:base="http://localhost:4000/db/mongodb/20180909/mongodb-introduce">&lt;h2 id=&quot;1-mongodb-란&quot;&gt;1. MongoDB 란&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; 는 &lt;strong&gt;JSON&lt;/strong&gt; 으로 이루어진 Document 기반의 NoSQL(Not Only SQL) 이다. 기존의 RDS(Relational Database System) 는 무결성을 지키기 위해 여러 테이블로 나누고 서로 관계를 맺는 구조를 가지는데 반에 NoSQL 은 Key 와 Value 그리고 Collection 이라는 매우 심플한 구조를 가진다. RDS 특성상 Data Sharding 을 하기 위해서는 큰 부담이 따르고 한계가 있기 때문에 Scale Out 보다 Scale Up 을 한다. Scale Up 은 Scale Out 보다 비용과 시간적인 측면에서 매우 부담이 큰 작업이다. 하지만 NoSQL 은 이런 단점을 극복할 수 있도록 설계되어 있어 Scale Out 에 용이하다. 또 Schema 가 고정되어 있는 RDS 와는 달리 Collection(Table) 안에서 서로 다른 Schema 형태의 Document(Record/Row) 를 가질 수 있어 매우 유연하다. 이런 특징은 Document 안에 Field(Column) 를 확장하거나 축소할 때 편하고 부담이 없다. MongoDB 는 Main Query Language 로 &lt;strong&gt;Javascript&lt;/strong&gt; 를 사용하고 있어 Web Developer 에게 친숙하다는 것도 장점이 될 수 있겠다. 하지만 위와 같은 편리함과 유연함은 복잡한 쿼리를 불가능하게 하고 데이터의 무결성을 깰 수 있다는 점에서 단점이 될 수 도 있다.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;RDS&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;MongoDB&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;database&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;database&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;table&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;collection&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;row/record&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;document&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;column&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;field/key&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-설치하기&quot;&gt;2. 설치하기&lt;/h2&gt;
-
-&lt;h3 id=&quot;--local-windows10&quot;&gt;- Local (Windows10)&lt;/h3&gt;
-
-&lt;h4 id=&quot;1-mongodb-download-center-에서-community-server-다운로드&quot;&gt;1. &lt;a href=&quot;https://www.mongodb.com/download-center&quot;&gt;MongoDB Download Center&lt;/a&gt; 에서 Community Server 다운로드&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/DB/2018-09-09/download.png&quot; alt=&quot;download&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-service-에-등록하기&quot;&gt;2. Service 에 등록하기&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mongod&lt;/code&gt; 명령어를 통해 MongoDB 를 직접 실행할 필요 없음 (Windows 부팅시 자동실행)&lt;/li&gt;
-  &lt;li&gt;Service 에 등록하기 싫다면 &lt;strong&gt;Install MongoD as a Service&lt;/strong&gt; 체크해제&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/DB/2018-09-09/service.png&quot; alt=&quot;service&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-gui-client-tool-은-mongodb-compass-대신-robo3trobomongo-를-사용&quot;&gt;3. GUI Client Tool 은 MongoDB Compass 대신 &lt;a href=&quot;https://robomongo.org&quot;&gt;Robo3T/Robomongo&lt;/a&gt; 를 사용&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mongo Compass 를 사용해 본 결과 오류도 있고 뭔가 별로라고 생각&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/DB/2018-09-09/compass.png&quot; alt=&quot;install&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;4-db-가-저장될-폴더-생성&quot;&gt;4. db 가 저장될 폴더 생성&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mongodb&lt;/code&gt; 명령어를 통해 MongoDB 를 직접 실행할 때 인식하는 기본경로&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /data/db
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;5-mongodcfg&quot;&gt;5. mongod.cfg&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;MongoDB 설치폴더 안에 bin 폴더에 위치&lt;/li&gt;
-  &lt;li&gt;Service 는 이 &lt;strong&gt;mongod.cfg&lt;/strong&gt; 를 참조하여 MongoDB 를 실행 함&lt;/li&gt;
-  &lt;li&gt;dbPath 변경
-    &lt;ul&gt;
-      &lt;li&gt;MongoDB 를 설치할 때 Service 등록에서 변경하면 될 것 같은데 설치가 재대로 안되는 문제가 있었음&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mongod&lt;/code&gt; 명령어를 통해 직접 실행할 때와 동일한 storage 를 사용하기 위해 변경&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;storage: dbPath: /data/db&lt;/code&gt; 로 변경&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;※ &lt;strong&gt;.cfg&lt;/strong&gt; 나 &lt;strong&gt;.conf&lt;/strong&gt; 는 확장자 차이 일 뿐 참조해서 MongoDB 를 실행하고 싶을 때는 선호하는 확장자로 만들면 됨&lt;/p&gt;
-
-&lt;h4 id=&quot;6-mongodb-재시작-mongodcfg-변경사항-적용&quot;&gt;6. MongoDB 재시작 (mongod.cfg 변경사항 적용)&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;services.msc
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/DB/2018-09-09/service-restart.png&quot; alt=&quot;install&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;7-간편한-실행을-위해-bin-폴더를-path-값에-추가&quot;&gt;7. 간편한 실행을 위해 bin 폴더를 Path 값에 추가&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/DB/2018-09-09/path.jpg&quot; alt=&quot;path&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;8-readme&quot;&gt;8. README&lt;/h4&gt;
-
-&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;COMPONENTS
-
-  mongod - The database server.
-  mongos - Sharding router.
-  mongo  - The database shell (uses interactive javascript).
-
-UTILITIES
-
-  mongodump         - Create a binary dump of the contents of a database.
-  mongorestore      - Restore data from the output created by mongodump.
-  mongoexport       - Export the contents of a collection to JSON or CSV.
-  mongoimport       - Import data from JSON, CSV or TSV.
-  mongofiles        - Put, get and delete files from GridFS.
-  mongostat         - Show the status of a running mongod/mongos.
-  bsondump          - Convert BSON files into human-readable formats.
-  mongoreplay       - Traffic capture and replay tool.
-  mongotop          - Track time spent reading and writing data.
-
-RUNNING
-
-  For command line options invoke:
-
-    $ ./mongod --help
-
-  To run a single server database:
-
-    $ sudo mkdir -p /data/db
-    $ ./mongod
-    $
-    $ # The mongo javascript shell connects to localhost and test database by default:
-    $ ./mongo
-    &amp;gt; help
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;--cloud-service&quot;&gt;- Cloud Service&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.mongodb.com/cloud/atlas&quot;&gt;Atlas&lt;/a&gt;&lt;/strong&gt; : &lt;strong&gt;&lt;a href=&quot;https://www.mongodb.com/blog/post/comparing-cloud-mongodb-services-mongodb-atlas-vs-mlab&quot;&gt;Atlas vs mLab&lt;/a&gt;&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;AWS, Azure, GCP&lt;/li&gt;
-      &lt;li&gt;Free Tier (M0) : Free / Shared RAM / 512 MB Storage / Shared vCPUs / Limited Regions&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://mlab.com&quot;&gt;mLab&lt;/a&gt;&lt;/strong&gt; : &lt;strong&gt;&lt;a href=&quot;https://mlab.com/mlab-vs-atlas&quot;&gt;mLab vs Atlas&lt;/a&gt;&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;AWS, Azure, GCP&lt;/li&gt;
-      &lt;li&gt;Simple Pricing Policy (All-Inclusive Pricing)&lt;/li&gt;
-      &lt;li&gt;SANDBOX : Free / Variable RAM / 0.5 GB Storage / Limited Regions&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;--gui-client-tool&quot;&gt;- GUI Client Tool&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.mongodb.com/products/compass&quot;&gt;MongoDB Compass&lt;/a&gt;&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;MongoDB 에서 만든 GUI&lt;/li&gt;
-      &lt;li&gt;Readonly, Isolated, Community 에디션으로 구분&lt;/li&gt;
-      &lt;li&gt;Community 에디션은 무료 (유료 에디션은 없는 것 같음)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://robomongo.org&quot;&gt;Robo3T/Robomongo&lt;/a&gt;&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Robomongo 무료 버전&lt;/li&gt;
-      &lt;li&gt;가벼운 GUI&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://studio3t.com&quot;&gt;Studio3T&lt;/a&gt;&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Robomongo 유료 버전&lt;/li&gt;
-      &lt;li&gt;Core, Pro, Enterprise 에디션으로 구분&lt;/li&gt;
-      &lt;li&gt;30일 동안 모든 에디션 사용가능&lt;/li&gt;
-      &lt;li&gt;비상업적인 용도로 사용할 경우 Core 에디션은 항상 무료&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-mongodb-실행&quot;&gt;3. MongoDB 실행&lt;/h2&gt;
-
-&lt;p&gt;처음 실행하게 되면 DB 초기 파일들이 생성된다.&lt;/p&gt;
-
-&lt;h4 id=&quot;--기본경로-datadb&quot;&gt;- 기본경로 (/data/db)&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongod
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;--경로지정&quot;&gt;- 경로지정&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongod &lt;span class=&quot;nt&quot;&gt;--dbpath&lt;/span&gt; 경로
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-mongodb-javascript-shell&quot;&gt;4. MongoDB javascript shell&lt;/h2&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://lazybrain.ikspres.com/nosql1/&quot;&gt;NoSQL의 장단점&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.quora.com/What-query-language-does-MongoDB-uses-please&quot;&gt;What query language does MongoDB uses please?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/reference/sql-comparison/#terminology-and-concepts&quot;&gt;SQL to MongoDB Mapping Chart - Terminology and Concepts&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="mongodb" /><category term="mongoose" /><summary type="html">1. MongoDB 란</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="mongodb" /><category term="mongoose" /><category term="command" /><summary type="html">MongoDB 를 설치한 Local 에서는 언제든지 패스워드 없이 접속할 수 있고 모든 일을 할 수 있다. 이는 외부접속을 허용할 경우 외부 접속자가 허락없이 모든 일을 할 수 있다는 말이다. 보안이 매우 위험한 상태이며 악의적인 의도로 접근할 경우 운영에 심각한 영향을 줄 수 있다. 따라서 MongoDB 를 Authentication Mode 로 실행하여 계정들의 접근을 컨트롤할 수 있어야 한다.</summary></entry></feed>
