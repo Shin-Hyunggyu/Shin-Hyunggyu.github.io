@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-05T18:04:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">React + TypeScript + StoryBook</title><link href="http://localhost:4000/nodejs/react/20190705/react-typescript-storybook" rel="alternate" type="text/html" title="React + TypeScript + StoryBook" /><published>2019-07-05T00:00:00+09:00</published><updated>2019-07-05T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/react/20190705/react-typescript-storybook</id><content type="html" xml:base="http://localhost:4000/nodejs/react/20190705/react-typescript-storybook">&lt;h2 id=&quot;1-프로젝트-만들기&quot;&gt;1. 프로젝트 만들기&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-06T00:31:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Dev Store</title><subtitle>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</subtitle><author><name>lofty87</name><email>lofty87@daum.net</email></author><entry><title type="html">React + TypeScript + StoryBook</title><link href="http://localhost:4000/nodejs/react/20190705/react-typescript-storybook" rel="alternate" type="text/html" title="React + TypeScript + StoryBook" /><published>2019-07-05T00:00:00+09:00</published><updated>2019-07-05T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/react/20190705/react-typescript-storybook</id><content type="html" xml:base="http://localhost:4000/nodejs/react/20190705/react-typescript-storybook">&lt;h2 id=&quot;1-프로젝트-만들기&quot;&gt;1. 프로젝트 만들기&lt;/h2&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt; 을 통해 TypeScript 기반 프로젝트 만들기&lt;/p&gt;
 
@@ -220,10 +220,10 @@
 
 &lt;h4 id=&quot;--typeroots&quot;&gt;- typeRoots&lt;/h4&gt;
 
-&lt;p&gt;지정하지 않으면 &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/@types&lt;/code&gt; 가 default 이며 module 의 name 으로 타입을 참조한다.&lt;/p&gt;
+&lt;p&gt;지정하지 않으면 &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/@types&lt;/code&gt; 가 default 값이다. &lt;u&gt;직접 테스트 해보니 프로젝트 최상위 폴더는 인식하지 못하였고 src 폴더 안에 두어야 인식하였다.&lt;/u&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;typeRoots&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node_modules/@types&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@types&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;typeRoots&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;node_modules/@types&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/@types&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -302,7 +302,37 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=DpjuaI-2UC4&amp;amp;list=PLV6pYUAZ-ZoFwOspuVHBvmhQRalqvj7Jf&quot;&gt;맠튜브 - TypeScript Basic 타입스크립트 기초 워크숍 201812&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="es6" /><category term="typescript" /><summary type="html">- tsconfig.js 생성하기 tsc --init</summary></entry><entry><title type="html">Windows Update, Defender 중지, OneDrive 삭제</title><link href="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive" rel="alternate" type="text/html" title="Windows Update, Defender 중지, OneDrive 삭제" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive</id><content type="html" xml:base="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive">&lt;h3 id=&quot;1-windows-update-중지&quot;&gt;1. Windows Update 중지&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="es6" /><category term="typescript" /><summary type="html">- tsconfig.js 생성하기 tsc --init</summary></entry><entry><title type="html">리눅스 환경변수 등록</title><link href="http://localhost:4000/linux/20181001/linux-environment-variable" rel="alternate" type="text/html" title="리눅스 환경변수 등록" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/linux/20181001/linux-environment-variable</id><content type="html" xml:base="http://localhost:4000/linux/20181001/linux-environment-variable">&lt;p&gt;환경변수 등록은 &lt;strong&gt;login shell&lt;/strong&gt; 과 &lt;strong&gt;none login shell&lt;/strong&gt; 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. &lt;strong&gt;login shell&lt;/strong&gt; 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. &lt;strong&gt;none login shell&lt;/strong&gt; 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-login-shell&quot;&gt;1. login shell&lt;/h3&gt;
+
+&lt;p&gt;login shell 이 실행될 때 함께 로드되는 파일은 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 등이 있다. &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt; 은 모든 shell 이 대상이고 &lt;em&gt;~/.bash_profile&lt;/em&gt; 은 bash shell 이 대상이다. 또 다른 차이는 &lt;em&gt;/etc/profile&lt;/em&gt; 은 전역(global) 등록이고 &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 은 지역(user) 등록이다. 전역(global) 등록 파일은 &lt;em&gt;/etc&lt;/em&gt; 디렉토리에 있고 지역(user) 파일은 유저의 &lt;em&gt;home(~)&lt;/em&gt; 디렉토리에 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;유저가 ssh 접속 후 bash shell 을 실행할 때 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 순서로 로드될 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-none-login-shell&quot;&gt;2. none login shell&lt;/h3&gt;
+
+&lt;p&gt;none login shell (bash shell) 이 실행될 때 로드되는 파일은 &lt;em&gt;/etc/bashrc&lt;/em&gt;, &lt;em&gt;~/.bashrc&lt;/em&gt; 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. &lt;em&gt;/etc/bashrc&lt;/em&gt; 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 &lt;em&gt;~/.bashrc&lt;/em&gt; 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-결론&quot;&gt;3. 결론&lt;/h3&gt;
+
+&lt;p&gt;따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;value 에 띄어쓰기가 있을 경우 반드시 &lt;strong&gt;“(쌍따옴표)&lt;/strong&gt;로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;또는 &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="linux" /><category term="bash" /><category term="profile" /><category term="command" /><summary type="html">환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</summary></entry><entry><title type="html">Windows Update, Defender 중지, OneDrive 삭제</title><link href="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive" rel="alternate" type="text/html" title="Windows Update, Defender 중지, OneDrive 삭제" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive</id><content type="html" xml:base="http://localhost:4000/etc/windows/20181001/windows-update-defender-onedrive">&lt;h3 id=&quot;1-windows-update-중지&quot;&gt;1. Windows Update 중지&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;- services.msc&lt;/strong&gt;&lt;/p&gt;
 
@@ -349,68 +379,43 @@
       &lt;td&gt;&lt;a href=&quot;https://drive.google.com/file/d/1CLKKl_I-gZ8HKo9lUupBOqLdnMb1d75V/view?usp=sharing&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="update" /><category term="defender" /><category term="onedrive" /><summary type="html">1. Windows Update 중지</summary></entry><entry><title type="html">리눅스 환경변수 등록</title><link href="http://localhost:4000/linux/20181001/linux-environment-variable" rel="alternate" type="text/html" title="리눅스 환경변수 등록" /><published>2018-10-01T00:00:00+09:00</published><updated>2018-10-01T00:00:00+09:00</updated><id>http://localhost:4000/linux/20181001/linux-environment-variable</id><content type="html" xml:base="http://localhost:4000/linux/20181001/linux-environment-variable">&lt;p&gt;환경변수 등록은 &lt;strong&gt;login shell&lt;/strong&gt; 과 &lt;strong&gt;none login shell&lt;/strong&gt; 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. &lt;strong&gt;login shell&lt;/strong&gt; 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. &lt;strong&gt;none login shell&lt;/strong&gt; 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.&lt;/p&gt;
+&lt;/table&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="windows" /><category term="update" /><category term="defender" /><category term="onedrive" /><summary type="html">1. Windows Update 중지</summary></entry><entry><title type="html">폰트와 기본세팅 정리</title><link href="http://localhost:4000/etc/ide/20180914/ide-settings" rel="alternate" type="text/html" title="폰트와 기본세팅 정리" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/ide/20180914/ide-settings</id><content type="html" xml:base="http://localhost:4000/etc/ide/20180914/ide-settings">&lt;h3 id=&quot;1-폰트&quot;&gt;1. 폰트&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;D2 Coding&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1w68OjeNbabSGnSJyz2l7tq3RkG4ZYvPa&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1p5OQPqZ8dyLuHLJ8B9qFN5BGmb4Sdhmo&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR (경량화 웹 폰트)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17hG2bY-GUFcZhmK1ejagCsIqkmmCyAB6&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;1-login-shell&quot;&gt;1. login shell&lt;/h3&gt;
+&lt;h3 id=&quot;2-visual-studio-code&quot;&gt;2. Visual Studio Code&lt;/h3&gt;
 
-&lt;p&gt;login shell 이 실행될 때 함께 로드되는 파일은 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 등이 있다. &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt; 은 모든 shell 이 대상이고 &lt;em&gt;~/.bash_profile&lt;/em&gt; 은 bash shell 이 대상이다. 또 다른 차이는 &lt;em&gt;/etc/profile&lt;/em&gt; 은 전역(global) 등록이고 &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 은 지역(user) 등록이다. 전역(global) 등록 파일은 &lt;em&gt;/etc&lt;/em&gt; 디렉토리에 있고 지역(user) 파일은 유저의 &lt;em&gt;home(~)&lt;/em&gt; 디렉토리에 있다.&lt;/p&gt;
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Mac User Settings&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1uT_CS0f5glfZRLbCjbTE39cWI0rDZ9mY&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Windows User Settings&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17atE33DpHqyormhQ8gFAGWO_fsy60i2K&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;유저가 ssh 접속 후 bash shell 을 실행할 때 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 순서로 로드될 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-none-login-shell&quot;&gt;2. none login shell&lt;/h3&gt;
-
-&lt;p&gt;none login shell (bash shell) 이 실행될 때 로드되는 파일은 &lt;em&gt;/etc/bashrc&lt;/em&gt;, &lt;em&gt;~/.bashrc&lt;/em&gt; 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. &lt;em&gt;/etc/bashrc&lt;/em&gt; 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 &lt;em&gt;~/.bashrc&lt;/em&gt; 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;3-결론&quot;&gt;3. 결론&lt;/h3&gt;
-
-&lt;p&gt;따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 &lt;em&gt;/etc/profile&lt;/em&gt;, &lt;em&gt;~/.profile&lt;/em&gt;, &lt;em&gt;~/.bash_profile&lt;/em&gt; 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;value
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;value 에 띄어쓰기가 있을 경우 반드시 &lt;strong&gt;“(쌍따옴표)&lt;/strong&gt;로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;또는 &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="linux" /><category term="bash" /><category term="profile" /><category term="command" /><summary type="html">환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. none login shell 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</summary></entry><entry><title type="html">C++ Addon Compile 을 위한 node-gyp</title><link href="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module" rel="alternate" type="text/html" title="C++ Addon Compile 을 위한 node-gyp" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/20180914/nodejs-native-addon-module</id><content type="html" xml:base="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 모듈을 설치하다 보면 &lt;a href=&quot;https://github.com/nodejs/node-gyp&quot;&gt;node-gyp&lt;/a&gt; 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘&lt;a href=&quot;https://nodejs.org/api/addons.html#addons_c_addons&quot;&gt;C++ Addon&lt;/a&gt;’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;node-gyp-설치&quot;&gt;node-gyp 설치&lt;/h2&gt;
-
-&lt;p&gt;node-gyp 을 설치하고 사용하려면 Python v2.7 과 C++ 언어를 Compile 할 수 있는 환경이 구축되있어야 한다. Python 버전은 반드시 2.7 이어야 함을 명심하자. Mac OS 라면 Python 이 기본적으로 설치되어 있을 것이고 Xcode 를 통해 나머지 환경만 조성하면 되겠다. 하지만 Windows 는 직접 둘을 설치하고 설정해야만 하는 번거로움이 있는데 정상적으로 설치했다고 해도 node-gyp 이 설치되지 않는 짜증나는 경우가 있다. 이를 해결해 줄 모듈이 바로 &lt;a href=&quot;https://www.npmjs.com/package/windows-build-tools&quot;&gt;windows-build-tools&lt;/a&gt; 이다. &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 이 모듈을 설치해주면 자동으로 실행되어 Visual C++ Build Tools (Free Charge) 와 Python 2.7 을 설치해준다. 또 C++ Addon 을 Compile 할 수 있도록 적당한 설정까지 완료해준다. 이미 어떤 환경이 조성되있더라도 충돌하지 않도록 잘 구분해서 설치해주기 때문에 충돌도 걱정할 필요가 없다.&lt;/p&gt;
-
-&lt;h3 id=&quot;1-windows-build-tools&quot;&gt;1. windows-build-tools&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Python 2.7, Visual C++ Build Tools 를 설치해주고 PATH 를 등록해 줌&lt;/li&gt;
-  &lt;li&gt;Windows 7 또는 Windows Vista 일 경우 .NET Framework 4.5.1 을 미리 설치해야 함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 관리자 권한으로 실행
-npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--production&lt;/span&gt; windows-build-tools
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;2-node-gyp&quot;&gt;2. node-gyp&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; node-gyp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/ojwojwoj/221266536930&quot;&gt;Node.js C++ 모듈 제작 하기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://z-wony.tistory.com/12&quot;&gt;Node.js 용 c++ Addon을 gcc로 컴파일하기 (node-gyp 없이)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="nodejs" /><category term="node-gyp" /><category term="c++" /><category term="addon" /><summary type="html">npm 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 require 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘C++ Addon’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 require 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.</summary></entry><entry><title type="html">React Component Snippet</title><link href="http://localhost:4000/nodejs/react/20180914/react-component-snippet" rel="alternate" type="text/html" title="React Component Snippet" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/react/20180914/react-component-snippet</id><content type="html" xml:base="http://localhost:4000/nodejs/react/20180914/react-component-snippet">&lt;h3 id=&quot;1-user-snippets&quot;&gt;1. User Snippets&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-14/VisualStudioCodePlugin.png&quot; alt=&quot;Visual Studio Code Plugin&quot; /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="ide" /><category term="font" /><category term="settings" /><summary type="html">1. 폰트</summary></entry><entry><title type="html">React Component Snippet</title><link href="http://localhost:4000/nodejs/react/20180914/react-component-snippet" rel="alternate" type="text/html" title="React Component Snippet" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/react/20180914/react-component-snippet</id><content type="html" xml:base="http://localhost:4000/nodejs/react/20180914/react-component-snippet">&lt;h3 id=&quot;1-user-snippets&quot;&gt;1. User Snippets&lt;/h3&gt;
 
 &lt;p&gt;Preferences - User Snippets&lt;/p&gt;
 
@@ -449,43 +454,38 @@ npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n
     &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;export default $1;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="snippet" /><summary type="html">1. User Snippets</summary></entry><entry><title type="html">폰트와 기본세팅 정리</title><link href="http://localhost:4000/etc/ide/20180914/ide-settings" rel="alternate" type="text/html" title="폰트와 기본세팅 정리" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/ide/20180914/ide-settings</id><content type="html" xml:base="http://localhost:4000/etc/ide/20180914/ide-settings">&lt;h3 id=&quot;1-폰트&quot;&gt;1. 폰트&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;D2 Coding&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1w68OjeNbabSGnSJyz2l7tq3RkG4ZYvPa&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1p5OQPqZ8dyLuHLJ8B9qFN5BGmb4Sdhmo&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Noto Sans CJK KR (경량화 웹 폰트)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17hG2bY-GUFcZhmK1ejagCsIqkmmCyAB6&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="react" /><category term="snippet" /><summary type="html">1. User Snippets</summary></entry><entry><title type="html">C++ Addon Compile 을 위한 node-gyp</title><link href="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module" rel="alternate" type="text/html" title="C++ Addon Compile 을 위한 node-gyp" /><published>2018-09-14T00:00:00+09:00</published><updated>2018-09-14T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/20180914/nodejs-native-addon-module</id><content type="html" xml:base="http://localhost:4000/nodejs/20180914/nodejs-native-addon-module">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 모듈을 설치하다 보면 &lt;a href=&quot;https://github.com/nodejs/node-gyp&quot;&gt;node-gyp&lt;/a&gt; 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘&lt;a href=&quot;https://nodejs.org/api/addons.html#addons_c_addons&quot;&gt;C++ Addon&lt;/a&gt;’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;2-visual-studio-code&quot;&gt;2. Visual Studio Code&lt;/h3&gt;
+&lt;h2 id=&quot;node-gyp-설치&quot;&gt;node-gyp 설치&lt;/h2&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Mac User Settings&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=1uT_CS0f5glfZRLbCjbTE39cWI0rDZ9mY&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Windows User Settings&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://drive.google.com/open?id=17atE33DpHqyormhQ8gFAGWO_fsy60i2K&quot;&gt;&lt;img src=&quot;/assets/img/attach.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;node-gyp 을 설치하고 사용하려면 Python v2.7 과 C++ 언어를 Compile 할 수 있는 환경이 구축되있어야 한다. Python 버전은 반드시 2.7 이어야 함을 명심하자. Mac OS 라면 Python 이 기본적으로 설치되어 있을 것이고 Xcode 를 통해 나머지 환경만 조성하면 되겠다. 하지만 Windows 는 직접 둘을 설치하고 설정해야만 하는 번거로움이 있는데 정상적으로 설치했다고 해도 node-gyp 이 설치되지 않는 짜증나는 경우가 있다. 이를 해결해 줄 모듈이 바로 &lt;a href=&quot;https://www.npmjs.com/package/windows-build-tools&quot;&gt;windows-build-tools&lt;/a&gt; 이다. &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 을 통해 이 모듈을 설치해주면 자동으로 실행되어 Visual C++ Build Tools (Free Charge) 와 Python 2.7 을 설치해준다. 또 C++ Addon 을 Compile 할 수 있도록 적당한 설정까지 완료해준다. 이미 어떤 환경이 조성되있더라도 충돌하지 않도록 잘 구분해서 설치해주기 때문에 충돌도 걱정할 필요가 없다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/posts/Etc/2018-09-14/VisualStudioCodePlugin.png&quot; alt=&quot;Visual Studio Code Plugin&quot; /&gt;&lt;/p&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="ide" /><category term="font" /><category term="settings" /><summary type="html">1. 폰트</summary></entry><entry><title type="html">Windows 에서 Linux 사용하기</title><link href="http://localhost:4000/etc/windows/20180912/windows-wsl" rel="alternate" type="text/html" title="Windows 에서 Linux 사용하기" /><published>2018-09-12T00:00:00+09:00</published><updated>2018-09-12T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20180912/windows-wsl</id><content type="html" xml:base="http://localhost:4000/etc/windows/20180912/windows-wsl">&lt;p&gt;&lt;strong&gt;WSL(Windows Subsystem for Linux)&lt;/strong&gt; 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 Ubuntu, OpenSUSE, SLES, Kali Linux, Debian GNU/Linux 가 있다.&lt;/p&gt;
+&lt;h3 id=&quot;1-windows-build-tools&quot;&gt;1. windows-build-tools&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Python 2.7, Visual C++ Build Tools 를 설치해주고 PATH 를 등록해 줌&lt;/li&gt;
+  &lt;li&gt;Windows 7 또는 Windows Vista 일 경우 .NET Framework 4.5.1 을 미리 설치해야 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 관리자 권한으로 실행
+npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--production&lt;/span&gt; windows-build-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-node-gyp&quot;&gt;2. node-gyp&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; node-gyp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;-reference&quot;&gt;※ Reference&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.naver.com/ojwojwoj/221266536930&quot;&gt;Node.js C++ 모듈 제작 하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://z-wony.tistory.com/12&quot;&gt;Node.js 용 c++ Addon을 gcc로 컴파일하기 (node-gyp 없이)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>lofty87</name><email>lofty87@daum.net</email></author><category term="nodejs" /><category term="node-gyp" /><category term="c++" /><category term="addon" /><summary type="html">npm 을 통해 모듈을 설치하다 보면 node-gyp 에러가 종종 발생하곤 한다. 보통 node-gyp 을 사용해야 되는데 설치가 안되어 있거나 또는 node-gyp 을 설치하려고 하는데 설치가 불가능하거나 하는 문제이다. node-gyp 이 무엇인지 알아보기 전에 NodeJS 스펙부터 살펴 볼 필요가 있다. NodeJS 는 CommonJs 표준과 V8 자바스크립트 엔진을 기반으로 만들어진 자바스크립트 런타임이다. 이 V8 자바스크립트 엔진은 C++ 언어로 작성되었으며 자바스크립트 코드를 기계어로 바꾸어 실행하는 역할을 한다. 그렇기 때문에 자바스크립트로 작성하던 모듈들도 C++ 언어로 작성하여 require 할 수 있다. 스크립트 언어는 생산성이 좋고 편하지만 속도가 느리고 로우한 로직 또는 바이너리 처리가 힘들기 때문에 부분적으로 C++ 언어를 사용하여 모듈을 작성한다면 이런 단점을 보완하고 NodeJS 성능을 향상시킬 수 있다. 이 C++ 언어로 작성된 모듈을 ‘C++ Addon’ 또는 ‘Natvie Node Module’ 또는 ‘Native Addon Module’ 이라고 하며 Compile 후 require 할 수 있다. 바로 이 Compile 작업을 해주는 도구가 node-gyp 인 것이다. node-gyp 말고도 직접 GCC Compiler 를 사용해 Compile 을 할 수도 있다.</summary></entry><entry><title type="html">Windows 에서 Linux 사용하기</title><link href="http://localhost:4000/etc/windows/20180912/windows-wsl" rel="alternate" type="text/html" title="Windows 에서 Linux 사용하기" /><published>2018-09-12T00:00:00+09:00</published><updated>2018-09-12T00:00:00+09:00</updated><id>http://localhost:4000/etc/windows/20180912/windows-wsl</id><content type="html" xml:base="http://localhost:4000/etc/windows/20180912/windows-wsl">&lt;p&gt;&lt;strong&gt;WSL(Windows Subsystem for Linux)&lt;/strong&gt; 은 기존에 사용하던 가상머신(VMware, VirtualBox, Docker)이나 멀티부팅을 사용하지 않고도 Windows 위에 다이렉트로 Linux 환경을 만들어 준다. 이제는 Cmd, PowerShell, GitBash 를 사용하지 않고도 Bash 를 사용할 수 있게 되었으며 Linux 환경에서 실행할 수 있는 대부분의 유틸리티, 애플리케이션들도 실행할 수 있다. 현재 지원하고 있는 Linux 는 Ubuntu, OpenSUSE, SLES, Kali Linux, Debian GNU/Linux 가 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 

@@ -167,10 +167,10 @@
 
 <h4 id="--typeroots">- typeRoots</h4>
 
-<p>지정하지 않으면 <code class="highlighter-rouge">node_modules/@types</code> 가 default 이며 module 의 name 으로 타입을 참조한다.</p>
+<p>지정하지 않으면 <code class="highlighter-rouge">node_modules/@types</code> 가 default 값이다. <u>직접 테스트 해보니 프로젝트 최상위 폴더는 인식하지 못하였고 src 폴더 안에 두어야 인식하였다.</u></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"typeRoots"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"node_modules/@types"</span><span class="p">,</span><span class="w"> </span><span class="s2">"@types"</span><span class="w"> </span><span class="p">]</span><span class="w">
+  </span><span class="s2">"typeRoots"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"node_modules/@types"</span><span class="p">,</span><span class="w"> </span><span class="s2">"src/@types"</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
