@@ -5,9 +5,65 @@
     <description>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</description>
     <link>https://lofty87.github.io/</link>
     <atom:link href="https://lofty87.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Jul 2019 09:27:48 +0900</pubDate>
-    <lastBuildDate>Mon, 08 Jul 2019 09:27:48 +0900</lastBuildDate>
+    <pubDate>Mon, 08 Jul 2019 17:06:27 +0900</pubDate>
+    <lastBuildDate>Mon, 08 Jul 2019 17:06:27 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>type definition (*.d.ts)</title>
+        <description>&lt;h3 id=&quot;1-type-을-정의해야-하는-이유&quot;&gt;1. type 을 정의해야 하는 이유?&lt;/h3&gt;
+
+&lt;p&gt;npm 에서 받을 수 있는 대부분의 3rd Party 모듈들은 js 로 작성되어 있다. TypeScript 프로젝트에서 import 를 통해 이 모듈들을 불러오면 TypeScript Compiler 가 에러를 내뿜기 시작한다. 원인은 이 모듈에 대한 타입 정보가 없어 어떻게 구성되어 있는지, 이 모듈이 무엇인지를 알 수 없기 때문이다. 그래서 TypeScript Compiler 에게 이 모듈들에 대한 타입 정보를 알려줄 필요가 생겼다.&lt;/p&gt;
+
+&lt;p&gt;TypeScript Compiler 는 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 파일을 통해 타입 정보를 탐색할 수 있다. TypeScript 는 기본적으로 &lt;em&gt;node_modules/@types&lt;/em&gt; 를 탐색해 모듈들의 타입 정보를 얻는다. (tsconfig.js 를 통해 변경가능)&lt;/p&gt;
+
+&lt;h3 id=&quot;2-types&quot;&gt;2. @types&lt;/h3&gt;
+
+&lt;p&gt;대부분의 유명한 모듈들은 &lt;strong&gt;@types&lt;/strong&gt; 를 통해 타입 정보를 배포하고 있다. 하지만 그러지 못한 모듈들은 개발자가 직접 타입 정의 파일을 작성해 사용할 수 밖에 없다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--save&lt;/span&gt; @types/모듈명
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-declare-keyword&quot;&gt;3. ‘declare’ keyword&lt;/h3&gt;
+
+&lt;p&gt;타입 정의 파일에는 실제 코드가 있는 것이 아니라 TypeScript Compiler 에게 ‘&lt;u&gt;프로젝트 어디엔가 이런게 존재한다&lt;/u&gt;’ 라고 알려주는 역할만 한다. 이를 위해 사용하는 키워드가 바로 &lt;code class=&quot;highlighter-rouge&quot;&gt;declare&lt;/code&gt; 다. declare 키워드는 module 뿐만 아니라 const, let, class, function 에도 사용하여 TypeScript Compiler 에게 알려줄 수 있다. 만약 타입 정보를 알려줬는데 실제 코드가 없다면 tslint 에는 걸리진 않겠지만 런타임 시에는 오류가 날 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* definition.d.ts */&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// module 모듈명 === namespace 모듈명&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// const&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// function&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;u&gt;모든 ts 코드에 타입 정보가 반영되므로 import 없이 타입을 사용할 수 있고 자동완성(assist) 이 가능하다.&lt;/u&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-type-interface&quot;&gt;4. type, interface&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;type&lt;/strong&gt;, &lt;strong&gt;interface&lt;/strong&gt; 는 타입을 정의하기 위해 존재한다. &lt;strong&gt;declare&lt;/strong&gt; 또한 타입을 TypeScript Compiler 에게 알려주기 위해 존재한다. 즉, TypeScript Compiler 는 셋 다 타입을 정의하는 키워드로 알고 있고 그렇기 때문에 type, interface 또한 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 에 작성이 가능하다. 다시 말해 type, interface 를 외부에 작성하여 import 해서 타입을 사용하지 않고 이미 알고 있는 타입 정보로 만들어 사용이 가능하다는 이야기다. tsconfig.js 에서 typeRoots 설정에 type, interface 를 정의한 파일들의 루트 폴더를 지정해 TypeScript Compiler 에게 알려주기만 하면 된다.&lt;/p&gt;
+
+&lt;p&gt;type, interface 앞에 declare 를 붙이는 것은 동일한 키워드를 중복하는 일이므로 안 붙이는 것을 권장한다.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 08 Jul 2019 00:00:00 +0900</pubDate>
+        <link>https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition</link>
+        <guid isPermaLink="true">https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition</guid>
+        
+        <category>es6</category>
+        
+        <category>typescript</category>
+        
+        
+        <category>NodeJS</category>
+        
+        <category>TypeScript</category>
+        
+      </item>
     
       <item>
         <title>React + TypeScript + StoryBook</title>
