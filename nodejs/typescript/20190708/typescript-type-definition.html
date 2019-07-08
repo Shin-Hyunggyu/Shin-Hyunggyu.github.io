@@ -159,12 +159,26 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @types/모듈명
 </code></pre></div></div>
 
-<h3 id="3-declare-keyword">3. ‘declare’ keyword</h3>
+<h3 id="3-declare-keyword">3. declare keyword</h3>
 
-<p>타입 정의 파일에는 실제 코드가 있는 것이 아니라 TypeScript Compiler 에게 ‘<u>프로젝트 어디엔가 이런게 존재한다</u>’ 라고 알려주는 역할만 한다. 이를 위해 사용하는 키워드가 바로 <code class="highlighter-rouge">declare</code> 다. declare 키워드는 module 뿐만 아니라 const, let, class, function 에도 사용하여 TypeScript Compiler 에게 알려줄 수 있다. 만약 타입 정보를 알려줬는데 실제 코드가 없다면 tslint 에는 걸리진 않겠지만 런타임 시에는 오류가 날 것이다.</p>
+<p>타입 정의 파일에는 실제 코드가 있는 것이 아니라 TypeScript Compiler 에게 ‘<u>프로젝트 어디엔가 이런게 존재한다</u>’ 라고 알려주는 역할만 한다. 이를 위해 사용하는 키워드가 바로 <code class="highlighter-rouge">declare</code> 다. declare 는 module 뿐만 아니라 const, let, class, function 앞에서도 사용이 가능하며 타입 정보들을 TypeScript Compiler 에게 알려줄 수 있다. 만약 타입 정보를 알려줬는데 실제 코드가 없다면 tslint 에는 걸리진 않겠지만 빌드 후 런타임 시에는 오류가 날 것이다.</p>
+
+<h4 id="-declare-로-정의한-타입의-특징">※ declare 로 정의한 타입의 특징</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">*.d.ts</code> 파일 안에서 사용하는 키워드</li>
+  <li>TypeScript Compiler 가 탐색할 수 있는 범위에 포함되어야 함</li>
+  <li>TypeScript Compiler 가 탐색을 통해 이미 타입 정보를 알고 있음
+    <ul>
+      <li>다른 타입(type, interface) 정의들과는 달리 import 없이도 사용 가능</li>
+      <li>*.ts 코드 작성 시 타입 자동완성(assist) 이 가능함</li>
+    </ul>
+  </li>
+</ul>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* definition.d.ts */</span>
-<span class="c1">// module 모듈명 === namespace 모듈명</span>
+
+<span class="c1">// module 모듈명 === namespace 모듈명 (의미만 다름)</span>
 <span class="nx">declare</span> <span class="nx">module</span> <span class="nx">m</span> <span class="p">{</span>
   <span class="k">export</span> <span class="kd">const</span> <span class="nx">str</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
   <span class="k">export</span> <span class="kd">const</span> <span class="nx">num</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
@@ -174,16 +188,36 @@
 <span class="nx">declare</span> <span class="kd">const</span> <span class="nx">str</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
 
 <span class="c1">// function</span>
-<span class="nx">declare</span> <span class="kd">function</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">):</span> <span class="k">void</span> <span class="p">{}</span>
+<span class="nx">declare</span> <span class="kd">function</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">):</span> <span class="k">void</span> <span class="p">{};</span>
 </code></pre></div></div>
 
-<p><u>모든 ts 코드에 타입 정보가 반영되므로 import 없이 타입을 사용할 수 있고 자동완성(assist) 이 가능하다.</u></p>
+<h3 id="4-advanced">4. advanced</h3>
 
-<h3 id="4-type-interface">4. type, interface</h3>
+<p><strong>type</strong> 과 <strong>interface</strong> 를 외부에 정의하여 사용하려면 불가피하게 import 를 할 수 밖에 없다. 사용하는 모듈 외에 import 하는 것은 뭔가 비효율적이고 코드가 깔끔하게 보이지 않는다. 이 문제를 해결할 수 있는 방법이 type definition 을 활용하는 것이다. declare 와 type, interface 는 TypeScript Compiler 에게 타입 정보만을 제공하는 것이 목적이기 때문에 type, interface 또한 <code class="highlighter-rouge">*.d.ts</code> 에 작성하여 TypeScript Compiler 에게 알려주기만 하면 되는 것이다. 이렇게 정의할 경우 import 를 피할 수 있고 코드 작성 시 타입 자동완성도 기대할 수 있다.</p>
 
-<p><strong>type</strong>, <strong>interface</strong> 는 타입을 정의하기 위해 존재한다. <strong>declare</strong> 또한 타입을 TypeScript Compiler 에게 알려주기 위해 존재한다. 즉, TypeScript Compiler 는 셋 다 타입을 정의하는 키워드로 알고 있고 그렇기 때문에 type, interface 또한 <code class="highlighter-rouge">*.d.ts</code> 에 작성이 가능하다. 다시 말해 type, interface 를 외부에 작성하여 import 해서 타입을 사용하지 않고 이미 알고 있는 타입 정보로 만들어 사용이 가능하다는 이야기다. tsconfig.js 에서 typeRoots 설정에 type, interface 를 정의한 파일들의 루트 폴더를 지정해 TypeScript Compiler 에게 알려주기만 하면 된다.</p>
+<p>type과 interface 자체가 타입을 정의하는 키워드이기 때문에 declare 를 붙이지 않아도 TypeScript Compiler 가 타입 정보를 탐색할 수 있다. 한가지 주의할 점은 타입 정의가 중복될 수 있어 <strong>namespace</strong> 를 사용해 독립적으로 정의하는 것도 좋은 방법이 될 수 있다.</p>
 
-<p>type, interface 앞에 declare 를 붙이는 것은 동일한 키워드를 중복하는 일이므로 안 붙이는 것을 권장한다.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* definition.d.ts */</span>
+
+<span class="c1">// without declare</span>
+<span class="kr">interface</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">age</span><span class="o">!</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// namespace</span>
+<span class="nx">declare</span> <span class="nx">namespace</span> <span class="nx">componentProps</span> <span class="p">{</span>
+  <span class="k">export</span> <span class="kr">interface</span> <span class="nx">IButtonProps</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">second</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">disabled</span><span class="p">:</span> <span class="nx">boolean</span>
+  <span class="p">};</span>
+
+  <span class="k">export</span> <span class="kr">interface</span> <span class="nx">IBlockProps</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">primary</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">second</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">active</span><span class="p">:</span> <span class="nx">boolean</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
   </section>
 </article>
@@ -571,17 +605,6 @@ s.setAttribute('data-timestamp', +new Date());
       <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
       
 
-        
-        
-
-        
-          <li class="depth depth-1">
-            <a href="/categories/nodejs">NodeJS<span class="count">(7)</span></a>
-          </li>
-        
-
-      
-
     
       <!-- category page 를 찾고 depth 를 구분 -->
       
@@ -592,6 +615,17 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
+
+        
+        
+
+        
+          <li class="depth depth-1">
+            <a href="/categories/nodejs">NodeJS<span class="count">(7)</span></a>
+          </li>
+        
+
       
 
     

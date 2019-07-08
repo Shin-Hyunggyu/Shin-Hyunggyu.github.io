@@ -5,8 +5,8 @@
     <description>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</description>
     <link>https://lofty87.github.io/</link>
     <atom:link href="https://lofty87.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Jul 2019 17:06:27 +0900</pubDate>
-    <lastBuildDate>Mon, 08 Jul 2019 17:06:27 +0900</lastBuildDate>
+    <pubDate>Mon, 08 Jul 2019 20:22:45 +0900</pubDate>
+    <lastBuildDate>Mon, 08 Jul 2019 20:22:45 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -24,12 +24,26 @@
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--save&lt;/span&gt; @types/모듈명
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;3-declare-keyword&quot;&gt;3. ‘declare’ keyword&lt;/h3&gt;
+&lt;h3 id=&quot;3-declare-keyword&quot;&gt;3. declare keyword&lt;/h3&gt;
 
-&lt;p&gt;타입 정의 파일에는 실제 코드가 있는 것이 아니라 TypeScript Compiler 에게 ‘&lt;u&gt;프로젝트 어디엔가 이런게 존재한다&lt;/u&gt;’ 라고 알려주는 역할만 한다. 이를 위해 사용하는 키워드가 바로 &lt;code class=&quot;highlighter-rouge&quot;&gt;declare&lt;/code&gt; 다. declare 키워드는 module 뿐만 아니라 const, let, class, function 에도 사용하여 TypeScript Compiler 에게 알려줄 수 있다. 만약 타입 정보를 알려줬는데 실제 코드가 없다면 tslint 에는 걸리진 않겠지만 런타임 시에는 오류가 날 것이다.&lt;/p&gt;
+&lt;p&gt;타입 정의 파일에는 실제 코드가 있는 것이 아니라 TypeScript Compiler 에게 ‘&lt;u&gt;프로젝트 어디엔가 이런게 존재한다&lt;/u&gt;’ 라고 알려주는 역할만 한다. 이를 위해 사용하는 키워드가 바로 &lt;code class=&quot;highlighter-rouge&quot;&gt;declare&lt;/code&gt; 다. declare 는 module 뿐만 아니라 const, let, class, function 앞에서도 사용이 가능하며 타입 정보들을 TypeScript Compiler 에게 알려줄 수 있다. 만약 타입 정보를 알려줬는데 실제 코드가 없다면 tslint 에는 걸리진 않겠지만 빌드 후 런타임 시에는 오류가 날 것이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;-declare-로-정의한-타입의-특징&quot;&gt;※ declare 로 정의한 타입의 특징&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 파일 안에서 사용하는 키워드&lt;/li&gt;
+  &lt;li&gt;TypeScript Compiler 가 탐색할 수 있는 범위에 포함되어야 함&lt;/li&gt;
+  &lt;li&gt;TypeScript Compiler 가 탐색을 통해 이미 타입 정보를 알고 있음
+    &lt;ul&gt;
+      &lt;li&gt;다른 타입(type, interface) 정의들과는 달리 import 없이도 사용 가능&lt;/li&gt;
+      &lt;li&gt;*.ts 코드 작성 시 타입 자동완성(assist) 이 가능함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* definition.d.ts */&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// module 모듈명 === namespace 모듈명&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// module 모듈명 === namespace 모듈명 (의미만 다름)&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -39,16 +53,36 @@
 &lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// function&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;u&gt;모든 ts 코드에 타입 정보가 반영되므로 import 없이 타입을 사용할 수 있고 자동완성(assist) 이 가능하다.&lt;/u&gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-advanced&quot;&gt;4. advanced&lt;/h3&gt;
 
-&lt;h3 id=&quot;4-type-interface&quot;&gt;4. type, interface&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;type&lt;/strong&gt; 과 &lt;strong&gt;interface&lt;/strong&gt; 를 외부에 정의하여 사용하려면 불가피하게 import 를 할 수 밖에 없다. 사용하는 모듈 외에 import 하는 것은 뭔가 비효율적이고 코드가 깔끔하게 보이지 않는다. 이 문제를 해결할 수 있는 방법이 type definition 을 활용하는 것이다. declare 와 type, interface 는 TypeScript Compiler 에게 타입 정보만을 제공하는 것이 목적이기 때문에 type, interface 또한 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 에 작성하여 TypeScript Compiler 에게 알려주기만 하면 되는 것이다. 이렇게 정의할 경우 import 를 피할 수 있고 코드 작성 시 타입 자동완성도 기대할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;type&lt;/strong&gt;, &lt;strong&gt;interface&lt;/strong&gt; 는 타입을 정의하기 위해 존재한다. &lt;strong&gt;declare&lt;/strong&gt; 또한 타입을 TypeScript Compiler 에게 알려주기 위해 존재한다. 즉, TypeScript Compiler 는 셋 다 타입을 정의하는 키워드로 알고 있고 그렇기 때문에 type, interface 또한 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 에 작성이 가능하다. 다시 말해 type, interface 를 외부에 작성하여 import 해서 타입을 사용하지 않고 이미 알고 있는 타입 정보로 만들어 사용이 가능하다는 이야기다. tsconfig.js 에서 typeRoots 설정에 type, interface 를 정의한 파일들의 루트 폴더를 지정해 TypeScript Compiler 에게 알려주기만 하면 된다.&lt;/p&gt;
+&lt;p&gt;type과 interface 자체가 타입을 정의하는 키워드이기 때문에 declare 를 붙이지 않아도 TypeScript Compiler 가 타입 정보를 탐색할 수 있다. 한가지 주의할 점은 타입 정의가 중복될 수 있어 &lt;strong&gt;namespace&lt;/strong&gt; 를 사용해 독립적으로 정의하는 것도 좋은 방법이 될 수 있다.&lt;/p&gt;
 
-&lt;p&gt;type, interface 앞에 declare 를 붙이는 것은 동일한 키워드를 중복하는 일이므로 안 붙이는 것을 권장한다.&lt;/p&gt;
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* definition.d.ts */&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// without declare&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// namespace&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;componentProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IButtonProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;primary&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;boolean&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IBlockProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;primary&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;boolean&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 08 Jul 2019 00:00:00 +0900</pubDate>
         <link>https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition</link>
