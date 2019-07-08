@@ -80,7 +80,7 @@ date: 2018-08-30
 
 ## 8. SEO 를 위한 sitemap.xml, feed.xml, robots.txt 추가
 
-이미 자동으로 **sitemap.xml** 이나 **feed.xml** 을 만들어 주고 있을 수 있음
+build 후 배포를 하기 때문에 url 이 localhost 로 들어가서 plugin 을 사용하지 않고 직접 코드로 생성하고 있음 (sitemap.xml, feed.xml)
 
 ### 1. install
 
