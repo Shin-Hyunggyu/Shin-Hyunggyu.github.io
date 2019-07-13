@@ -5,50 +5,50 @@
 <meta name="referrer" content="always">
 <meta name="author"   content="lofty87">
 
-  <meta name="keywords" content="리눅스 환경변수 등록,Dev Store">
-<meta name="description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ..."><!-- View -->
+  <meta name="keywords" content="type definition 1,Dev Store">
+<meta name="description" content="타입을 정의해야 하는 이유와 방법, 기존 타입 정의를 오버라이딩 할 수 있는가?"><!-- View -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"              content="width=device-width, initial-scale=1.0">
 
 <!-- Represent -->
 <base                                                         href="https://lofty87.github.io">
-<link rel="canonical"                                         href="https://lofty87.github.io/linux/20181001/linux-environment-variable"/>
+<link rel="canonical"                                         href="https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition-1"/>
 <link rel="icon"             type="image/png" sizes="32x32"   href="https://lofty87.github.io/assets/favicon-32x32.png">
 <link rel="icon"             type="image/png" sizes="16x16"   href="https://lofty87.github.io/assets/favicon-16x16.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://lofty87.github.io/assets/apple-touch-icon.png">
 
-<title>리눅스 환경변수 등록 | Dev Store</title>
+<title>type definition 1 | Dev Store</title>
 
 <!-- Site Verification --><meta name="google-site-verification" content="hyjADXBfPWioezEyxWb91yhZYGC08ikSp1aF6Bz1b_w"/>
   <meta name="naver-site-verification"  content="16bc7701ad208ef6b2ff1ba2aa5f1021561c8071"/><!-- Open Graph -->
 <meta property="og:type"      content="article">
 <meta property="og:site_name" content="Dev Store">
-<meta property="og:url"       content="https://lofty87.github.io/linux/20181001/linux-environment-variable">
+<meta property="og:url"       content="https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition-1">
 <meta property="og:image"     content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta property="og:title"     content="리눅스 환경변수 등록">
-<meta property="og:description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ..."><!-- Twitter Card -->
+  <meta property="og:title"     content="type definition 1">
+<meta property="og:description" content="타입을 정의해야 하는 이유와 방법, 기존 타입 정의를 오버라이딩 할 수 있는가?"><!-- Twitter Card -->
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:site"  content="Dev Store">
 <meta name="twitter:image" content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta name="twitter:title" content="리눅스 환경변수 등록">
-<meta name="twitter:description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ..."><!-- Structured Data -->
+  <meta name="twitter:title" content="type definition 1">
+<meta name="twitter:description" content="타입을 정의해야 하는 이유와 방법, 기존 타입 정의를 오버라이딩 할 수 있는가?"><!-- Structured Data -->
 <script type="application/ld+json">
   {
     "@context":"http://schema.org",
     "@type":"BlogPosting",
-    "url":"https://lofty87.github.io/linux/20181001/linux-environment-variable",
+    "url":"https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition-1",
     
-      "headline":"리눅스 환경변수 등록",
+      "headline":"type definition 1",
     
     
-      "description": "환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ...",
+      "description": "타입을 정의해야 하는 이유와 방법, 기존 타입 정의를 오버라이딩 할 수 있는가?",
     
-    "datePublished":"2018-10-01 00:00:00 +0900",
-    "dateModified":"2018-10-01 00:00:00 +0900",
+    "datePublished":"2019-07-08 00:00:00 +0900",
+    "dateModified":"2019-07-08 00:00:00 +0900",
     "mainEntityOfPage":{
-      "@id":"https://lofty87.github.io/linux/20181001/linux-environment-variable"
+      "@id":"https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition-1"
     },
     "author":{
       "@type":"Person",
@@ -135,51 +135,173 @@
 
 <article class="post">
   <section class="post-header">
-    <div class="category">Linux</div>
+    <div class="category">TypeScript</div>
     <div class="tags">
       
-        <div class="tag">linux</div>
+        <div class="tag">es6</div>
       
-        <div class="tag">bash</div>
-      
-        <div class="tag">profile</div>
-      
-        <div class="tag">command</div>
+        <div class="tag">typescript</div>
       
     </div>
-    <h1 class="title">리눅스 환경변수 등록</h1>
+    <h1 class="title">type definition 1</h1>
   </section>
   <section class="post-content">
-    <p>환경변수 등록은 <strong>login shell</strong> 과 <strong>none login shell</strong> 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. <strong>login shell</strong> 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. <strong>none login shell</strong> 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</p>
+    <h3 id="1-type-을-정의해야-하는-이유">1. type 을 정의해야 하는 이유?</h3>
 
-<p><br /></p>
+<p>npm 에서 받을 수 있는 대부분의 3rd Party 모듈들은 js 로 작성되어 있다. TypeScript 프로젝트에서 import 를 통해 이 모듈들을 불러오면 TypeScript Compiler 가 에러를 내뿜기 시작한다. 원인은 이 모듈에 대한 타입 정보가 없어 어떻게 구성되어 있는지, 이 모듈이 무엇인지를 알 수 없기 때문이다. 그래서 TypeScript Compiler 에게 이 모듈들에 대한 타입 정보를 알려 줄 필요가 생겼다. 그 외에도 type, interface 같은 타입 정의를 통해 조금 더 효율적이고 클린한 코드를 생산할 수 있다.</p>
 
-<h3 id="1-login-shell">1. login shell</h3>
+<p>TypeScript Compiler 는 <code class="highlighter-rouge">*.d.ts</code> 파일을 통해 타입 정보를 탐색할 수 있다. TypeScript 는 기본적으로 <em>node_modules/@types</em> 를 탐색해 모듈들의 타입 정보를 얻는다. (tsconfig.js 를 통해 변경가능)</p>
 
-<p>login shell 이 실행될 때 함께 로드되는 파일은 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 등이 있다. <em>/etc/profile</em>, <em>~/.profile</em> 은 모든 shell 이 대상이고 <em>~/.bash_profile</em> 은 bash shell 이 대상이다. 또 다른 차이는 <em>/etc/profile</em> 은 전역(global) 등록이고 <em>~/.profile</em>, <em>~/.bash_profile</em> 은 지역(user) 등록이다. 전역(global) 등록 파일은 <em>/etc</em> 디렉토리에 있고 지역(user) 파일은 유저의 <em>home(~)</em> 디렉토리에 있다.</p>
+<h3 id="2-types">2. @types</h3>
 
-<blockquote>
-  <p>유저가 ssh 접속 후 bash shell 을 실행할 때 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 순서로 로드될 것이다.</p>
-</blockquote>
+<p>대부분의 유명한 모듈들은 <strong>@types</strong> 를 통해 타입 정보를 배포하고 있다. 하지만 그러지 못한 모듈들은 개발자가 직접 타입 정의 파일을 작성해 사용할 수 밖에 없다.</p>
 
-<p><br /></p>
-
-<h3 id="2-none-login-shell">2. none login shell</h3>
-
-<p>none login shell (bash shell) 이 실행될 때 로드되는 파일은 <em>/etc/bashrc</em>, <em>~/.bashrc</em> 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. <em>/etc/bashrc</em> 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 <em>~/.bashrc</em> 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.</p>
-
-<p><br /></p>
-
-<h3 id="3-결론">3. 결론</h3>
-
-<p>따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">name</span><span class="o">=</span>value
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @types/모듈명
 </code></pre></div></div>
 
-<p>value 에 띄어쓰기가 있을 경우 반드시 <strong>“(쌍따옴표)</strong>로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.</p>
+<h3 id="3-declare-keyword">3. declare keyword</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span>또는 <span class="nb">env</span>
+<p><strong>declare</strong> 는 TypeScript Compiler 에게 ‘프로젝트 어디엔가 이런게 존재하고 있어!’
+라고 알려주는 역할을 한다. declare 는 module 뿐만 아니라 const, let, class,
+function 앞에서도 사용이 가능하며 오직 Top-level 에서만 사용할 수 있다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 'person' 이라는 모듈이 존재하고 있어!</span>
+<span class="nx">declare</span> <span class="nx">module</span> <span class="dl">'</span><span class="s1">person</span><span class="dl">'</span> <span class="p">{}</span>
+
+<span class="c1">// declare 사용가능</span>
+<span class="nx">declare</span> <span class="kd">const</span> <span class="nx">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+
+<span class="c1">// declare(두번째) 사용불가</span>
+<span class="nx">declare</span> <span class="nx">namespace</span> <span class="dl">'</span><span class="s1">person</span><span class="dl">'</span> <span class="p">{</span>
+  <span class="nx">declare</span> <span class="kd">const</span> <span class="nx">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="--declare-와-export">- declare 와 export</h4>
+
+<p>Top-level 에서 타입을 정의하는데 있어 declare 와 export 는 비슷한 해석을 가진다. declare 대신 export 를 사용해도 TypeScript Compiler 가 인식할 수 있고 assist 도 가능하다. 하지만 사용하는 의미와 용도가 달라 외부에 타입을 정의할 때에는 declare 를 그 외에는 export 를 사용하는 것이 좋겠다.</p>
+
+<h4 id="--type-과-interface">- type 과 interface</h4>
+
+<p>Top-level 에서 정의한 type 과 interface 는 declare 나 export 를 앞에 붙이지 않아도 TypeScript Compiler 가 인식할 수 있고 assist 도 가능하다.</p>
+
+<h4 id="--module-과-namespace">- module 과 namespace</h4>
+
+<p>타입을 정의하는데 있어 module 과 namespace 는 독립적인 공간을 말한다. module 대신 namespace 를 사용해도 100% 같은 효과를 가진다. 하지만 사용하는 의미와 용도가 달라 모듈을 정의할 때는 module 을 독립적인 공간을 정의할 때는 namespace 를 사용하는 것이 좋겠다.</p>
+
+<h3 id="4-내부-타입-정의">4. 내부 타입 정의</h3>
+
+<p>TypeScript Compiler 는 실제 모듈을 불러오는 방법과 똑같이 경로를 인식하기 때문에 아래와 같이 definition 파일을 둘 경우 해당 모듈의 타입을 정의할 수 있다.</p>
+
+<ul>
+  <li>모듈이 파일명일 때
+    <ul>
+      <li>src/person.js</li>
+      <li>src/person.d.ts</li>
+    </ul>
+  </li>
+  <li>모듈이 폴더명일 때
+    <ul>
+      <li>src/person/index.js</li>
+      <li>src/person/index.d.ts</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">IPerson</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">person</span><span class="p">:</span> <span class="nx">IPerson</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">person</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>내부 타입 정의는 실제 모듈을 불러오는 경로와 똑같기 때문에 구지 <strong>declare</strong> 를 통해 모듈의 위치를 TypeScript Compiler 에게 알려 줄 필요가 없다. person 변수 앞에 export 를 붙여 준 이유는 TypeScript Compiler 가 Top-level 안에 <u>평범한 변수 정의를 제한</u>하기 때문이다. <strong>type</strong> 과 <strong>interface</strong> 를 제외한 평범한 변수를 Top-level 안에 정의할 때에는 앞에 export 나 declare 를 붙여 주도록 하자. block 안, 예를 들면 module 이나 namespace 안에서는 정의가 가능하다.</p>
+
+<h3 id="5-외부-타입-정의">5. 외부 타입 정의</h3>
+
+<p>외부 타입 정의는 보통 3rd Party js 모듈이 타입 정의를 제공하지 않거나 잘못된 타입 정의를 수정하기 위해 사용한다. 아래와 같이 <u>파일명이나 폴더명을 모듈명</u>으로 한다고 해서 TypeScript Compiler 가 해당 명의 모듈 타입 정보로 인식하지 않는다. 반드시 <strong>declare</strong> 를 통해 모듈을 정의해야 한다.</p>
+
+<ul>
+  <li>src/@types/person.d.ts</li>
+  <li>src/@types/person/index.d.ts</li>
+</ul>
+
+<p>주의할 것은 이미 타입 정의가 제공되고 있는데 중복으로 정의할 경우 TypeScript Compiler 가 두개로 구분해 인식하여 원하는 타입 정의가 나오지 않을 수 있다. 따라서 최대한 중복되지 않도록 해야 정신건강에 이롭다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 일반적인 모듈명</span>
+<span class="nx">declare</span> <span class="nx">module</span> <span class="dl">'</span><span class="s1">person</span><span class="dl">'</span> <span class="p">{</span>
+  <span class="k">export</span> <span class="kd">const</span> <span class="nx">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="k">export</span> <span class="kd">const</span> <span class="nx">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="k">export</span> <span class="nx">type</span> <span class="nx">info</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">address</span><span class="p">:</span> <span class="nx">string</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// 경로 형식의 모듈명도 가능</span>
+<span class="nx">declare</span> <span class="nx">module</span> <span class="dl">'</span><span class="s1">@material-ui/core</span><span class="dl">'</span> <span class="p">{</span>
+  <span class="k">export</span> <span class="kd">const</span> <span class="nx">CustomPropTypes</span><span class="p">:</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">dense</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">normal</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="--외부-타입을-정의하려면">- 외부 타입을 정의하려면?</h4>
+
+<p>Typescript Compiler 가 탐색할 수 있도록 tsconfig.js 에 <strong>typeRoots</strong> 값을 추가해 주어야 한다. 값을 설정하지 않으면 기본적으로 <em>node_modules/@types</em> 만 탐색하도록 되있다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">typeRoots</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span> <span class="dl">"</span><span class="s2">node_modules/@types</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">src/@types</span><span class="dl">"</span> <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="--외부-타입-정의를-통해-기존-타입-정의를-오버라이딩-하려면">- 외부 타입 정의를 통해 기존 타입 정의를 오버라이딩 하려면?</h4>
+
+<p>이리저리 구글링하고 테스트 해보았지만 한마디로 <u>불가능</u>하다. Typescript Compiler 는 동일한 부분을 오버라이딩 하는 것이 아니라 두개로 인식할 뿐이다. 정말 불가피한 상황이라면 직접 타입 정의를 수정하거나 오버라이딩이 필요한 타입 정의들만 복사해 수정하고 외부 타입으로 정의하면 된다. 당연히 기존 타입 정의들은 중복되지 않도록 지우는 것이 좋다. 단, 예외적으로 오버라이딩 효과를 낼 수 있는 경우가 있는데 그것은 완전히 서로 다른 내용을 가진 같은 명의 모듈 정의일 경우이다. 오버라이딩이라기 보다는 병합에 가까운 수준이다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// @material-ui/core 모듈에는 PropTypes 라는 타입이 이미 정의되어 있다.</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@material-ui/core</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// 중복 정의를 통해 오버라이딩 하지 말아야 할 경우 (PropTypes 겹침)</span>
+<span class="nx">declare</span> <span class="nx">module</span> <span class="dl">'</span><span class="s1">@material-ui/core</span><span class="dl">'</span> <span class="p">{</span>
+  <span class="k">export</span> <span class="kd">const</span> <span class="nx">PropTypes</span><span class="p">:</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">dense</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">normal</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 중복 정의를 통해 오버라이딩 효과를 낼 수 있는 경우</span>
+<span class="nx">declare</span> <span class="nx">module</span> <span class="dl">'</span><span class="s1">@material-ui/core</span><span class="dl">'</span> <span class="p">{</span>
+  <span class="k">export</span> <span class="kd">const</span> <span class="nx">CustomPropTypes</span><span class="p">:</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">dense</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">normal</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="--타입을-정의할-때-유의할-점">- 타입을 정의할 때 유의할 점</h4>
+
+<p><code class="highlighter-rouge">*.ts</code> 코드와 <code class="highlighter-rouge">*.d.ts</code> 타입 정의가 정확하게 <strong>매칭</strong>되어야 한다. 정확하게 매칭되지 않을 경우 혹시나 TypeScript Compiler 린팅은 통과했지만 런타임 시 에러가 발생할 가능성이 있다. TypeScript Compiler 는 타입 정의를 통해서만 코드를 해석하므로 개발자가 고의로 타입을 속일 수도 있다. 또 타입 정의에 집중한 나머지 type 이나 interface 를 export 하는 실수도 할 수 있으니 조심하도록 하자.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// person.js</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">lofty87</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">33</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">person</span><span class="p">;</span>
+
+<span class="c1">// person.d.ts</span>
+<span class="kr">interface</span> <span class="nx">IPerson</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">person</span><span class="p">:</span> <span class="nx">IPerson</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">person</span><span class="p">;</span>
+
+<span class="c1">// person.d.ts (export 실수한 경우)</span>
+<span class="kr">interface</span> <span class="nx">IPerson</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">IPerson</span><span class="p">;</span>
 </code></pre></div></div>
 
   </section>
@@ -187,10 +309,10 @@
 
 <section class="post-category-list">
   <section class="title">
-    <h4><span>'Linux'</span> 카테고리의 최신글</h4>
+    <h4><span>'TypeScript'</span> 카테고리의 최신글</h4>
 
     
-      <a href="/categories/linux">더보기</a>
+      <a href="/categories/nodejs/typescript">더보기</a>
     
   </section>
   
@@ -200,7 +322,55 @@
       
       
         
+          <li>
+            <a href="/nodejs/typescript/20190713/typescript-type-definition-2">
+              <h2>type definition 2</h2>
+            </a>
+            <time datetime="2019-07-13">2019-07-13</time>
+          </li>
+        
+      
+    
+      
+      
+        
           
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20190703/typescript-base">
+              <h2>TypeScript 기본 1</h2>
+            </a>
+            <time datetime="2019-07-03">2019-07-03</time>
+          </li>
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20190702/typescript-tsconfig">
+              <h2>tsconfig.js</h2>
+            </a>
+            <time datetime="2019-07-02">2019-07-02</time>
+          </li>
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20180830/typescript-import-export">
+              <h2>TypeScript 에서 import 와 export 를 어떻게 처...</h2>
+            </a>
+            <time datetime="2018-08-30">2018-08-30</time>
+          </li>
         
       
     
@@ -217,8 +387,8 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-  this.page.url = "http://localhost:4000/linux/20181001/linux-environment-variable";
-  this.page.identifier = "/linux/20181001/linux-environment-variable";
+  this.page.url = "http://localhost:4000/nodejs/typescript/20190708/typescript-type-definition-1";
+  this.page.identifier = "/nodejs/typescript/20190708/typescript-type-definition-1";
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

@@ -5,15 +5,137 @@
     <description>프로그래밍을 하면서 얻은 지식이나 생각을 기록하는 저장소입니다.</description>
     <link>https://lofty87.github.io/</link>
     <atom:link href="https://lofty87.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Jul 2019 20:22:45 +0900</pubDate>
-    <lastBuildDate>Mon, 08 Jul 2019 20:22:45 +0900</lastBuildDate>
+    <pubDate>Sun, 14 Jul 2019 00:34:27 +0900</pubDate>
+    <lastBuildDate>Sun, 14 Jul 2019 00:34:27 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>type definition (*.d.ts)</title>
+        <title>type definition 2</title>
+        <description>&lt;p&gt;타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-interface-class-같은-객체-타입들의-병합&quot;&gt;1. interface, class 같은 객체 타입들의 병합&lt;/h3&gt;
+
+&lt;h4 id=&quot;---연산자&quot;&gt;- &amp;amp; 연산자&lt;/h4&gt;
+
+&lt;p&gt;두 타입을 한 타입으로 합치는 연산자이다. 중복되는 프로퍼티는 타입끼리 &amp;amp;(교집합) 처리가 되는데 서로 다른 타입일 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;string &amp;amp; number&lt;/code&gt; 같이 정의되어 값을 할당할 수 없게 되니 조심해야 한다. 합쳐지는 두 타입의 모든 프로퍼티가 존재하게 되어 assist 가 가능하다. 따라서 &lt;u&gt;두 타입의 프로퍼티가 서로 완전 다를 때&lt;/u&gt; 사용하는 것이 바람직하다.&lt;/p&gt;
+
+&lt;h4 id=&quot;---연산자-1&quot;&gt;- | 연산자&lt;/h4&gt;
+
+&lt;p&gt;둘 중 한 타입에만 속하면 되는 연산자이다. 범용적으로 두 타입을 합치는 효과가 있다. &amp;amp; 연산자와는 다르게 중복되는 프로퍼티는 타입끼리 |(합집합) 처리가 되어 안정적으로 값을 할당할 수 있다. 하지만 어느 한 타입에만 존재하는 프로퍼티가 있을 수 있어 assist 는 중복되는 프로퍼티만 가능하다. 따라서 적절한 &lt;strong&gt;type assertion&lt;/strong&gt; 을 통해 효율적으로 사용하는 것이 좋겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-extends&quot;&gt;2. extends&lt;/h3&gt;
+
+&lt;p&gt;extends 는 &lt;strong&gt;제네릭&lt;/strong&gt; 안에서 어떤 타입(들)의 선택적 포함을 나타낸다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// T 는 &quot;address1&quot; | &quot;address2&quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;address1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;address2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-keyof&quot;&gt;3. keyof&lt;/h3&gt;
+
+&lt;p&gt;keyof 는 어떤 타입의 &lt;strong&gt;프로퍼티&lt;/strong&gt;를 Union 타입으로 나열하는 키워드로써 제네릭이나 타입을 정의하는데 효율적으로 사용된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Info&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Address&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;address1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;address2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// T 는 &quot;address1&quot; | &quot;address2&quot;&lt;/span&gt;
+  &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Address&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TPerson&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// unionTPerson 은 &quot;name&quot; | &quot;age&quot; | &quot;address&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;unionTPerson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TPerson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-in&quot;&gt;4. in&lt;/h3&gt;
+
+&lt;p&gt;in 은 어떤 타입(들)의 포함을 나타낸다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Info&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Partial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;K&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+  &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IRequiredProperty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;// 모든 프로퍼티를 선택적인 프로퍼티로 변경&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ISelectedProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Partial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;IRequiredProperty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 필수적인 &quot;name&quot;, &quot;age&quot;, &quot;address&quot; 프로퍼티&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5-대표적인-객체-타입-라이브러리&quot;&gt;5. 대표적인 객체 타입 라이브러리&lt;/h3&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 모든 프로퍼티를 readonly 프로퍼티로 변경&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Readonly&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;readonly&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 모든 프로퍼티를 선택적인 프로퍼티로 변경&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Partial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]?:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 모든 프로퍼티를 null 허용 프로퍼티로 변경&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Nullable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 모든 프로퍼티 중 선택한 일부 프로퍼티로 변경&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Pick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;K&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Record&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Record&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;K&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 13 Jul 2019 00:00:00 +0900</pubDate>
+        <link>https://lofty87.github.io/nodejs/typescript/20190713/typescript-type-definition-2</link>
+        <guid isPermaLink="true">https://lofty87.github.io/nodejs/typescript/20190713/typescript-type-definition-2</guid>
+        
+        <category>es6</category>
+        
+        <category>typescript</category>
+        
+        
+        <category>NodeJS</category>
+        
+        <category>TypeScript</category>
+        
+      </item>
+    
+      <item>
+        <title>type definition 1</title>
         <description>&lt;h3 id=&quot;1-type-을-정의해야-하는-이유&quot;&gt;1. type 을 정의해야 하는 이유?&lt;/h3&gt;
 
-&lt;p&gt;npm 에서 받을 수 있는 대부분의 3rd Party 모듈들은 js 로 작성되어 있다. TypeScript 프로젝트에서 import 를 통해 이 모듈들을 불러오면 TypeScript Compiler 가 에러를 내뿜기 시작한다. 원인은 이 모듈에 대한 타입 정보가 없어 어떻게 구성되어 있는지, 이 모듈이 무엇인지를 알 수 없기 때문이다. 그래서 TypeScript Compiler 에게 이 모듈들에 대한 타입 정보를 알려줄 필요가 생겼다.&lt;/p&gt;
+&lt;p&gt;npm 에서 받을 수 있는 대부분의 3rd Party 모듈들은 js 로 작성되어 있다. TypeScript 프로젝트에서 import 를 통해 이 모듈들을 불러오면 TypeScript Compiler 가 에러를 내뿜기 시작한다. 원인은 이 모듈에 대한 타입 정보가 없어 어떻게 구성되어 있는지, 이 모듈이 무엇인지를 알 수 없기 때문이다. 그래서 TypeScript Compiler 에게 이 모듈들에 대한 타입 정보를 알려 줄 필요가 생겼다. 그 외에도 type, interface 같은 타입 정의를 통해 조금 더 효율적이고 클린한 코드를 생산할 수 있다.&lt;/p&gt;
 
 &lt;p&gt;TypeScript Compiler 는 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 파일을 통해 타입 정보를 탐색할 수 있다. TypeScript 는 기본적으로 &lt;em&gt;node_modules/@types&lt;/em&gt; 를 탐색해 모듈들의 타입 정보를 얻는다. (tsconfig.js 를 통해 변경가능)&lt;/p&gt;
 
@@ -26,67 +148,152 @@
 
 &lt;h3 id=&quot;3-declare-keyword&quot;&gt;3. declare keyword&lt;/h3&gt;
 
-&lt;p&gt;타입 정의 파일에는 실제 코드가 있는 것이 아니라 TypeScript Compiler 에게 ‘&lt;u&gt;프로젝트 어디엔가 이런게 존재한다&lt;/u&gt;’ 라고 알려주는 역할만 한다. 이를 위해 사용하는 키워드가 바로 &lt;code class=&quot;highlighter-rouge&quot;&gt;declare&lt;/code&gt; 다. declare 는 module 뿐만 아니라 const, let, class, function 앞에서도 사용이 가능하며 타입 정보들을 TypeScript Compiler 에게 알려줄 수 있다. 만약 타입 정보를 알려줬는데 실제 코드가 없다면 tslint 에는 걸리진 않겠지만 빌드 후 런타임 시에는 오류가 날 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;declare&lt;/strong&gt; 는 TypeScript Compiler 에게 ‘프로젝트 어디엔가 이런게 존재하고 있어!’
+라고 알려주는 역할을 한다. declare 는 module 뿐만 아니라 const, let, class,
+function 앞에서도 사용이 가능하며 오직 Top-level 에서만 사용할 수 있다.&lt;/p&gt;
 
-&lt;h4 id=&quot;-declare-로-정의한-타입의-특징&quot;&gt;※ declare 로 정의한 타입의 특징&lt;/h4&gt;
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 'person' 이라는 모듈이 존재하고 있어!&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// declare 사용가능&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// declare(두번째) 사용불가&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;--declare-와-export&quot;&gt;- declare 와 export&lt;/h4&gt;
+
+&lt;p&gt;Top-level 에서 타입을 정의하는데 있어 declare 와 export 는 비슷한 해석을 가진다. declare 대신 export 를 사용해도 TypeScript Compiler 가 인식할 수 있고 assist 도 가능하다. 하지만 사용하는 의미와 용도가 달라 외부에 타입을 정의할 때에는 declare 를 그 외에는 export 를 사용하는 것이 좋겠다.&lt;/p&gt;
+
+&lt;h4 id=&quot;--type-과-interface&quot;&gt;- type 과 interface&lt;/h4&gt;
+
+&lt;p&gt;Top-level 에서 정의한 type 과 interface 는 declare 나 export 를 앞에 붙이지 않아도 TypeScript Compiler 가 인식할 수 있고 assist 도 가능하다.&lt;/p&gt;
+
+&lt;h4 id=&quot;--module-과-namespace&quot;&gt;- module 과 namespace&lt;/h4&gt;
+
+&lt;p&gt;타입을 정의하는데 있어 module 과 namespace 는 독립적인 공간을 말한다. module 대신 namespace 를 사용해도 100% 같은 효과를 가진다. 하지만 사용하는 의미와 용도가 달라 모듈을 정의할 때는 module 을 독립적인 공간을 정의할 때는 namespace 를 사용하는 것이 좋겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-내부-타입-정의&quot;&gt;4. 내부 타입 정의&lt;/h3&gt;
+
+&lt;p&gt;TypeScript Compiler 는 실제 모듈을 불러오는 방법과 똑같이 경로를 인식하기 때문에 아래와 같이 definition 파일을 둘 경우 해당 모듈의 타입을 정의할 수 있다.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 파일 안에서 사용하는 키워드&lt;/li&gt;
-  &lt;li&gt;TypeScript Compiler 가 탐색할 수 있는 범위에 포함되어야 함&lt;/li&gt;
-  &lt;li&gt;TypeScript Compiler 가 탐색을 통해 이미 타입 정보를 알고 있음
+  &lt;li&gt;모듈이 파일명일 때
     &lt;ul&gt;
-      &lt;li&gt;다른 타입(type, interface) 정의들과는 달리 import 없이도 사용 가능&lt;/li&gt;
-      &lt;li&gt;*.ts 코드 작성 시 타입 자동완성(assist) 이 가능함&lt;/li&gt;
+      &lt;li&gt;src/person.js&lt;/li&gt;
+      &lt;li&gt;src/person.d.ts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;모듈이 폴더명일 때
+    &lt;ul&gt;
+      &lt;li&gt;src/person/index.js&lt;/li&gt;
+      &lt;li&gt;src/person/index.d.ts&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* definition.d.ts */&lt;/span&gt;
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// module 모듈명 === namespace 모듈명 (의미만 다름)&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// const&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// function&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;4-advanced&quot;&gt;4. advanced&lt;/h3&gt;
+&lt;p&gt;내부 타입 정의는 실제 모듈을 불러오는 경로와 똑같기 때문에 구지 &lt;strong&gt;declare&lt;/strong&gt; 를 통해 모듈의 위치를 TypeScript Compiler 에게 알려 줄 필요가 없다. person 변수 앞에 export 를 붙여 준 이유는 TypeScript Compiler 가 Top-level 안에 &lt;u&gt;평범한 변수 정의를 제한&lt;/u&gt;하기 때문이다. &lt;strong&gt;type&lt;/strong&gt; 과 &lt;strong&gt;interface&lt;/strong&gt; 를 제외한 평범한 변수를 Top-level 안에 정의할 때에는 앞에 export 나 declare 를 붙여 주도록 하자. block 안, 예를 들면 module 이나 namespace 안에서는 정의가 가능하다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;type&lt;/strong&gt; 과 &lt;strong&gt;interface&lt;/strong&gt; 를 외부에 정의하여 사용하려면 불가피하게 import 를 할 수 밖에 없다. 사용하는 모듈 외에 import 하는 것은 뭔가 비효율적이고 코드가 깔끔하게 보이지 않는다. 이 문제를 해결할 수 있는 방법이 type definition 을 활용하는 것이다. declare 와 type, interface 는 TypeScript Compiler 에게 타입 정보만을 제공하는 것이 목적이기 때문에 type, interface 또한 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 에 작성하여 TypeScript Compiler 에게 알려주기만 하면 되는 것이다. 이렇게 정의할 경우 import 를 피할 수 있고 코드 작성 시 타입 자동완성도 기대할 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;5-외부-타입-정의&quot;&gt;5. 외부 타입 정의&lt;/h3&gt;
 
-&lt;p&gt;type과 interface 자체가 타입을 정의하는 키워드이기 때문에 declare 를 붙이지 않아도 TypeScript Compiler 가 타입 정보를 탐색할 수 있다. 한가지 주의할 점은 타입 정의가 중복될 수 있어 &lt;strong&gt;namespace&lt;/strong&gt; 를 사용해 독립적으로 정의하는 것도 좋은 방법이 될 수 있다.&lt;/p&gt;
+&lt;p&gt;외부 타입 정의는 보통 3rd Party js 모듈이 타입 정의를 제공하지 않거나 잘못된 타입 정의를 수정하기 위해 사용한다. 아래와 같이 &lt;u&gt;파일명이나 폴더명을 모듈명&lt;/u&gt;으로 한다고 해서 TypeScript Compiler 가 해당 명의 모듈 타입 정보로 인식하지 않는다. 반드시 &lt;strong&gt;declare&lt;/strong&gt; 를 통해 모듈을 정의해야 한다.&lt;/p&gt;
 
-&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* definition.d.ts */&lt;/span&gt;
+&lt;ul&gt;
+  &lt;li&gt;src/@types/person.d.ts&lt;/li&gt;
+  &lt;li&gt;src/@types/person/index.d.ts&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// without declare&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;p&gt;주의할 것은 이미 타입 정의가 제공되고 있는데 중복으로 정의할 경우 TypeScript Compiler 가 두개로 구분해 인식하여 원하는 타입 정의가 나오지 않을 수 있다. 따라서 최대한 중복되지 않도록 해야 정신건강에 이롭다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 일반적인 모듈명&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 경로 형식의 모듈명도 가능&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@material-ui/core&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CustomPropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;dense&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;--외부-타입을-정의하려면&quot;&gt;- 외부 타입을 정의하려면?&lt;/h4&gt;
+
+&lt;p&gt;Typescript Compiler 가 탐색할 수 있도록 tsconfig.js 에 &lt;strong&gt;typeRoots&lt;/strong&gt; 값을 추가해 주어야 한다. 값을 설정하지 않으면 기본적으로 &lt;em&gt;node_modules/@types&lt;/em&gt; 만 탐색하도록 되있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;typeRoots&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;node_modules/@types&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;src/@types&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;--외부-타입-정의를-통해-기존-타입-정의를-오버라이딩-하려면&quot;&gt;- 외부 타입 정의를 통해 기존 타입 정의를 오버라이딩 하려면?&lt;/h4&gt;
+
+&lt;p&gt;이리저리 구글링하고 테스트 해보았지만 한마디로 &lt;u&gt;불가능&lt;/u&gt;하다. Typescript Compiler 는 동일한 부분을 오버라이딩 하는 것이 아니라 두개로 인식할 뿐이다. 정말 불가피한 상황이라면 직접 타입 정의를 수정하거나 오버라이딩이 필요한 타입 정의들만 복사해 수정하고 외부 타입으로 정의하면 된다. 당연히 기존 타입 정의들은 중복되지 않도록 지우는 것이 좋다. 단, 예외적으로 오버라이딩 효과를 낼 수 있는 경우가 있는데 그것은 완전히 서로 다른 내용을 가진 같은 명의 모듈 정의일 경우이다. 오버라이딩이라기 보다는 병합에 가까운 수준이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// @material-ui/core 모듈에는 PropTypes 라는 타입이 이미 정의되어 있다.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@material-ui/core&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 중복 정의를 통해 오버라이딩 하지 말아야 할 경우 (PropTypes 겹침)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@material-ui/core&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;dense&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 중복 정의를 통해 오버라이딩 효과를 낼 수 있는 경우&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@material-ui/core&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CustomPropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;dense&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;--타입을-정의할-때-유의할-점&quot;&gt;- 타입을 정의할 때 유의할 점&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*.ts&lt;/code&gt; 코드와 &lt;code class=&quot;highlighter-rouge&quot;&gt;*.d.ts&lt;/code&gt; 타입 정의가 정확하게 &lt;strong&gt;매칭&lt;/strong&gt;되어야 한다. 정확하게 매칭되지 않을 경우 혹시나 TypeScript Compiler 린팅은 통과했지만 런타임 시 에러가 발생할 가능성이 있다. TypeScript Compiler 는 타입 정의를 통해서만 코드를 해석하므로 개발자가 고의로 타입을 속일 수도 있다. 또 타입 정의에 집중한 나머지 type 이나 interface 를 export 하는 실수도 할 수 있으니 조심하도록 하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// person.js&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;lofty87&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// person.d.ts&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;// namespace&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;componentProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IButtonProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;primary&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;boolean&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-  &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IBlockProps&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;primary&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;boolean&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// person.d.ts (export 실수한 경우)&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IPerson&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 08 Jul 2019 00:00:00 +0900</pubDate>
-        <link>https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition</link>
-        <guid isPermaLink="true">https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition</guid>
+        <link>https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition-1</link>
+        <guid isPermaLink="true">https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition-1</guid>
         
         <category>es6</category>
         
@@ -395,7 +602,7 @@
 
 &lt;h5 id=&quot;--noimplicitany&quot;&gt;&lt;u&gt;--noImplicitAny&lt;/u&gt;&lt;/h5&gt;
 
-&lt;p&gt;타입을 추정할 수 없는 곳에 any 를 지정하라고 알려준다. 하지만 너무 지나칠 경우 예를 들면 객체의 &lt;strong&gt;index signature&lt;/strong&gt; 일 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;suppressImplicitAnyIndexErrors&lt;/code&gt; 옵션을 통해 제외 시킬 수 있다. 원래는 아래와 같이 객체의 타입을 지정해야 한다.&lt;/p&gt;
+&lt;p&gt;타입을 추정할 수 없는 곳에 any 를 지정하라고 알려준다. 하지만 너무 지나칠 경우, 예를 들면 객체의 &lt;strong&gt;index signature&lt;/strong&gt; 일 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;suppressImplicitAnyIndexErrors&lt;/code&gt; 옵션을 통해 제외 시킬 수 있다. 원래는 아래와 같이 객체의 타입을 지정해야 한다.&lt;/p&gt;
 
 &lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1330,7 +1537,7 @@ RUNNING
     
       <item>
         <title>TypeScript 에서 import 와 export 를 어떻게 처리할까?</title>
-        <description>&lt;p&gt;ES6 에서 모듈을 불러오고 내보낼 수 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; 와 &lt;code class=&quot;highlighter-rouge&quot;&gt;export&lt;/code&gt; 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 CommonJS 기반의 NodeJS 에서는 부분적으로 ES6 사용이 가능한 것 같고 완벽한 ES6 또는 NEXT(최신버전) 를 사용하기 위해서는 &lt;a href=&quot;https://babeljs.io&quot;&gt;Babel&lt;/a&gt; 이나 &lt;a href=&quot;https://www.typescriptlang.org&quot;&gt;TypeScript&lt;/a&gt; 의 도움을 받아야만 한다. 이번 포스팅은 TypeScript 를 통해 import 와 export 를 사용했을 때 어떻게 transpile 되는지 알아 보려고 한다. 또 Babel 과도 어떤 차이가 있는지 비교해 볼 것이다. transpile target 은 가장 안정적으로 돌아가는 ES5 로 하겠다.&lt;/p&gt;
+        <description>&lt;p&gt;ES6 에 모듈을 불러오고 내보낼 수 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; 와 &lt;code class=&quot;highlighter-rouge&quot;&gt;export&lt;/code&gt; 키워드가 새로 추가 되었다. 대표적으로 AMD, CommonJS, UMD 같은 모듈 시스템을 사용하고 있는데 CommonJS 기반의 NodeJS 는 부분적으로 ES6 사용이 가능한 것 같고 완벽한 ES6 또는 NEXT(최신버전) 를 사용하기 위해서는 &lt;a href=&quot;https://babeljs.io&quot;&gt;Babel&lt;/a&gt; 이나 &lt;a href=&quot;https://www.typescriptlang.org&quot;&gt;TypeScript&lt;/a&gt; 의 도움을 받아야 한다. 이번 포스팅은 TypeScript 가 import 와 export 를 어떻게 처리하는지 알아보기 위함이다. build target 은 가장 범용적인 ES5 로 할 것이며 또 Babel 과 어떤 차이가 있는지 비교해 볼 것이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -1396,7 +1603,7 @@ RUNNING
 
 &lt;h2 id=&quot;2-typescript-에서-import-와-export-의-transpile&quot;&gt;2. TypeScript 에서 import 와 export 의 transpile&lt;/h2&gt;
 
-&lt;p&gt;TypeScript 에서 CommonJS 기반의 모듈을 어떻게 처리하는지 살펴보기 위해 ‘3rd-module.js’ 를 추가했다. 아직까지는 &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 에 올라와 있는 대부분의 모듈들이 &lt;strong&gt;CommonJS&lt;/strong&gt; 기반으로 제공되고 있다는 점을 유의해야 한다.&lt;/p&gt;
+&lt;p&gt;TypeScript 에서 CommonJS 기반의 모듈을 어떻게 처리하는지 살펴보기 위해 &lt;em&gt;3rd-module.js&lt;/em&gt; 를 추가했다. &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 에 올라와 있는 대부분의 모듈들은 &lt;strong&gt;CommonJS&lt;/strong&gt; 기반으로 제공되고 있다.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-es6typescript&quot;&gt;1. ES6(TypeScript)&lt;/h3&gt;
 
@@ -1409,7 +1616,7 @@ RUNNING
 &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tsModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;--3rd-modulejs-npm-install-을-통해-다운받을-수-있는-commonjs-기반의-모듈&quot;&gt;- 3rd-module.js (&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; 을 통해 다운받을 수 있는 CommonJS 기반의 모듈)&lt;/h4&gt;
+&lt;h4 id=&quot;--3rd-modulejs&quot;&gt;- 3rd-module.js&lt;/h4&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thirdModule&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;thirdModuleProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;thirdModuleProperty&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
@@ -1473,9 +1680,7 @@ undefined // default property 값을 가져오지 못함
 thirdModuleProperty
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;module.exports&lt;/code&gt; 와 &lt;code class=&quot;highlighter-rouge&quot;&gt;export default&lt;/code&gt; 가 같다고 생각해 왔던 사람들에게는 세번째 값이 undefined 가 나온 것에 대해 의아해 할 수 있다. 기존에 사용하던 CommonJS 환경과 비슷하게 보였던 것은 여태껏 Typesciprt 가 transpile 되면서 import 와 export 를 사용하면 알아서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 처리해 주었기 때문이다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;module.exports&lt;/code&gt; 와 &lt;code class=&quot;highlighter-rouge&quot;&gt;export default&lt;/code&gt; 가 같다고 생각했던 사람들에게는 세번째 값(undefined) 이 이해가 안될 수 있다. 여태껏 잘 사용했던 이유는 CommonJS 방식으로 작성해도 Typesciprt 가 똑똑하게 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 처리해 주었기 때문이다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// before transpile&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tsModuleProperty&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
@@ -1486,7 +1691,7 @@ thirdModuleProperty
 &lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tsModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;exports 변수에 프로퍼티를 추가하는 형태로 transpile 되었다. &lt;code class=&quot;highlighter-rouge&quot;&gt;export default&lt;/code&gt; 가 &lt;code class=&quot;highlighter-rouge&quot;&gt;module.exports&lt;/code&gt; 로 transpile 되지 않았다는 것에 유의해야 한다.&lt;/p&gt;
+&lt;p&gt;exports 변수에 default 프로퍼티를 추가해 주는 형태로 transpile 되었다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// before transpile&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tsModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -1503,11 +1708,13 @@ thirdModuleProperty
 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_3rd_module_1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;thirdModuleProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;import 를 통해 모듈을 불러와 console 에서 사용할 때에도 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 추가하고 있다. 아마도 ES6 에서는 모듈을 내보낼 때 default 와 property 형태로 동시에 내보낼 수 있기 때문에 이렇게 처리하지 않았을까 생각해 본다. 따라서 console 에서 undefined 값이 나온 이유는 CommonJS 기반의 모듈이 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;가 없는 상태로 export 되었기 때문이다.&lt;/p&gt;
+&lt;p&gt;import 를 통해 console 에서 사용할 때에도 default 프로퍼티를 추가해 주었다. 아마도 ES6 에서 default 와 property 형태로 모듈을 내보낼 수 있기 때문에 이렇게 처리하지 않았을까 생각해 본다. 따라서 undefined 값이 나온 이유는 Typescript 가 import 와 export 를 처리하는 방법에 원인이 있다고 생각할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;앞으로 import 를 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;가 있는 모듈을 불러오는 키워드라고 생각하면 되겠다.&lt;/p&gt;
+&lt;p&gt;앞으로 import 와 export 를 사용할 때에 &lt;strong&gt;default 프로퍼티&lt;/strong&gt; 처리를 생각하며 사용하는 것이 좋겠다.&lt;/p&gt;
 
-&lt;h3 id=&quot;3-commonjs-기반의-모듈을-import-할-때에는-어떻게-해야-될까&quot;&gt;3. CommonJS 기반의 모듈을 import 할 때에는 어떻게 해야 될까?&lt;/h3&gt;
+&lt;h3 id=&quot;3-commonjs-기반의-모듈을-import-할-때에는-어떻게-해야-할까&quot;&gt;3. CommonJS 기반의 모듈을 import 할 때에는 어떻게 해야 할까?&lt;/h3&gt;
+
+&lt;p&gt;모듈의 프로퍼티들을 불러오는 것 처럼 작성한다면 모듈 자체가 import 될 수 있다. 다시 말하면 transpile 되면서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 추가하지 않기 때문에 기존의 CommonJS 방식처럼 모듈을 사용할 수 있다는 말이다. thirdModule 이 transpile 되면서 default 프로퍼티를 추가하지 않았고 그 결과 console 에서는 객체정보가 잘 출력되었다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// before transpile&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thirdModule&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./3rd-module&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -1520,20 +1727,18 @@ thirdModuleProperty
 &lt;span class=&quot;c1&quot;&gt;// console : { thirdModuleProperty: 'thirdModuleProperty' }&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;모듈의 프로퍼티를 사용하려고 평소처럼 위와 같이 불러 온다면 모듈 자체가 import 될 수 있다. 다시 말하면 transpile 되면서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 추가하지 않기 때문에 기존의 CommonJS 방식으로 모듈을 사용할 수 있게 된다는 말이다. thirdModule 이 transpile 되면서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 추가하지 않았고 그 결과 console 에서는 객체정보가 잘 출력되었다.&lt;/p&gt;
-
 &lt;h3 id=&quot;4-export-default-된-모듈을-require-할-때에는-어떻게-해야-될까&quot;&gt;4. export default 된 모듈을 require 할 때에는 어떻게 해야 될까?&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export default&lt;/code&gt; 는 &lt;code class=&quot;highlighter-rouge&quot;&gt;exports.default&lt;/code&gt; 로 transpile 될 것이다. import 를 사용해 모듈을 불러 온다면 transpile 되면서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 자동으로 추가해 주겠지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 를 사용할 경우에는 개발자가 직접 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;만 추가해 주면 된다.&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;thirdModule&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./3rd-module&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;export default&lt;/code&gt; 는 &lt;code class=&quot;highlighter-rouge&quot;&gt;exports.default&lt;/code&gt; 로 transpile 될 것이다. import 를 사용해 모듈을 불러 온다면 transpile 되면서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 자동으로 추가해 주겠지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; 를 사용할 경우 개발자가 직접 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 추가해 코딩해 주면 된다.&lt;/p&gt;
-
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;3-babel-vs-typescript&quot;&gt;3. Babel VS TypeScript&lt;/h2&gt;
+&lt;h2 id=&quot;3-typescript-와-babel-비교&quot;&gt;3. TypeScript 와 Babel 비교&lt;/h2&gt;
 
-&lt;p&gt;Babel 에서 CommonJS 기반의 모듈을 어떻게 import 하는지 살펴보기 위해 ‘commonjs-module.js’ 를 추가했다.&lt;/p&gt;
+&lt;p&gt;Babel 에서 CommonJS 기반의 모듈을 어떻게 import 하는지 살펴보기 위해 &lt;em&gt;commonjs-module.js&lt;/em&gt; 를 추가했다.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-es6&quot;&gt;1. ES6&lt;/h3&gt;
 
@@ -1569,7 +1774,7 @@ thirdModuleProperty
 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;commonjsModuleProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;2-es5transpiled--presets-es2015&quot;&gt;2. ES5(transpiled) / presets: es2015&lt;/h3&gt;
+&lt;h3 id=&quot;2-es5transpiled-1&quot;&gt;2. ES5(transpiled)&lt;/h3&gt;
 
 &lt;h4 id=&quot;--es6-modulejs-1&quot;&gt;- es6-module.js&lt;/h4&gt;
 
@@ -1626,9 +1831,7 @@ es6ModuleProperty
 commonjsModuleProperty
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;위에 있는 Babel 예제는 파일명과 변수명만 바뀌었을 뿐 TypeScript 예제와 동일하다. 하지만 신기하게도 Babel 의 transpile 은 세번째 값이 재대로 출력되었다. TypeScript 에서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 처리하는 방식과 Babel 에서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 처리하는 방식이 특별히 다르지 않은 것 같은데 어떤 이유로 이런 결과가 나올까?&lt;/p&gt;
+&lt;p&gt;위에 있는 Babel 예제는 파일명과 변수명만 바뀌었을 뿐 TypeScript 예제와 동일하다. 하지만 신기하게도 세번째 값이 재대로 출력되었다. TypeScript 에서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 처리하는 방식과 Babel 에서 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 처리하는 방식이 특별히 다르지 않은 것 같은데 어떤 이유로 이런 결과가 나올까?&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// es6-module.js&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;defineProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;__esModule&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
@@ -1642,13 +1845,13 @@ commonjsModuleProperty
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Babel 로 transpile 된 js 들을 살펴보면 TypeScript 의 transpile 에서는 없는 특별한 부분이 있다. ES6 기반의 모듈은 &lt;strong&gt;__esModule 프로퍼티&lt;/strong&gt;를 추가하고 내보내졌지만 CommonJS 기반의 모듈은 그렇지 않다. 두 모듈을 불러온 ‘index.js’ 에서는 이 프로퍼티 값으로 각 모듈을 구분하고 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 추가하는 작업을 하고 있다. 결과적으로 CommonJS 기반의 모듈은 &lt;strong&gt;default 프로퍼티&lt;/strong&gt; 값으로 귀속된 새로운 객체를 반환한다. 따라서 CommonJS 기반의 모듈을 기존 방식으로 import 해도 &lt;strong&gt;default 프로퍼티&lt;/strong&gt; 접근이 가능해져서 정상적으로 출력되는 것이다.&lt;/p&gt;
+&lt;p&gt;Babel 로 transpile 된 js 들을 살펴보면 TypeScript 에서는 없던 특별한 부분이 있다. ES6 기반의 모듈은 &lt;strong&gt;__esModule 프로퍼티&lt;/strong&gt;를 추가하고 내보내졌지만 CommonJS 기반의 모듈은 그렇지 않다. 두 모듈을 불러온 &lt;em&gt;index.js&lt;/em&gt; 에서는 이 프로퍼티 값으로 모듈을 구분하고 &lt;strong&gt;default 프로퍼티&lt;/strong&gt;를 추가하는 작업을 하고 있다. 결과적으로 CommonJS 기반의 모듈은 &lt;strong&gt;default 프로퍼티&lt;/strong&gt; 값으로 귀속된 새로운 객체를 반환한다. 따라서 CommonJS 기반의 모듈을 기존 방식으로 import 해도 &lt;strong&gt;default 프로퍼티&lt;/strong&gt; 접근이 가능해 정상적으로 출력되는 것이다.&lt;/p&gt;
 
-&lt;h3 id=&quot;3-babel-vs-typescript-1&quot;&gt;3. Babel VS TypeScript&lt;/h3&gt;
+&lt;h3 id=&quot;3-babel-vs-typescript&quot;&gt;3. Babel VS TypeScript&lt;/h3&gt;
 
-&lt;p&gt;NodeJS 에서 채택한 CommonJS 모듈 시스템에 익숙해져서 Babel 의 transpile 스펙이 맞는 것 같지만 이는 Babel 에서 편의상 제공하는 스펙이고 TypeScript 의 transpile 이 근본적인 스펙인 것 같다. TypeScript 와 Babel 은 태생이 다르기 때문에 비교하는 것은 맞지 않고 그냥 개발환경에 따라 왜 이렇게 사용하는지 어떤 차이가 있는지 이해하면서 사용하는 것이 좋겠다.&lt;/p&gt;
+&lt;p&gt;NodeJS 에서 채택한 CommonJS 모듈 시스템에 익숙해져 Babel 의 transpile 스펙이 맞는 것 같지만 이는 Babel 에서 편의상 제공하는 스펙이고 TypeScript 의 transpile 이 근본적인 스펙인 것 같다. TypeScript 와 Babel 은 태생이 다르기 때문에 어떤 것이 더 좋다라고 할 수는 없지만 개발환경에 따라 어떤 차이가 있는지, 왜 이렇게 사용하는지 이해하면서 사용하는 것이 좋겠다.&lt;/p&gt;
 
-&lt;h3 id=&quot;4-es6--es-next-환경에서-commonjs-기반의-모듈을-import-하는-방법&quot;&gt;4. ES6 &amp;amp; ES NEXT 환경에서 CommonJS 기반의 모듈을 import 하는 방법&lt;/h3&gt;
+&lt;h3 id=&quot;4-commonjs-기반의-모듈을-import-하는-방법&quot;&gt;4. CommonJS 기반의 모듈을 import 하는 방법&lt;/h3&gt;
 
 &lt;h4 id=&quot;--typescript&quot;&gt;- TypeScript&lt;/h4&gt;
 
@@ -1657,7 +1860,8 @@ commonjsModuleProperty
 
 &lt;h4 id=&quot;--babel&quot;&gt;- Babel&lt;/h4&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// import * as alias from module; 도 가능&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;

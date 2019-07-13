@@ -6,7 +6,7 @@
 <meta name="author"   content="lofty87">
 
   <meta name="keywords" content="TypeScript 에서 import 와 export 를 어떻게 처리할까?,Dev Store">
-<meta name="description" content="ES6 에서 모듈을 불러오고 내보낼 수 있는 'import' 와 'export' 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 CommonJS 기반의 Node..."><!-- View -->
+<meta name="description" content="ES6 에 모듈을 불러오고 내보낼 수 있는 import 와 export 키워드가 새로 추가 되었다. 기존에는 대표적으로 AMD, CommonJS, UMD 같은 모듈 시스템을 사용하고 있었다. CommonJS 기반의 NodeJS 는 부분적으로 ES6 사용이 가능한 ..."><!-- View -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"              content="width=device-width, initial-scale=1.0">
 
@@ -27,13 +27,13 @@
 <meta property="og:image"     content="https://lofty87.github.io/assets/favicon-32x32.png">
 
   <meta property="og:title"     content="TypeScript 에서 import 와 export 를 어떻게 처리할까?">
-<meta property="og:description" content="ES6 에서 모듈을 불러오고 내보낼 수 있는 'import' 와 'export' 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 CommonJS 기반의 Node..."><!-- Twitter Card -->
+<meta property="og:description" content="ES6 에 모듈을 불러오고 내보낼 수 있는 import 와 export 키워드가 새로 추가 되었다. 기존에는 대표적으로 AMD, CommonJS, UMD 같은 모듈 시스템을 사용하고 있었다. CommonJS 기반의 NodeJS 는 부분적으로 ES6 사용이 가능한 ..."><!-- Twitter Card -->
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:site"  content="Dev Store">
 <meta name="twitter:image" content="https://lofty87.github.io/assets/favicon-32x32.png">
 
   <meta name="twitter:title" content="TypeScript 에서 import 와 export 를 어떻게 처리할까?">
-<meta name="twitter:description" content="ES6 에서 모듈을 불러오고 내보낼 수 있는 'import' 와 'export' 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 CommonJS 기반의 Node..."><!-- Structured Data -->
+<meta name="twitter:description" content="ES6 에 모듈을 불러오고 내보낼 수 있는 import 와 export 키워드가 새로 추가 되었다. 기존에는 대표적으로 AMD, CommonJS, UMD 같은 모듈 시스템을 사용하고 있었다. CommonJS 기반의 NodeJS 는 부분적으로 ES6 사용이 가능한 ..."><!-- Structured Data -->
 <script type="application/ld+json">
   {
     "@context":"http://schema.org",
@@ -43,7 +43,7 @@
       "headline":"TypeScript 에서 import 와 export 를 어떻게 처리할까?",
     
     
-      "description": "ES6 에서 모듈을 불러오고 내보낼 수 있는 'import' 와 'export' 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 CommonJS 기반의 Node...",
+      "description": "ES6 에 모듈을 불러오고 내보낼 수 있는 import 와 export 키워드가 새로 추가 되었다. 기존에는 대표적으로 AMD, CommonJS, UMD 같은 모듈 시스템을 사용하고 있었다. CommonJS 기반의 NodeJS 는 부분적으로 ES6 사용이 가능한 ...",
     
     "datePublished":"2018-08-30 00:00:00 +0900",
     "dateModified":"2018-08-30 00:00:00 +0900",
@@ -154,7 +154,7 @@
     <h1 class="title">TypeScript 에서 import 와 export 를 어떻게 처리할까?</h1>
   </section>
   <section class="post-content">
-    <p>ES6 에서 모듈을 불러오고 내보낼 수 있는 <code class="highlighter-rouge">import</code> 와 <code class="highlighter-rouge">export</code> 키워드가 새로 추가 되었다. 기존에는 환경에 따라 AMD, CommonJS, UMD 로 나누고 저 마다 각 모듈 시스템을 가지고 사용하고 있었다. 현재 CommonJS 기반의 NodeJS 에서는 부분적으로 ES6 사용이 가능한 것 같고 완벽한 ES6 또는 NEXT(최신버전) 를 사용하기 위해서는 <a href="https://babeljs.io">Babel</a> 이나 <a href="https://www.typescriptlang.org">TypeScript</a> 의 도움을 받아야만 한다. 이번 포스팅은 TypeScript 를 통해 import 와 export 를 사용했을 때 어떻게 transpile 되는지 알아 보려고 한다. 또 Babel 과도 어떤 차이가 있는지 비교해 볼 것이다. transpile target 은 가장 안정적으로 돌아가는 ES5 로 하겠다.</p>
+    <p>ES6 에 모듈을 불러오고 내보낼 수 있는 <code class="highlighter-rouge">import</code> 와 <code class="highlighter-rouge">export</code> 키워드가 새로 추가 되었다. 대표적으로 AMD, CommonJS, UMD 같은 모듈 시스템을 사용하고 있는데 CommonJS 기반의 NodeJS 는 부분적으로 ES6 사용이 가능한 것 같고 완벽한 ES6 또는 NEXT(최신버전) 를 사용하기 위해서는 <a href="https://babeljs.io">Babel</a> 이나 <a href="https://www.typescriptlang.org">TypeScript</a> 의 도움을 받아야 한다. 이번 포스팅은 TypeScript 가 import 와 export 를 어떻게 처리하는지 알아보기 위함이다. build target 은 가장 범용적인 ES5 로 할 것이며 또 Babel 과 어떤 차이가 있는지 비교해 볼 것이다.</p>
 
 <p><br /></p>
 
@@ -220,7 +220,7 @@
 
 <h2 id="2-typescript-에서-import-와-export-의-transpile">2. TypeScript 에서 import 와 export 의 transpile</h2>
 
-<p>TypeScript 에서 CommonJS 기반의 모듈을 어떻게 처리하는지 살펴보기 위해 ‘3rd-module.js’ 를 추가했다. 아직까지는 <code class="highlighter-rouge">npm</code> 에 올라와 있는 대부분의 모듈들이 <strong>CommonJS</strong> 기반으로 제공되고 있다는 점을 유의해야 한다.</p>
+<p>TypeScript 에서 CommonJS 기반의 모듈을 어떻게 처리하는지 살펴보기 위해 <em>3rd-module.js</em> 를 추가했다. <code class="highlighter-rouge">npm</code> 에 올라와 있는 대부분의 모듈들은 <strong>CommonJS</strong> 기반으로 제공되고 있다.</p>
 
 <h3 id="1-es6typescript">1. ES6(TypeScript)</h3>
 
@@ -233,7 +233,7 @@
 <span class="k">export</span> <span class="k">default</span> <span class="nx">tsModule</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h4 id="--3rd-modulejs-npm-install-을-통해-다운받을-수-있는-commonjs-기반의-모듈">- 3rd-module.js (<code class="highlighter-rouge">npm install</code> 을 통해 다운받을 수 있는 CommonJS 기반의 모듈)</h4>
+<h4 id="--3rd-modulejs">- 3rd-module.js</h4>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">thirdModule</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">thirdModuleProperty</span><span class="p">:</span> <span class="dl">'</span><span class="s1">thirdModuleProperty</span><span class="dl">'</span>
@@ -297,9 +297,7 @@ undefined // default property 값을 가져오지 못함
 thirdModuleProperty
 </span></code></pre></div></div>
 
-<hr />
-
-<p><code class="highlighter-rouge">module.exports</code> 와 <code class="highlighter-rouge">export default</code> 가 같다고 생각해 왔던 사람들에게는 세번째 값이 undefined 가 나온 것에 대해 의아해 할 수 있다. 기존에 사용하던 CommonJS 환경과 비슷하게 보였던 것은 여태껏 Typesciprt 가 transpile 되면서 import 와 export 를 사용하면 알아서 <strong>default 프로퍼티</strong>를 처리해 주었기 때문이다.</p>
+<p><code class="highlighter-rouge">module.exports</code> 와 <code class="highlighter-rouge">export default</code> 가 같다고 생각했던 사람들에게는 세번째 값(undefined) 이 이해가 안될 수 있다. 여태껏 잘 사용했던 이유는 CommonJS 방식으로 작성해도 Typesciprt 가 똑똑하게 <strong>default 프로퍼티</strong>를 처리해 주었기 때문이다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// before transpile</span>
 <span class="k">export</span> <span class="p">{</span> <span class="nx">tsModuleProperty</span> <span class="p">};</span>
@@ -310,7 +308,7 @@ thirdModuleProperty
 <span class="nx">exports</span><span class="p">.</span><span class="k">default</span> <span class="o">=</span> <span class="nx">tsModule</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>exports 변수에 프로퍼티를 추가하는 형태로 transpile 되었다. <code class="highlighter-rouge">export default</code> 가 <code class="highlighter-rouge">module.exports</code> 로 transpile 되지 않았다는 것에 유의해야 한다.</p>
+<p>exports 변수에 default 프로퍼티를 추가해 주는 형태로 transpile 되었다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// before transpile</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tsModule</span><span class="p">);</span>
@@ -327,11 +325,13 @@ thirdModuleProperty
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_3rd_module_1</span><span class="p">.</span><span class="nx">thirdModuleProperty</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>import 를 통해 모듈을 불러와 console 에서 사용할 때에도 <strong>default 프로퍼티</strong>를 추가하고 있다. 아마도 ES6 에서는 모듈을 내보낼 때 default 와 property 형태로 동시에 내보낼 수 있기 때문에 이렇게 처리하지 않았을까 생각해 본다. 따라서 console 에서 undefined 값이 나온 이유는 CommonJS 기반의 모듈이 <strong>default 프로퍼티</strong>가 없는 상태로 export 되었기 때문이다.</p>
+<p>import 를 통해 console 에서 사용할 때에도 default 프로퍼티를 추가해 주었다. 아마도 ES6 에서 default 와 property 형태로 모듈을 내보낼 수 있기 때문에 이렇게 처리하지 않았을까 생각해 본다. 따라서 undefined 값이 나온 이유는 Typescript 가 import 와 export 를 처리하는 방법에 원인이 있다고 생각할 수 있다.</p>
 
-<p>앞으로 import 를 <strong>default 프로퍼티</strong>가 있는 모듈을 불러오는 키워드라고 생각하면 되겠다.</p>
+<p>앞으로 import 와 export 를 사용할 때에 <strong>default 프로퍼티</strong> 처리를 생각하며 사용하는 것이 좋겠다.</p>
 
-<h3 id="3-commonjs-기반의-모듈을-import-할-때에는-어떻게-해야-될까">3. CommonJS 기반의 모듈을 import 할 때에는 어떻게 해야 될까?</h3>
+<h3 id="3-commonjs-기반의-모듈을-import-할-때에는-어떻게-해야-할까">3. CommonJS 기반의 모듈을 import 할 때에는 어떻게 해야 할까?</h3>
+
+<p>모듈의 프로퍼티들을 불러오는 것 처럼 작성한다면 모듈 자체가 import 될 수 있다. 다시 말하면 transpile 되면서 <strong>default 프로퍼티</strong>를 추가하지 않기 때문에 기존의 CommonJS 방식처럼 모듈을 사용할 수 있다는 말이다. thirdModule 이 transpile 되면서 default 프로퍼티를 추가하지 않았고 그 결과 console 에서는 객체정보가 잘 출력되었다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// before transpile</span>
 <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">thirdModule</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./3rd-module</span><span class="dl">'</span><span class="p">;</span>
@@ -344,20 +344,18 @@ thirdModuleProperty
 <span class="c1">// console : { thirdModuleProperty: 'thirdModuleProperty' }</span>
 </code></pre></div></div>
 
-<p>모듈의 프로퍼티를 사용하려고 평소처럼 위와 같이 불러 온다면 모듈 자체가 import 될 수 있다. 다시 말하면 transpile 되면서 <strong>default 프로퍼티</strong>를 추가하지 않기 때문에 기존의 CommonJS 방식으로 모듈을 사용할 수 있게 된다는 말이다. thirdModule 이 transpile 되면서 <strong>default 프로퍼티</strong>를 추가하지 않았고 그 결과 console 에서는 객체정보가 잘 출력되었다.</p>
-
 <h3 id="4-export-default-된-모듈을-require-할-때에는-어떻게-해야-될까">4. export default 된 모듈을 require 할 때에는 어떻게 해야 될까?</h3>
+
+<p><code class="highlighter-rouge">export default</code> 는 <code class="highlighter-rouge">exports.default</code> 로 transpile 될 것이다. import 를 사용해 모듈을 불러 온다면 transpile 되면서 <strong>default 프로퍼티</strong>를 자동으로 추가해 주겠지만 <code class="highlighter-rouge">require</code> 를 사용할 경우에는 개발자가 직접 <strong>default 프로퍼티</strong>만 추가해 주면 된다.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">thirdModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./3rd-module</span><span class="dl">'</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">export default</code> 는 <code class="highlighter-rouge">exports.default</code> 로 transpile 될 것이다. import 를 사용해 모듈을 불러 온다면 transpile 되면서 <strong>default 프로퍼티</strong>를 자동으로 추가해 주겠지만 <code class="highlighter-rouge">require</code> 를 사용할 경우 개발자가 직접 <strong>default 프로퍼티</strong>를 추가해 코딩해 주면 된다.</p>
-
 <p><br /></p>
 
-<h2 id="3-babel-vs-typescript">3. Babel VS TypeScript</h2>
+<h2 id="3-typescript-와-babel-비교">3. TypeScript 와 Babel 비교</h2>
 
-<p>Babel 에서 CommonJS 기반의 모듈을 어떻게 import 하는지 살펴보기 위해 ‘commonjs-module.js’ 를 추가했다.</p>
+<p>Babel 에서 CommonJS 기반의 모듈을 어떻게 import 하는지 살펴보기 위해 <em>commonjs-module.js</em> 를 추가했다.</p>
 
 <h3 id="1-es6">1. ES6</h3>
 
@@ -393,7 +391,7 @@ thirdModuleProperty
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">commonjsModuleProperty</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h3 id="2-es5transpiled--presets-es2015">2. ES5(transpiled) / presets: es2015</h3>
+<h3 id="2-es5transpiled-1">2. ES5(transpiled)</h3>
 
 <h4 id="--es6-modulejs-1">- es6-module.js</h4>
 
@@ -450,9 +448,7 @@ es6ModuleProperty
 commonjsModuleProperty
 </span></code></pre></div></div>
 
-<hr />
-
-<p>위에 있는 Babel 예제는 파일명과 변수명만 바뀌었을 뿐 TypeScript 예제와 동일하다. 하지만 신기하게도 Babel 의 transpile 은 세번째 값이 재대로 출력되었다. TypeScript 에서 <strong>default 프로퍼티</strong>를 처리하는 방식과 Babel 에서 <strong>default 프로퍼티</strong>를 처리하는 방식이 특별히 다르지 않은 것 같은데 어떤 이유로 이런 결과가 나올까?</p>
+<p>위에 있는 Babel 예제는 파일명과 변수명만 바뀌었을 뿐 TypeScript 예제와 동일하다. 하지만 신기하게도 세번째 값이 재대로 출력되었다. TypeScript 에서 <strong>default 프로퍼티</strong>를 처리하는 방식과 Babel 에서 <strong>default 프로퍼티</strong>를 처리하는 방식이 특별히 다르지 않은 것 같은데 어떤 이유로 이런 결과가 나올까?</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// es6-module.js</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">exports</span><span class="p">,</span> <span class="dl">"</span><span class="s2">__esModule</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
@@ -466,13 +462,13 @@ commonjsModuleProperty
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Babel 로 transpile 된 js 들을 살펴보면 TypeScript 의 transpile 에서는 없는 특별한 부분이 있다. ES6 기반의 모듈은 <strong>__esModule 프로퍼티</strong>를 추가하고 내보내졌지만 CommonJS 기반의 모듈은 그렇지 않다. 두 모듈을 불러온 ‘index.js’ 에서는 이 프로퍼티 값으로 각 모듈을 구분하고 <strong>default 프로퍼티</strong>를 추가하는 작업을 하고 있다. 결과적으로 CommonJS 기반의 모듈은 <strong>default 프로퍼티</strong> 값으로 귀속된 새로운 객체를 반환한다. 따라서 CommonJS 기반의 모듈을 기존 방식으로 import 해도 <strong>default 프로퍼티</strong> 접근이 가능해져서 정상적으로 출력되는 것이다.</p>
+<p>Babel 로 transpile 된 js 들을 살펴보면 TypeScript 에서는 없던 특별한 부분이 있다. ES6 기반의 모듈은 <strong>__esModule 프로퍼티</strong>를 추가하고 내보내졌지만 CommonJS 기반의 모듈은 그렇지 않다. 두 모듈을 불러온 <em>index.js</em> 에서는 이 프로퍼티 값으로 모듈을 구분하고 <strong>default 프로퍼티</strong>를 추가하는 작업을 하고 있다. 결과적으로 CommonJS 기반의 모듈은 <strong>default 프로퍼티</strong> 값으로 귀속된 새로운 객체를 반환한다. 따라서 CommonJS 기반의 모듈을 기존 방식으로 import 해도 <strong>default 프로퍼티</strong> 접근이 가능해 정상적으로 출력되는 것이다.</p>
 
-<h3 id="3-babel-vs-typescript-1">3. Babel VS TypeScript</h3>
+<h3 id="3-babel-vs-typescript">3. Babel VS TypeScript</h3>
 
-<p>NodeJS 에서 채택한 CommonJS 모듈 시스템에 익숙해져서 Babel 의 transpile 스펙이 맞는 것 같지만 이는 Babel 에서 편의상 제공하는 스펙이고 TypeScript 의 transpile 이 근본적인 스펙인 것 같다. TypeScript 와 Babel 은 태생이 다르기 때문에 비교하는 것은 맞지 않고 그냥 개발환경에 따라 왜 이렇게 사용하는지 어떤 차이가 있는지 이해하면서 사용하는 것이 좋겠다.</p>
+<p>NodeJS 에서 채택한 CommonJS 모듈 시스템에 익숙해져 Babel 의 transpile 스펙이 맞는 것 같지만 이는 Babel 에서 편의상 제공하는 스펙이고 TypeScript 의 transpile 이 근본적인 스펙인 것 같다. TypeScript 와 Babel 은 태생이 다르기 때문에 어떤 것이 더 좋다라고 할 수는 없지만 개발환경에 따라 어떤 차이가 있는지, 왜 이렇게 사용하는지 이해하면서 사용하는 것이 좋겠다.</p>
 
-<h3 id="4-es6--es-next-환경에서-commonjs-기반의-모듈을-import-하는-방법">4. ES6 &amp; ES NEXT 환경에서 CommonJS 기반의 모듈을 import 하는 방법</h3>
+<h3 id="4-commonjs-기반의-모듈을-import-하는-방법">4. CommonJS 기반의 모듈을 import 하는 방법</h3>
 
 <h4 id="--typescript">- TypeScript</h4>
 
@@ -481,7 +477,8 @@ commonjsModuleProperty
 
 <h4 id="--babel">- Babel</h4>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">name</span> <span class="k">from</span> <span class="nx">module</span><span class="p">;</span>  <span class="c1">// import * as alias from module; 도 가능</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">name</span> <span class="k">from</span> <span class="nx">module</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">alias</span> <span class="k">from</span> <span class="nx">module</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -511,8 +508,20 @@ commonjsModuleProperty
       
         
           <li>
-            <a href="/nodejs/typescript/20190708/typescript-type-definition">
-              <h2>type definition (*.d.ts)</h2>
+            <a href="/nodejs/typescript/20190713/typescript-type-definition-2">
+              <h2>type definition 2</h2>
+            </a>
+            <time datetime="2019-07-13">2019-07-13</time>
+          </li>
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20190708/typescript-type-definition-1">
+              <h2>type definition 1</h2>
             </a>
             <time datetime="2019-07-08">2019-07-08</time>
           </li>
@@ -583,10 +592,20 @@ s.setAttribute('data-timestamp', +new Date());
   <ul>
     
       <li class="article">
-        <a href="/nodejs/typescript/20190708/typescript-type-definition" alt="type definition (*.d.ts)">
+        <a href="/nodejs/typescript/20190713/typescript-type-definition-2" alt="type definition 2">
           <article>
             <div class="category">NodeJS <span>></span>TypeScript </div>
-            <div class="title">type definition (*.d.ts)</div>
+            <div class="title">type definition 2</div>
+            <time>2019-07-13</time>
+          </article>
+        </a>
+      </li>
+    
+      <li class="article">
+        <a href="/nodejs/typescript/20190708/typescript-type-definition-1" alt="type definition 1">
+          <article>
+            <div class="category">NodeJS <span>></span>TypeScript </div>
+            <div class="title">type definition 1</div>
             <time>2019-07-08</time>
           </article>
         </a>
@@ -622,16 +641,6 @@ s.setAttribute('data-timestamp', +new Date());
         </a>
       </li>
     
-      <li class="article">
-        <a href="/linux/20181001/linux-environment-variable" alt="리눅스 환경변수 등록">
-          <article>
-            <div class="category">Linux </div>
-            <div class="title">리눅스 환경변수 등록</div>
-            <time>2018-10-01</time>
-          </article>
-        </a>
-      </li>
-    
   </ul>
 </section>
 
@@ -639,7 +648,7 @@ s.setAttribute('data-timestamp', +new Date());
   <h3>Category</h3>
   <ul>
     <li class="depth depth-1">
-      <a href="/">전체보기<span class="count">(13)</span></a>
+      <a href="/">전체보기<span class="count">(14)</span></a>
     </li>
 
     
@@ -895,7 +904,7 @@ s.setAttribute('data-timestamp', +new Date());
 
         
           <li class="depth depth-1">
-            <a href="/categories/nodejs">NodeJS<span class="count">(7)</span></a>
+            <a href="/categories/nodejs">NodeJS<span class="count">(8)</span></a>
           </li>
         
 
@@ -941,10 +950,22 @@ s.setAttribute('data-timestamp', +new Date());
 
         
           <li class="depth depth-2">
-            <a href="/categories/nodejs/typescript"><span class="prefix">-</span>TypeScript<span class="count">(4)</span></a>
+            <a href="/categories/nodejs/typescript"><span class="prefix">-</span>TypeScript<span class="count">(5)</span></a>
           </li>
         
 
+      
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
       
 
     
@@ -1305,7 +1326,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/es6" style="font-size: 16pt; color: #121212;">es6</a>
+        <a href="/tags/es6" style="font-size: 16pt; color: #141414;">es6</a>
       </li>
     
       
@@ -1401,7 +1422,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/mongodb" style="font-size: 11.5pt; color: #999;">mongodb</a>
+        <a href="/tags/mongodb" style="font-size: 11pt; color: #777;">mongodb</a>
       </li>
     
       
@@ -1417,7 +1438,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/mongoose" style="font-size: 11.5pt; color: #999;">mongoose</a>
+        <a href="/tags/mongoose" style="font-size: 11pt; color: #777;">mongoose</a>
       </li>
     
       
@@ -1433,7 +1454,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/command" style="font-size: 11.5pt; color: #999;">command</a>
+        <a href="/tags/command" style="font-size: 11pt; color: #777;">command</a>
       </li>
     
       
@@ -1449,7 +1470,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/windows" style="font-size: 11.5pt; color: #999;">windows</a>
+        <a href="/tags/windows" style="font-size: 11pt; color: #777;">windows</a>
       </li>
     
       
@@ -1481,7 +1502,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/linux" style="font-size: 11.5pt; color: #999;">linux</a>
+        <a href="/tags/linux" style="font-size: 11pt; color: #777;">linux</a>
       </li>
     
       
@@ -1625,7 +1646,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <li class="tag">
-        <a href="/tags/react" style="font-size: 11.5pt; color: #999;">react</a>
+        <a href="/tags/react" style="font-size: 11pt; color: #777;">react</a>
       </li>
     
       

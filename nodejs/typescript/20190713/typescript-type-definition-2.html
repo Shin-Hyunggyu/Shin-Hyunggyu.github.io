@@ -5,50 +5,50 @@
 <meta name="referrer" content="always">
 <meta name="author"   content="lofty87">
 
-  <meta name="keywords" content="리눅스 환경변수 등록,Dev Store">
-<meta name="description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ..."><!-- View -->
+  <meta name="keywords" content="type definition 2,Dev Store">
+<meta name="description" content="타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자."><!-- View -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"              content="width=device-width, initial-scale=1.0">
 
 <!-- Represent -->
 <base                                                         href="https://lofty87.github.io">
-<link rel="canonical"                                         href="https://lofty87.github.io/linux/20181001/linux-environment-variable"/>
+<link rel="canonical"                                         href="https://lofty87.github.io/nodejs/typescript/20190713/typescript-type-definition-2"/>
 <link rel="icon"             type="image/png" sizes="32x32"   href="https://lofty87.github.io/assets/favicon-32x32.png">
 <link rel="icon"             type="image/png" sizes="16x16"   href="https://lofty87.github.io/assets/favicon-16x16.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://lofty87.github.io/assets/apple-touch-icon.png">
 
-<title>리눅스 환경변수 등록 | Dev Store</title>
+<title>type definition 2 | Dev Store</title>
 
 <!-- Site Verification --><meta name="google-site-verification" content="hyjADXBfPWioezEyxWb91yhZYGC08ikSp1aF6Bz1b_w"/>
   <meta name="naver-site-verification"  content="16bc7701ad208ef6b2ff1ba2aa5f1021561c8071"/><!-- Open Graph -->
 <meta property="og:type"      content="article">
 <meta property="og:site_name" content="Dev Store">
-<meta property="og:url"       content="https://lofty87.github.io/linux/20181001/linux-environment-variable">
+<meta property="og:url"       content="https://lofty87.github.io/nodejs/typescript/20190713/typescript-type-definition-2">
 <meta property="og:image"     content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta property="og:title"     content="리눅스 환경변수 등록">
-<meta property="og:description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ..."><!-- Twitter Card -->
+  <meta property="og:title"     content="type definition 2">
+<meta property="og:description" content="타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자."><!-- Twitter Card -->
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:site"  content="Dev Store">
 <meta name="twitter:image" content="https://lofty87.github.io/assets/favicon-32x32.png">
 
-  <meta name="twitter:title" content="리눅스 환경변수 등록">
-<meta name="twitter:description" content="환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ..."><!-- Structured Data -->
+  <meta name="twitter:title" content="type definition 2">
+<meta name="twitter:description" content="타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자."><!-- Structured Data -->
 <script type="application/ld+json">
   {
     "@context":"http://schema.org",
     "@type":"BlogPosting",
-    "url":"https://lofty87.github.io/linux/20181001/linux-environment-variable",
+    "url":"https://lofty87.github.io/nodejs/typescript/20190713/typescript-type-definition-2",
     
-      "headline":"리눅스 환경변수 등록",
+      "headline":"type definition 2",
     
     
-      "description": "환경변수 등록은 login shell 과 none login shell 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. login shell 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 ...",
+      "description": "타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자.",
     
-    "datePublished":"2018-10-01 00:00:00 +0900",
-    "dateModified":"2018-10-01 00:00:00 +0900",
+    "datePublished":"2019-07-13 00:00:00 +0900",
+    "dateModified":"2019-07-13 00:00:00 +0900",
     "mainEntityOfPage":{
-      "@id":"https://lofty87.github.io/linux/20181001/linux-environment-variable"
+      "@id":"https://lofty87.github.io/nodejs/typescript/20190713/typescript-type-definition-2"
     },
     "author":{
       "@type":"Person",
@@ -135,51 +135,120 @@
 
 <article class="post">
   <section class="post-header">
-    <div class="category">Linux</div>
+    <div class="category">TypeScript</div>
     <div class="tags">
       
-        <div class="tag">linux</div>
+        <div class="tag">es6</div>
       
-        <div class="tag">bash</div>
-      
-        <div class="tag">profile</div>
-      
-        <div class="tag">command</div>
+        <div class="tag">typescript</div>
       
     </div>
-    <h1 class="title">리눅스 환경변수 등록</h1>
+    <h1 class="title">type definition 2</h1>
   </section>
   <section class="post-content">
-    <p>환경변수 등록은 <strong>login shell</strong> 과 <strong>none login shell</strong> 로 구분되고 전역(global) 등록과 지역(user) 등록으로 나누어 진다. <strong>login shell</strong> 은 아이디와 패스워드를 입력하고 로그인 후 세션이 생성될 때 처음 실행되는 shell 인데 예를 들면 putty 같은 클라이언트 프로그램을 통해 ssh 접속을 하는 것일 수 있다. <strong>none login shell</strong> 은 이미 로그인 상태이거나 세션이 없을 때 실행되는 shell 인데 예를 들면 GUI 에서 터미널을 열어 shell 이 실행되거나 루트접속 시도(su)를 통해 shell 이 실행되는 것일 수 있다. 전역(global) 등록은 모든 유저에게 공통으로 적용되는 등록이고 지역(user) 등록은 접속한 유저(본인)에게만 적용되는 등록이다.</p>
+    <p>타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자.</p>
 
-<p><br /></p>
+<h3 id="1-interface-class-같은-객체-타입들의-병합">1. interface, class 같은 객체 타입들의 병합</h3>
 
-<h3 id="1-login-shell">1. login shell</h3>
+<h4 id="---연산자">- &amp; 연산자</h4>
 
-<p>login shell 이 실행될 때 함께 로드되는 파일은 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 등이 있다. <em>/etc/profile</em>, <em>~/.profile</em> 은 모든 shell 이 대상이고 <em>~/.bash_profile</em> 은 bash shell 이 대상이다. 또 다른 차이는 <em>/etc/profile</em> 은 전역(global) 등록이고 <em>~/.profile</em>, <em>~/.bash_profile</em> 은 지역(user) 등록이다. 전역(global) 등록 파일은 <em>/etc</em> 디렉토리에 있고 지역(user) 파일은 유저의 <em>home(~)</em> 디렉토리에 있다.</p>
+<p>두 타입을 한 타입으로 합치는 연산자이다. 중복되는 프로퍼티는 타입끼리 &amp;(교집합) 처리가 되는데 서로 다른 타입일 경우 <code class="highlighter-rouge">string &amp; number</code> 같이 정의되어 값을 할당할 수 없게 되니 조심해야 한다. 합쳐지는 두 타입의 모든 프로퍼티가 존재하게 되어 assist 가 가능하다. 따라서 <u>두 타입의 프로퍼티가 서로 완전 다를 때</u> 사용하는 것이 바람직하다.</p>
 
-<blockquote>
-  <p>유저가 ssh 접속 후 bash shell 을 실행할 때 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 순서로 로드될 것이다.</p>
-</blockquote>
+<h4 id="---연산자-1">- | 연산자</h4>
 
-<p><br /></p>
+<p>둘 중 한 타입에만 속하면 되는 연산자이다. 범용적으로 두 타입을 합치는 효과가 있다. &amp; 연산자와는 다르게 중복되는 프로퍼티는 타입끼리 |(합집합) 처리가 되어 안정적으로 값을 할당할 수 있다. 하지만 어느 한 타입에만 존재하는 프로퍼티가 있을 수 있어 assist 는 중복되는 프로퍼티만 가능하다. 따라서 적절한 <strong>type assertion</strong> 을 통해 효율적으로 사용하는 것이 좋겠다.</p>
 
-<h3 id="2-none-login-shell">2. none login shell</h3>
+<h3 id="2-extends">2. extends</h3>
 
-<p>none login shell (bash shell) 이 실행될 때 로드되는 파일은 <em>/etc/bashrc</em>, <em>~/.bashrc</em> 등이 있다. 역시 이 둘의 차이도 전역(global) 등록과 지역(user) 등록의 차이이다. <em>/etc/bashrc</em> 에 등록된 환경변수는 모든 유저에게 공통으로 로드될 것이고 <em>~/.bashrc</em> 에 등록된 환경변수는 접속한 유저(본인)에게만 로드될 것이다.</p>
+<p>extends 는 <strong>제네릭</strong> 안에서 어떤 타입(들)의 선택적 포함을 나타낸다.</p>
 
-<p><br /></p>
-
-<h3 id="3-결론">3. 결론</h3>
-
-<p>따라서 putty 같은 클라이언트 프로그램을 통해 ssh 접속 후 사용되어야 할 환경변수는 <em>/etc/profile</em>, <em>~/.profile</em>, <em>~/.bash_profile</em> 에 shell 종류와 적용대상에 맞게 등록하면 되겠다.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">name</span><span class="o">=</span>value
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// T 는 "address1" | "address2"</span>
+<span class="nx">declare</span> <span class="kd">class</span> <span class="nx">IPerson</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="dl">"</span><span class="s2">address1</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">address2</span><span class="dl">"</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nl">address</span><span class="p">:</span> <span class="nx">T</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>value 에 띄어쓰기가 있을 경우 반드시 <strong>“(쌍따옴표)</strong>로 감싸줘야 한다. 또 shell 에서 명령어를 실행하여 환경변수를 바로 등록할 수 도 있지만 해당 세션이 끊길 경우 환경변수는 증발되므로 유의해야 한다. 등록된 환경변수는 아래 명령어로 확인할 수 있다.</p>
+<h3 id="3-keyof">3. keyof</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span>또는 <span class="nb">env</span>
+<p>keyof 는 어떤 타입의 <strong>프로퍼티</strong>를 Union 타입으로 나열하는 키워드로써 제네릭이나 타입을 정의하는데 효율적으로 사용된다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">declare</span> <span class="nx">namespace</span> <span class="nx">Info</span> <span class="p">{</span>
+  <span class="kd">class</span> <span class="nx">Address</span> <span class="p">{</span>
+    <span class="nl">address1</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="nl">address2</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// T 는 "address1" | "address2"</span>
+  <span class="kr">interface</span> <span class="nx">IPerson</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="nx">keyof</span> <span class="nx">Address</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="nl">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">address</span><span class="p">:</span> <span class="nx">T</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">type</span> <span class="nx">TPerson</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+    <span class="na">address</span><span class="p">:</span> <span class="nx">string</span>
+  <span class="p">}</span>
+
+  <span class="c1">// unionTPerson 은 "name" | "age" | "address"</span>
+  <span class="k">export</span> <span class="kd">const</span> <span class="na">unionTPerson</span><span class="p">:</span> <span class="nx">keyof</span> <span class="nx">TPerson</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="4-in">4. in</h3>
+
+<p>in 은 어떤 타입(들)의 포함을 나타낸다.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">declare</span> <span class="nx">namespace</span> <span class="nx">Info</span> <span class="p">{</span>
+  <span class="nx">type</span> <span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">K</span> <span class="k">in</span> <span class="nx">keyof</span> <span class="nx">T</span><span class="p">]?:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">K</span><span class="p">]</span>
+  <span class="p">}</span>
+  
+  <span class="kr">interface</span> <span class="nx">IRequiredProperty</span> <span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+    <span class="nl">age</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">address</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="c1">// 모든 프로퍼티를 선택적인 프로퍼티로 변경</span>
+  <span class="nx">type</span> <span class="nx">ISelectedProperty</span> <span class="o">=</span> <span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">IRequiredProperty</span><span class="o">&gt;</span><span class="p">;</span>
+
+  <span class="c1">// 필수적인 "name", "age", "address" 프로퍼티</span>
+  <span class="nx">type</span> <span class="nx">Person</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">T</span> <span class="k">in</span> <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">age</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">]:</span> <span class="nx">string</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="5-대표적인-객체-타입-라이브러리">5. 대표적인 객체 타입 라이브러리</h3>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 모든 프로퍼티를 readonly 프로퍼티로 변경</span>
+<span class="nx">type</span> <span class="nx">Readonly</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">readonly</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">keyof</span> <span class="nx">T</span><span class="p">]:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// 모든 프로퍼티를 선택적인 프로퍼티로 변경</span>
+<span class="nx">type</span> <span class="nx">Partial</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">keyof</span> <span class="nx">T</span><span class="p">]?:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// 모든 프로퍼티를 null 허용 프로퍼티로 변경</span>
+<span class="nx">type</span> <span class="nx">Nullable</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">keyof</span> <span class="nx">T</span><span class="p">]:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 모든 프로퍼티 중 선택한 일부 프로퍼티로 변경</span>
+<span class="nx">type</span> <span class="nx">Pick</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">K</span> <span class="kd">extends</span> <span class="nx">keyof</span> <span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">K</span><span class="p">]:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// Record</span>
+<span class="nx">type</span> <span class="nx">Record</span><span class="o">&lt;</span><span class="nx">K</span> <span class="kd">extends</span> <span class="nx">string</span> <span class="o">|</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">K</span><span class="p">]:</span> <span class="nx">T</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
   </section>
@@ -187,10 +256,10 @@
 
 <section class="post-category-list">
   <section class="title">
-    <h4><span>'Linux'</span> 카테고리의 최신글</h4>
+    <h4><span>'TypeScript'</span> 카테고리의 최신글</h4>
 
     
-      <a href="/categories/linux">더보기</a>
+      <a href="/categories/nodejs/typescript">더보기</a>
     
   </section>
   
@@ -201,6 +270,54 @@
       
         
           
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20190708/typescript-type-definition-1">
+              <h2>type definition 1</h2>
+            </a>
+            <time datetime="2019-07-08">2019-07-08</time>
+          </li>
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20190703/typescript-base">
+              <h2>TypeScript 기본 1</h2>
+            </a>
+            <time datetime="2019-07-03">2019-07-03</time>
+          </li>
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20190702/typescript-tsconfig">
+              <h2>tsconfig.js</h2>
+            </a>
+            <time datetime="2019-07-02">2019-07-02</time>
+          </li>
+        
+      
+    
+      
+      
+        
+          <li>
+            <a href="/nodejs/typescript/20180830/typescript-import-export">
+              <h2>TypeScript 에서 import 와 export 를 어떻게 처...</h2>
+            </a>
+            <time datetime="2018-08-30">2018-08-30</time>
+          </li>
         
       
     
@@ -217,8 +334,8 @@
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-  this.page.url = "http://localhost:4000/linux/20181001/linux-environment-variable";
-  this.page.identifier = "/linux/20181001/linux-environment-variable";
+  this.page.url = "http://localhost:4000/nodejs/typescript/20190713/typescript-type-definition-2";
+  this.page.identifier = "/nodejs/typescript/20190713/typescript-type-definition-2";
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

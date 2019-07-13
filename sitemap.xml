@@ -2,7 +2,23 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition</loc>
+      <loc>https://lofty87.github.io/nodejs/typescript/20190713/typescript-type-definition-2</loc>
+      
+        <lastmod>2019-07-13T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>https://lofty87.github.io/nodejs/typescript/20190708/typescript-type-definition-1</loc>
       
         <lastmod>2019-07-08T00:00:00+09:00</lastmod>
       
