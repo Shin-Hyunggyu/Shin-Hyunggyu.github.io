@@ -6,7 +6,7 @@
 <meta name="author"   content="lofty87">
 
   <meta name="keywords" content="type definition 2,Dev Store">
-<meta name="description" content="타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자."><!-- View -->
+<meta name="description" content="타입 정의를 조금 더 고급스럽게 사용하는 법을 알아보자."><!-- View -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"              content="width=device-width, initial-scale=1.0">
 
@@ -27,13 +27,13 @@
 <meta property="og:image"     content="https://lofty87.github.io/assets/favicon-32x32.png">
 
   <meta property="og:title"     content="type definition 2">
-<meta property="og:description" content="타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자."><!-- Twitter Card -->
+<meta property="og:description" content="타입 정의를 조금 더 고급스럽게 사용하는 법을 알아보자."><!-- Twitter Card -->
 <meta name="twitter:card"  content="summary">
 <meta name="twitter:site"  content="Dev Store">
 <meta name="twitter:image" content="https://lofty87.github.io/assets/favicon-32x32.png">
 
   <meta name="twitter:title" content="type definition 2">
-<meta name="twitter:description" content="타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자."><!-- Structured Data -->
+<meta name="twitter:description" content="타입 정의를 조금 더 고급스럽게 사용하는 법을 알아보자."><!-- Structured Data -->
 <script type="application/ld+json">
   {
     "@context":"http://schema.org",
@@ -43,7 +43,7 @@
       "headline":"type definition 2",
     
     
-      "description": "타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자.",
+      "description": "타입 정의를 조금 더 고급스럽게 사용하는 법을 알아보자.",
     
     "datePublished":"2019-07-13 00:00:00 +0900",
     "dateModified":"2019-07-13 00:00:00 +0900",
@@ -146,17 +146,17 @@
     <h1 class="title">type definition 2</h1>
   </section>
   <section class="post-content">
-    <p>타입 정의를 조금 더 고급스럽게 하는 방법을 알아보자.</p>
+    <p>타입 정의를 조금 더 고급스럽게 사용하는 법을 알아보자.</p>
 
-<h3 id="1-interface-class-같은-객체-타입들의-병합">1. interface, class 같은 객체 타입들의 병합</h3>
+<h3 id="1-type-과-interface-같이-자식을-포함할-수-있는-타입들의-병합">1. type 과 interface 같이 자식을 포함할 수 있는 타입들의 병합</h3>
 
 <h4 id="---연산자">- &amp; 연산자</h4>
 
-<p>두 타입을 한 타입으로 합치는 연산자이다. 중복되는 프로퍼티는 타입끼리 &amp;(교집합) 처리가 되는데 서로 다른 타입일 경우 <code class="highlighter-rouge">string &amp; number</code> 같이 정의되어 값을 할당할 수 없게 되니 조심해야 한다. 합쳐지는 두 타입의 모든 프로퍼티가 존재하게 되어 assist 가 가능하다. 따라서 <u>두 타입의 프로퍼티가 서로 완전 다를 때</u> 사용하는 것이 바람직하다.</p>
+<p>두 타입을 한 타입으로 합치는 연산자다. 중복되는 프로퍼티는 &amp;(교집합) 처리가 되는데 프로퍼티가 서로 다른 타입일 경우 <code class="highlighter-rouge">string &amp; number</code> 같이 정의되어 값을 할당할 수 없게 되니 조심해야 한다. 합쳐진 타입 안에는 이전의 모든 프로퍼티가 존재하게 되므로 모두 assist 가 가능하다. 따라서 <u>두 타입의 프로퍼티가 서로 완전 다를 때</u> 사용하는 것이 바람직하다.</p>
 
 <h4 id="---연산자-1">- | 연산자</h4>
 
-<p>둘 중 한 타입에만 속하면 되는 연산자이다. 범용적으로 두 타입을 합치는 효과가 있다. &amp; 연산자와는 다르게 중복되는 프로퍼티는 타입끼리 |(합집합) 처리가 되어 안정적으로 값을 할당할 수 있다. 하지만 어느 한 타입에만 존재하는 프로퍼티가 있을 수 있어 assist 는 중복되는 프로퍼티만 가능하다. 따라서 적절한 <strong>type assertion</strong> 을 통해 효율적으로 사용하는 것이 좋겠다.</p>
+<p>둘 중 한 타입에만 속하면 되는 연산자다. 범용적으로 두 타입을 합치는 효과가 있다. &amp; 연산자와는 다르게 중복되는 프로퍼티는 타입끼리 |(합집합) 처리가 되어 안정적으로 값을 할당할 수 있다. 하지만 어느 한 타입에만 존재하는 프로퍼티가 있을 수 있어 assist 는 중복되는 프로퍼티만 가능하다. 따라서 적절한 <strong>type assertion</strong> 을 통해 효율적으로 사용하는 것이 좋겠다.</p>
 
 <h3 id="2-extends">2. extends</h3>
 
@@ -649,6 +649,17 @@ s.setAttribute('data-timestamp', +new Date());
       <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
       
 
+        
+        
+
+        
+          <li class="depth depth-1">
+            <a href="/categories/nodejs">NodeJS<span class="count">(8)</span></a>
+          </li>
+        
+
+      
+
     
       <!-- category page 를 찾고 depth 를 구분 -->
       
@@ -659,17 +670,6 @@ s.setAttribute('data-timestamp', +new Date());
       
       
       <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
-      
-
-        
-        
-
-        
-          <li class="depth depth-1">
-            <a href="/categories/nodejs">NodeJS<span class="count">(8)</span></a>
-          </li>
-        
-
       
 
     
