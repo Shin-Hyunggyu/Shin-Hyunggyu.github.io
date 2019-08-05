@@ -138,6 +138,58 @@
 
   
     <article class="article">
+      <a href="/nodejs/react/20190805/create-react-app-environment-variable">
+        <h1 class="article-title">create-react-app 에서 환경변수 관리</h1>
+        <div class="article-line"></div>
+        <summary class="article-content">1. ‘NODE_ENV’ 환경변수
+
+NODE_ENV 환경변수는 특수한 환경변수로 개발자가 설정할 수 없으며 설정해도 무시된다. package.json 의 script 에 따라 자동으로 값이 대입되는데, npm start 는 development 를, npm run build 는 production 을, npm test 는 test 를 대입한다.
+
+2. 변수명은 반드시 ...</summary>
+        <section>
+          <time datetime="2019-08-05" class="article-time">2019-08-05</time>
+          <span class="article-time">
+            
+              <div class="tag">react</div>
+            
+          </span>
+        </section>
+      </a>
+    </article>
+  
+    <article class="article">
+      <a href="/nodejs/react/20190805/create-react-app-absolute-path">
+        <h1 class="article-title">create-react-app 에서 absolute path 와 alias path 사용하기</h1>
+        <div class="article-line"></div>
+        <summary class="article-content">Project Environment
+
+  create-react-app –typescript
+  react-app-rewired (override webpack config without ejecting)
+  storybook
+  tslint
+
+
+
+
+1. create-react-app
+
+create-react-app 으로 생성한 프로젝트는 NODE_PATH 환경변수만 ...</summary>
+        <section>
+          <time datetime="2019-08-05" class="article-time">2019-08-05</time>
+          <span class="article-time">
+            
+              <div class="tag">react</div>
+            
+              <div class="tag">typescript</div>
+            
+              <div class="tag">storybook</div>
+            
+          </span>
+        </section>
+      </a>
+    </article>
+  
+    <article class="article">
       <a href="/nodejs/typescript/20190713/typescript-type-definition-2">
         <h1 class="article-title">type definition 2</h1>
         <div class="article-line"></div>
@@ -224,77 +276,6 @@ npm ins...</summary>
       </a>
     </article>
   
-    <article class="article">
-      <a href="/nodejs/typescript/20190703/typescript-base">
-        <h1 class="article-title">TypeScript 기본 1</h1>
-        <div class="article-line"></div>
-        <summary class="article-content">1. primitive type
-
-
-  boolean
-  number
-  string
-  symbol
-  null
-  undefined
-
-
-가이드 라인에 null 보다 undefined 를 사용하라고 권장
-
-
-
-2. literal type
-
-값 자체가 타입이 된다.
-
-const MyType = 'MyType';
-
-// value 변수는 'MyType' 값 외에는 대입할...</summary>
-        <section>
-          <time datetime="2019-07-03" class="article-time">2019-07-03</time>
-          <span class="article-time">
-            
-              <div class="tag">es6</div>
-            
-              <div class="tag">typescript</div>
-            
-          </span>
-        </section>
-      </a>
-    </article>
-  
-    <article class="article">
-      <a href="/nodejs/typescript/20190702/typescript-tsconfig">
-        <h1 class="article-title">tsconfig.js</h1>
-        <div class="article-line"></div>
-        <summary class="article-content">- tsconfig.js 생성하기
-tsc --init
-
-
-1. extends
-
-경로를 지정하여 외부 tsconfig 를 참조할 수 있으며 rule 들을 직접 작성하여 오버라이딩이 가능하다.
-
-2. include
-
-해당 경로의 .ts, .tsx, .d.ts 들을 컴파일하며 exclude 보다 약하다
-
-3. exclude
-
-지정하지 않으면 기본적으로 node_modules...</summary>
-        <section>
-          <time datetime="2019-07-02" class="article-time">2019-07-02</time>
-          <span class="article-time">
-            
-              <div class="tag">es6</div>
-            
-              <div class="tag">typescript</div>
-            
-          </span>
-        </section>
-      </a>
-    </article>
-  
 </div>
 
 <nav class="pagination">
@@ -317,6 +298,10 @@ tsc --init
         <a href="/3"><span>3</span></a>
       
     
+      
+        <a href="/4"><span>4</span></a>
+      
+    
     
       <a href="/2/"><span class="arrow">&gt;&gt;</span></a>
     
@@ -327,6 +312,26 @@ tsc --init
         <section> 
   <h3>Recently</h3>
   <ul>
+    
+      <li class="article">
+        <a href="/nodejs/react/20190805/create-react-app-environment-variable" alt="create-react-app 에서 환경변수 관리">
+          <article>
+            <div class="category">NodeJS <span>></span>React </div>
+            <div class="title">create-react-app 에서 환경변수 관리</div>
+            <time>2019-08-05</time>
+          </article>
+        </a>
+      </li>
+    
+      <li class="article">
+        <a href="/nodejs/react/20190805/create-react-app-absolute-path" alt="create-react-app 에서 absolute path 와 alias path 사용하기">
+          <article>
+            <div class="category">NodeJS <span>></span>React </div>
+            <div class="title">create-react-app 에서 absol...</div>
+            <time>2019-08-05</time>
+          </article>
+        </a>
+      </li>
     
       <li class="article">
         <a href="/nodejs/typescript/20190713/typescript-type-definition-2" alt="type definition 2">
@@ -358,26 +363,6 @@ tsc --init
         </a>
       </li>
     
-      <li class="article">
-        <a href="/nodejs/typescript/20190703/typescript-base" alt="TypeScript 기본 1">
-          <article>
-            <div class="category">NodeJS <span>></span>TypeScript </div>
-            <div class="title">TypeScript 기본 1</div>
-            <time>2019-07-03</time>
-          </article>
-        </a>
-      </li>
-    
-      <li class="article">
-        <a href="/nodejs/typescript/20190702/typescript-tsconfig" alt="tsconfig.js">
-          <article>
-            <div class="category">NodeJS <span>></span>TypeScript </div>
-            <div class="title">tsconfig.js</div>
-            <time>2019-07-02</time>
-          </article>
-        </a>
-      </li>
-    
   </ul>
 </section>
 
@@ -385,10 +370,22 @@ tsc --init
   <h3>Category</h3>
   <ul>
     <li class="depth depth-1">
-      <a href="/">전체보기<span class="count">(14)</span></a>
+      <a href="/">전체보기<span class="count">(16)</span></a>
     </li>
 
     
+
+    
+      <!-- category page 를 찾고 depth 를 구분 -->
+      
+      
+
+      <!-- title suffix 가 '- page' 일 경우 Pagination 처리가 된 page -->
+      <!-- page.link 가 중복되어 동일한 카테고리가 여러개 출력되는 문제를 해결 -->
+      
+      
+      <!-- /categories/depth1/depth2 and title suffix 가 '- page' 아닌 link 만 -->
+      
 
     
       <!-- category page 를 찾고 depth 를 구분 -->
@@ -629,7 +626,7 @@ tsc --init
 
         
           <li class="depth depth-1">
-            <a href="/categories/nodejs">NodeJS<span class="count">(8)</span></a>
+            <a href="/categories/nodejs">NodeJS<span class="count">(10)</span></a>
           </li>
         
 
@@ -664,7 +661,7 @@ tsc --init
 
         
           <li class="depth depth-2">
-            <a href="/categories/nodejs/react"><span class="prefix">-</span>React<span class="count">(2)</span></a>
+            <a href="/categories/nodejs/react"><span class="prefix">-</span>React<span class="count">(4)</span></a>
           </li>
         
 
@@ -1063,7 +1060,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/es6" style="font-size: 16pt; color: #141414;">es6</a>
+        <a href="/tags/es6" style="font-size: 15pt; color: #131313;">es6</a>
       </li>
     
       
@@ -1159,7 +1156,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/mongodb" style="font-size: 11pt; color: #777;">mongodb</a>
+        <a href="/tags/mongodb" style="font-size: 10.5pt; color: #777;">mongodb</a>
       </li>
     
       
@@ -1175,7 +1172,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/mongoose" style="font-size: 11pt; color: #777;">mongoose</a>
+        <a href="/tags/mongoose" style="font-size: 10.5pt; color: #777;">mongoose</a>
       </li>
     
       
@@ -1191,7 +1188,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/command" style="font-size: 11pt; color: #777;">command</a>
+        <a href="/tags/command" style="font-size: 10.5pt; color: #777;">command</a>
       </li>
     
       
@@ -1207,7 +1204,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/windows" style="font-size: 11pt; color: #777;">windows</a>
+        <a href="/tags/windows" style="font-size: 10.5pt; color: #777;">windows</a>
       </li>
     
       
@@ -1239,7 +1236,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/linux" style="font-size: 11pt; color: #777;">linux</a>
+        <a href="/tags/linux" style="font-size: 10.5pt; color: #777;">linux</a>
       </li>
     
       
@@ -1383,7 +1380,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/react" style="font-size: 11pt; color: #777;">react</a>
+        <a href="/tags/react" style="font-size: 13.5pt; color: #101010;">react</a>
       </li>
     
       
@@ -1495,7 +1492,7 @@ tsc --init
       
       
       <li class="tag">
-        <a href="/tags/storybook" style="font-size: 9pt; color: #777;">storybook</a>
+        <a href="/tags/storybook" style="font-size: 10.5pt; color: #777;">storybook</a>
       </li>
     
   </ul>
